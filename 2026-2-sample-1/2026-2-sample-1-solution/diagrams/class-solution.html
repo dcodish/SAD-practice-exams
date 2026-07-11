@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
 <meta charset="UTF-8">
-<title>פתרון שאלה 7 — תרשים מחלקות — קמפוס בית</title>
+<title>פתרון שאלה 7, תרשים מחלקות, קמפוס בית</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -32,8 +32,8 @@
 <body>
 <div class="page">
   <header class="top">
-    <h1>פתרון שאלה 7 — תרשים מחלקות — קמפוס בית</h1>
-    <p>ניתוח ועיצוב מערכות מידע (364-1-1411) · מבחן לדוגמה, סמסטר ב' 2026 · תרשים מודל-פתרון להוראה</p>
+    <h1>פתרון שאלה 7, תרשים מחלקות, קמפוס בית</h1>
+    <p>ניתוח ועיצוב מערכות מידע (364-1-1411), מבחן לדוגמה, סמסטר ב' 2026, תרשים מודל-פתרון להוראה</p>
   </header>
   <div class="diagram-wrap">
     <svg id="diagram-svg" xmlns="http://www.w3.org/2000/svg"></svg>
@@ -220,7 +220,7 @@ function svgRel(rel) {
   if (rel.type === 'agg')  mS = 'marker-start="url(#aggHollow)"';
   if (rel.type === 'gen')  mE = 'marker-end="url(#genHollow)"';
   if (rel.type === 'dep')  { mE = 'marker-end="url(#arrOpen)"'; dash = 'stroke-dasharray="6 3"'; }
-  // 'assoc': no markers — plain line
+  // 'assoc': no markers, plain line
 
   let s = `<polyline points="${pts}" fill="none" stroke="#334155" stroke-width="1.8" ${dash} ${mS} ${mE}/>`;
   const multLabel = (end, adj, txt) => {
@@ -337,7 +337,7 @@ function buildModel() {
 
   return {
     kind: 'class',
-    title: 'קמפוס בית — Class Diagram',
+    title: 'קמפוס בית, Class Diagram',
     parts: [ { id: 'part-1', label: 'Campus Housing', splitRationale: '', elements, relationships } ]
   };
 }

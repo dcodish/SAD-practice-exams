@@ -2,11 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>ספר פתוח — Use Case Diagram</title>
+  <title>ספר פתוח, Use Case Diagram</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
 /* inlined uc-diagram-common.css */
-/* uc-diagram-common.css — SAD MCP shared styles for use case diagrams */
+/* uc-diagram-common.css, SAD MCP shared styles for use case diagrams */
 
 /* ── Base layout ─────────────────────────────────────────────────────────── */
 body { margin: 0; padding: 20px 0; background: #f8fafc;
@@ -133,7 +133,7 @@ body.uc-modal-open { overflow: hidden; }
   <style>[hidden] { display: none !important; }</style>
 </head>
 <body>
-  <h1 class="page-title">פתרון שאלה 6 — תרשים Use Case — "ספר פתוח" (רשת השאלת ספריות)</h1>
+  <h1 class="page-title">פתרון שאלה 6, תרשים Use Case, "ספר פתוח" (רשת השאלת ספריות)</h1>
 
   <!-- Tab bar -->
   <div class="tab-bar">
@@ -142,14 +142,14 @@ body.uc-modal-open { overflow: hidden; }
   </div>
 
   <!-- Split rationale -->
-  <div class="split-rationale">Split by actor groups: מחזור השאלות / מינהלה — אחריות נבדלת (16 use cases &gt; 8)</div>
+  <div class="split-rationale">Split by actor groups: מחזור השאלות / מינהלה, אחריות נבדלת (16 use cases &gt; 8)</div>
 
   <!-- Fix Layout button -->
   <div style="text-align:center;margin:8px 0;">
     <button onclick="fixLayout(currentLayout())" class="fix-btn">Fix Layout</button>
   </div>
 
-  <!-- ============================ TAB 1 — מחזור ההשאלה ============================ -->
+  <!-- ============================ TAB 1, מחזור ההשאלה ============================ -->
   <div class="diagram-part" id="diagram-0">
     <svg id="diagram-svg-0" viewBox="0 0 1240 840" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -284,7 +284,7 @@ body.uc-modal-open { overflow: hidden; }
     </svg>
   </div>
 
-  <!-- ============================ TAB 2 — ניהול ומינהלה ============================ -->
+  <!-- ============================ TAB 2, ניהול ומינהלה ============================ -->
   <div class="diagram-part" id="diagram-1" hidden>
     <svg id="diagram-svg-1" viewBox="0 0 1240 780" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -414,7 +414,7 @@ body.uc-modal-open { overflow: hidden; }
   <!-- VP export button -->
   <button class="vp-export-btn" onclick="exportXMI()">Download .xmi (Visual Paradigm)</button>
 
-  <!-- DIAGRAM DATA ONLY — all functions are in uc-diagram-common.js. -->
+  <!-- DIAGRAM DATA ONLY, all functions are in uc-diagram-common.js. -->
   <script>
     var diagramLayouts = [
       {
@@ -492,25 +492,25 @@ body.uc-modal-open { overflow: hidden; }
     };
 
     var assocDescriptions = {
-      'as-patron-reserve': { name: 'מנוי ↔ הצבת הזמנה',        desc: 'המנוי יוזם הצבת הזמנה על כותר. תפקיד: Initiator.' },
-      'as-patron-renew':   { name: 'מנוי ↔ חידוש השאלה',       desc: 'המנוי יוזם חידוש השאלה קיימת. תפקיד: Initiator.' },
-      'as-patron-view':    { name: 'מנוי ↔ צפייה בחשבון המנוי', desc: 'המנוי יוזם צפייה בחשבונו. תפקיד: Initiator.' },
-      'as-lib-checkout':   { name: 'ספרן ↔ השאלת עותק',        desc: 'הספרן יוזם את השאלת העותק למנוי. תפקיד: Initiator.' },
-      'as-lib-return':     { name: 'ספרן ↔ קליטת החזרה',       desc: 'הספרן יוזם את קליטת ההחזרה; חישוב קנס מתבצע בתוך ה-UC. תפקיד: Initiator.' },
-      'as-lib-lost':       { name: 'ספרן ↔ הכרזת עותק כאבוד',   desc: 'הספרן יוזם הכרזת עותק כאבוד. תפקיד: Initiator.' },
-      'as-time-overdue':   { name: 'שחקן זמן ↔ סימון השאלה באיחור', desc: 'שחקן הזמן מפעיל את התהליך היומי לסימון איחורים. תפקיד: Initiator. תזמון: בכל יום.' },
-      'as-iln-receive':    { name: 'רשת ההשאלה ↔ קליטת הודעה על עותק שהתקבל', desc: 'הרשת החיצונית יוזמת את הפנייה עם הגעת עותק. תפקיד: Initiator.' },
+      'as-patron-reserve': { name: 'מנוי - הצבת הזמנה',        desc: 'המנוי יוזם הצבת הזמנה על כותר. תפקיד: Initiator.' },
+      'as-patron-renew':   { name: 'מנוי - חידוש השאלה',       desc: 'המנוי יוזם חידוש השאלה קיימת. תפקיד: Initiator.' },
+      'as-patron-view':    { name: 'מנוי - צפייה בחשבון המנוי', desc: 'המנוי יוזם צפייה בחשבונו. תפקיד: Initiator.' },
+      'as-lib-checkout':   { name: 'ספרן - השאלת עותק',        desc: 'הספרן יוזם את השאלת העותק למנוי. תפקיד: Initiator.' },
+      'as-lib-return':     { name: 'ספרן - קליטת החזרה',       desc: 'הספרן יוזם את קליטת ההחזרה; חישוב קנס מתבצע בתוך ה-UC. תפקיד: Initiator.' },
+      'as-lib-lost':       { name: 'ספרן - הכרזת עותק כאבוד',   desc: 'הספרן יוזם הכרזת עותק כאבוד. תפקיד: Initiator.' },
+      'as-time-overdue':   { name: 'שחקן זמן - סימון השאלה באיחור', desc: 'שחקן הזמן מפעיל את התהליך היומי לסימון איחורים. תפקיד: Initiator. תזמון: בכל יום.' },
+      'as-iln-receive':    { name: 'רשת ההשאלה - קליטת הודעה על עותק שהתקבל', desc: 'הרשת החיצונית יוזמת את הפנייה עם הגעת עותק. תפקיד: Initiator.' },
       'inc-reserve-elig':  { name: 'הצבת הזמנה «include» בדיקת כשירות מנוי', desc: 'בדיקת הכשירות מתבצעת תמיד כחלק מהצבת הזמנה.' },
       'inc-checkout-elig': { name: 'השאלת עותק «include» בדיקת כשירות מנוי', desc: 'בדיקת הכשירות מתבצעת תמיד כחלק מהשאלת עותק.' },
       'inc-renew-elig':    { name: 'חידוש השאלה «include» בדיקת כשירות מנוי', desc: 'בדיקת הכשירות מתבצעת תמיד כחלק מחידוש השאלה.' },
-      'as-bm-fine':        { name: 'מנהל סניף ↔ מחיקה או הפחתה של קנס', desc: 'מנהל הסניף יוזם מחיקה או הפחתה של קנס. תפקיד: Initiator.' },
-      'as-bm-reports':     { name: 'מנהל סניף ↔ הפקת דוחות',   desc: 'מנהל הסניף יוזם הפקת דוחות תפעוליים. תפקיד: Initiator.' },
-      'as-acq-reports':    { name: 'רכז רכש ↔ הפקת דוחות',    desc: 'רכז הרכש יוזם הפקת דוחות רכש ומלאי. תפקיד: Initiator.' },
-      'as-acq-addtitle':   { name: 'רכז רכש ↔ הוספת כותר לקטלוג', desc: 'רכז הרכש יוזם הוספת כותר חדש לקטלוג. תפקיד: Initiator.' },
-      'as-acq-order':      { name: 'רכז רכש ↔ הזמנת עותקים חדשים', desc: 'רכז הרכש יוזם הזמנת עותקים חדשים. תפקיד: Initiator.' },
-      'as-sa-branches':    { name: 'מנהל מערכת ↔ ניהול סניפים', desc: 'מנהל המערכת יוזם ניהול סניפים. תפקיד: Initiator.' },
-      'as-sa-memtypes':    { name: 'מנהל מערכת ↔ ניהול סוגי מנויים', desc: 'מנהל המערכת יוזם ניהול סוגי מנויים. תפקיד: Initiator.' },
-      'as-sa-policy':      { name: 'מנהל מערכת ↔ הגדרת מדיניות השאלה וקנסות', desc: 'מנהל המערכת יוזם הגדרת מדיניות השאלה וקנסות. תפקיד: Initiator.' }
+      'as-bm-fine':        { name: 'מנהל סניף - מחיקה או הפחתה של קנס', desc: 'מנהל הסניף יוזם מחיקה או הפחתה של קנס. תפקיד: Initiator.' },
+      'as-bm-reports':     { name: 'מנהל סניף - הפקת דוחות',   desc: 'מנהל הסניף יוזם הפקת דוחות תפעוליים. תפקיד: Initiator.' },
+      'as-acq-reports':    { name: 'רכז רכש - הפקת דוחות',    desc: 'רכז הרכש יוזם הפקת דוחות רכש ומלאי. תפקיד: Initiator.' },
+      'as-acq-addtitle':   { name: 'רכז רכש - הוספת כותר לקטלוג', desc: 'רכז הרכש יוזם הוספת כותר חדש לקטלוג. תפקיד: Initiator.' },
+      'as-acq-order':      { name: 'רכז רכש - הזמנת עותקים חדשים', desc: 'רכז הרכש יוזם הזמנת עותקים חדשים. תפקיד: Initiator.' },
+      'as-sa-branches':    { name: 'מנהל מערכת - ניהול סניפים', desc: 'מנהל המערכת יוזם ניהול סניפים. תפקיד: Initiator.' },
+      'as-sa-memtypes':    { name: 'מנהל מערכת - ניהול סוגי מנויים', desc: 'מנהל המערכת יוזם ניהול סוגי מנויים. תפקיד: Initiator.' },
+      'as-sa-policy':      { name: 'מנהל מערכת - הגדרת מדיניות השאלה וקנסות', desc: 'מנהל המערכת יוזם הגדרת מדיניות השאלה וקנסות. תפקיד: Initiator.' }
     };
 
     var useCaseDocs = {
@@ -528,8 +528,8 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                    text: 'מוודא שאין למנוי הזמנה פעילה כפולה על אותו כותר' },
             { kind: 'system',                    text: 'שומר רשומת הזמנה בסטטוס "ממתינה", משבץ בתור ומציג את המיקום בתור' }
           ], extensions: [
-            { at: 2, text: 'אם קיים עותק זמין — המערכת מציעה השאלה מיידית במקום הזמנה.' },
-            { at: 5, text: 'אם קיימת הזמנה כפולה — המערכת דוחה ומציגה את מיקום ההזמנה הקיימת.' }
+            { at: 2, text: 'אם קיים עותק זמין, המערכת מציעה השאלה מיידית במקום הזמנה.' },
+            { at: 5, text: 'אם קיימת הזמנה כפולה, המערכת דוחה ומציגה את מיקום ההזמנה הקיימת.' }
           ] }
         ],
         userStories: [
@@ -558,8 +558,8 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                      text: 'מחשב תאריך יעד להחזרה לפי מדיניות סוג המנוי' },
             { kind: 'system',                      text: 'שומר רשומת השאלה, מעדכן סטטוס עותק ל"מושאל" ומדפיס אישור' }
           ], extensions: [
-            { at: 2, text: 'אם הכרטיס פג תוקף — המערכת חוסמת את ההשאלה ומפנה לחידוש כרטיס.' },
-            { at: 4, text: 'אם העותק שמור להזמנה של מנוי אחר — המערכת מתריעה ומונעת השאלה.' }
+            { at: 2, text: 'אם הכרטיס פג תוקף, המערכת חוסמת את ההשאלה ומפנה לחידוש כרטיס.' },
+            { at: 4, text: 'אם העותק שמור להזמנה של מנוי אחר, המערכת מתריעה ומונעת השאלה.' }
           ] }
         ],
         userStories: [
@@ -588,8 +588,8 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'actor',   actor: 'patron', text: 'מאשר את בקשת החידוש' },
             { kind: 'system',                    text: 'מעדכן את תאריך היעד ומציג את התאריך החדש' }
           ], extensions: [
-            { at: 2, text: 'אם קיימת הזמנה ממתינה — המערכת דוחה את החידוש ומבקשת החזרה עד תאריך היעד.' },
-            { at: 4, text: 'אם נוצלה מכסת החידושים — המערכת דוחה ומציגה את המכסה שנוצלה.' }
+            { at: 2, text: 'אם קיימת הזמנה ממתינה, המערכת דוחה את החידוש ומבקשת החזרה עד תאריך היעד.' },
+            { at: 4, text: 'אם נוצלה מכסת החידושים, המערכת דוחה ומציגה את המכסה שנוצלה.' }
           ] }
         ],
         userStories: [
@@ -610,13 +610,13 @@ body.uc-modal-open { overflow: hidden; }
           { id: 'sc-happy', name: 'מסלול מרכזי', flow: [
             { kind: 'actor',   actor: 'librarian', text: 'סורק את ברקוד העותק המוחזר' },
             { kind: 'system',                      text: 'מאתר את רשומת ההשאלה הפתוחה ומשווה את תאריך ההחזרה לתאריך היעד' },
-            { kind: 'system',                      text: 'אם ההחזרה באיחור — מחשב קנס לפי ימי האיחור ומדיניות הקנסות ורושם אותו לחשבון המנוי' },
+            { kind: 'system',                      text: 'אם ההחזרה באיחור, מחשב קנס לפי ימי האיחור ומדיניות הקנסות ורושם אותו לחשבון המנוי' },
             { kind: 'system',                      text: 'בודק אם קיימת הזמנה ממתינה על הכותר' },
             { kind: 'actor',   actor: 'librarian', text: 'מניח את העותק במדף האיסוף או במדף הכללי לפי הנחיית המערכת' },
             { kind: 'system',                      text: 'מעדכן את סטטוס העותק ("שמור להזמנה" או "זמין") וסוגר את רשומת ההשאלה' }
           ], extensions: [
-            { at: 2, text: 'אם העותק אינו רשום כמושאל — המערכת מתריעה על החזרה לא צפויה.' },
-            { at: 3, text: 'אם המנוי פטור מקנסות לפי סוגו — המערכת מדלגת על חישוב הקנס.' }
+            { at: 2, text: 'אם העותק אינו רשום כמושאל, המערכת מתריעה על החזרה לא צפויה.' },
+            { at: 3, text: 'אם המנוי פטור מקנסות לפי סוגו, המערכת מדלגת על חישוב הקנס.' }
           ] }
         ],
         userStories: [
@@ -643,7 +643,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                text: 'מעדכן את מונה ימי האיחור המצטבר בחשבון המנוי' },
             { kind: 'system',                text: 'מסמן מנויים שחצו את סף האיחור כ"חסומים להשאלה חדשה"' }
           ], extensions: [
-            { at: 2, text: 'אם אין השאלות באיחור — התהליך מסתיים ללא שינוי.' }
+            { at: 2, text: 'אם אין השאלות באיחור, התהליך מסתיים ללא שינוי.' }
           ] }
         ],
         userStories: [
@@ -665,7 +665,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                     text: 'מעדכן את סטטוס העותק ל"אבוד" ומסיר אותו ממלאי הסניף' },
             { kind: 'system',                     text: 'רושם חיוב עלות החלפה לחשבון המנוי וסוגר את רשומת ההשאלה' }
           ], extensions: [
-            { at: 3, text: 'אם המנוי מדווח שהעותק נמצא לפני האישור — הספרן מבטל ועובר לקליטת החזרה.' }
+            { at: 3, text: 'אם המנוי מדווח שהעותק נמצא לפני האישור, הספרן מבטל ועובר לקליטת החזרה.' }
           ] }
         ],
         userStories: [
@@ -691,7 +691,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                     text: 'משבץ את העותק להזמנה ומעדכן אותה ל"מוכנה לאיסוף"' },
             { kind: 'system',                     text: 'רושם את המנוי המזמין לרשימת ההתראות לאיסוף' }
           ], extensions: [
-            { at: 2, text: 'אם מזהה ההזמנה אינו תואם הזמנה פתוחה — המערכת דוחה את ההודעה ורושמת אותה לבירור.' }
+            { at: 2, text: 'אם מזהה ההזמנה אינו תואם הזמנה פתוחה, המערכת דוחה את ההודעה ורושמת אותה לבירור.' }
           ] }
         ],
         userStories: [
@@ -714,7 +714,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'actor',  actor: 'patron', text: 'מסנן את התצוגה לפי סוג פריט (השאלות / הזמנות / קנסות)' },
             { kind: 'system',                  text: 'מציג את הרשימה המסוננת' }
           ], extensions: [
-            { at: 2, text: 'אם אין פעילות בחשבון — המערכת מציגה הודעת "אין פריטים להצגה".' }
+            { at: 2, text: 'אם אין פעילות בחשבון, המערכת מציגה הודעת "אין פריטים להצגה".' }
           ] }
         ],
         userStories: [
@@ -740,8 +740,8 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system', text: 'סופר את מספר ההשאלות הפעילות ומשווה למכסת סוג המנוי' },
             { kind: 'system', text: 'מחזיר "כשיר" או "לא כשיר" בצירוף הסיבה' }
           ], extensions: [
-            { at: 2, text: 'אם היתרה מעל הסף — מחזיר "לא כשיר: קנס פתוח".' },
-            { at: 3, text: 'אם נוצלה המכסה — מחזיר "לא כשיר: חריגה ממכסת השאלות".' }
+            { at: 2, text: 'אם היתרה מעל הסף, מחזיר "לא כשיר: קנס פתוח".' },
+            { at: 3, text: 'אם נוצלה המכסה, מחזיר "לא כשיר: חריגה ממכסת השאלות".' }
           ] }
         ],
         userStories: [
@@ -763,7 +763,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                         text: 'מעדכן את סכום הקנס ורושם רשומת ביקורת עם הנימוק ומזהה המנהל' },
             { kind: 'system',                         text: 'מציג את היתרה המעודכנת בחשבון המנוי' }
           ], extensions: [
-            { at: 4, text: 'אם לא הוזן נימוק — המערכת חוסמת את השמירה.' }
+            { at: 4, text: 'אם לא הוזן נימוק, המערכת חוסמת את השמירה.' }
           ] }
         ],
         userStories: [
@@ -792,7 +792,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'actor',  actor: 'branchManager', text: 'מוריד את הדוח כקובץ' },
             { kind: 'system',                         text: 'מייצר קובץ להורדה ורושם את הפקת הדוח ביומן' }
           ], extensions: [
-            { at: 3, text: 'אם אין נתונים בטווח שנבחר — המערכת מציגה דוח ריק עם הודעה מתאימה.' }
+            { at: 3, text: 'אם אין נתונים בטווח שנבחר, המערכת מציגה דוח ריק עם הודעה מתאימה.' }
           ] }
         ],
         userStories: [
@@ -820,7 +820,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                        text: 'מאמת את שלמות השדות הנדרשים' },
             { kind: 'system',                        text: 'שומר את רשומת הכותר ומציג הודעת אישור עם מזהה הכותר' }
           ], extensions: [
-            { at: 2, text: 'אם ה-ISBN כבר קיים — המערכת מפנה לרשומה הקיימת להוספת עותקים.' }
+            { at: 2, text: 'אם ה-ISBN כבר קיים, המערכת מפנה לרשומה הקיימת להוספת עותקים.' }
           ] }
         ],
         userStories: [
@@ -849,7 +849,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'actor',  actor: 'acquisitions', text: 'מאשר את ההזמנה' },
             { kind: 'system',                        text: 'שומר הזמנת רכש בסטטוס "מוזמן" ומציג מזהה הזמנה' }
           ], extensions: [
-            { at: 3, text: 'אם המספר שהוזן אינו חיובי — המערכת חוסמת ומבקשת ערך תקין.' }
+            { at: 3, text: 'אם המספר שהוזן אינו חיובי, המערכת חוסמת ומבקשת ערך תקין.' }
           ] }
         ],
         userStories: [
@@ -877,7 +877,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'actor',  actor: 'sysAdmin', text: 'מגדיר את מספר עמדות ההשאלה בסניף' },
             { kind: 'system',                    text: 'שומר את רשומת הסניף ומציג אותה ברשימת הסניפים' }
           ], extensions: [
-            { at: 3, text: 'אם השם כבר קיים — המערכת מתריעה ומונעת שמירה.' }
+            { at: 3, text: 'אם השם כבר קיים, המערכת מתריעה ומונעת שמירה.' }
           ] }
         ],
         userStories: [
@@ -905,7 +905,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                    text: 'מאמת שהערכים חיוביים ועקביים' },
             { kind: 'system',                    text: 'שומר את סוג המנוי ומציג אותו ברשימת הסוגים' }
           ], extensions: [
-            { at: 5, text: 'אם ערך אינו חוקי — המערכת מסמנת את השדה ומונעת שמירה.' }
+            { at: 5, text: 'אם ערך אינו חוקי, המערכת מסמנת את השדה ומונעת שמירה.' }
           ] }
         ],
         userStories: [
@@ -934,7 +934,7 @@ body.uc-modal-open { overflow: hidden; }
             { kind: 'system',                    text: 'מאמת את סבירות הערכים שהוזנו' },
             { kind: 'system',                    text: 'שומר את פרמטרי המדיניות ורושם רשומת ביקורת' }
           ], extensions: [
-            { at: 5, text: 'אם ערך חורג מהטווח המותר — המערכת מונעת שמירה ומציגה את הטווח.' }
+            { at: 5, text: 'אם ערך חורג מהטווח המותר, המערכת מונעת שמירה ומציגה את הטווח.' }
           ] }
         ],
         userStories: [
@@ -962,14 +962,14 @@ body.uc-modal-open { overflow: hidden; }
       function actor(id, type, side) {
         return { kind: 'actor', id: id, name: actorDescriptions[id].name, actorType: type, side: side, x: 0, y: 0 };
       }
-      var SPLIT = 'Split by actor groups: מחזור השאלות / מינהלה — אחריות נבדלת (16 use cases > 8)';
+      var SPLIT = 'Split by actor groups: מחזור השאלות / מינהלה, אחריות נבדלת (16 use cases > 8)';
       return {
         kind: 'use-case',
-        title: 'מערכת ניהול השאלות ברשת הספריות — ספר פתוח',
+        title: 'מערכת ניהול השאלות ברשת הספריות, ספר פתוח',
         assumptions: [
           'כל מנוי מזוהה במערכת באמצעות מספר מנוי יחיד.',
           'חישוב הקנס וגבייתו מתבצעים בתוך "קליטת החזרה" ואינם מקרה שימוש נפרד.',
-          'שתי קבוצות השחקנים — מחזור ההשאלה והמינהלה — נבדלות ואינן חולקות שחקן.'
+          'שתי קבוצות השחקנים, מחזור ההשאלה והמינהלה, נבדלות ואינן חולקות שחקן.'
         ],
         openQuestions: [
           'האם נדרש אישור נוסף (למשל של מנהל אזור) למחיקת קנס מעל סכום מסוים?',
@@ -1040,12 +1040,12 @@ body.uc-modal-open { overflow: hidden; }
   </script>
   <script>
 /* inlined uc-diagram-common.js */
-/* uc-diagram-common.js — SAD MCP shared runtime for use case diagrams
+/* uc-diagram-common.js, SAD MCP shared runtime for use case diagrams
    Depends on globals defined in the inline <script> of each diagram:
    diagramLayouts, actorDescriptions, assocDescriptions, useCaseDocs, diagramModel
 
-   This file is deployed by hand to themathbible.com (see CLAUDE.md → Static Assets).
-   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy — it prints to the
+   This file is deployed by hand to themathbible.com (see CLAUDE.md, Static Assets).
+   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy, it prints to the
    browser console so you can confirm which runtime is actually live vs. the repo.
 */
 const UC_RUNTIME_VERSION = '2.3.2';
@@ -1063,7 +1063,7 @@ function fixLayout(layout) {
   if (!svg) return;
   const b = layout.boundary;
 
-  // Step 1 — Group UCs by the side of their owning actor.
+  // Step 1, Group UCs by the side of their owning actor.
   const ucSide = {};
   layout.actors.forEach(a =>
     a.ucIds.forEach(uid => {
@@ -1073,7 +1073,7 @@ function fixLayout(layout) {
   const cols = { left: [], right: [], center: [] };
   layout.useCases.forEach(uc => cols[ucSide[uc.id] || 'center'].push(uc));
 
-  // Step 2 — Sort each column by actor order (top-to-bottom on that side).
+  // Step 2, Sort each column by actor order (top-to-bottom on that side).
   function sortCol(ucs, side) {
     const ordered = layout.actors.filter(a => a.side === side).sort((a, bb) => a.y - bb.y);
     ucs.sort((a, bb) => {
@@ -1085,7 +1085,7 @@ function fixLayout(layout) {
   sortCol(cols.left,  'left');
   sortCol(cols.right, 'right');
 
-  // Step 3 — Adaptive column X positions. Widen boundary if needed.
+  // Step 3, Adaptive column X positions. Widen boundary if needed.
   const COL_GAP = 30;
   const maxRx = ucs => (ucs.length ? Math.max(...ucs.map(u => u.rx)) : 0);
   const lRx = maxRx(cols.left), cRx = maxRx(cols.center), rRx = maxRx(cols.right);
@@ -1108,7 +1108,7 @@ function fixLayout(layout) {
   place(cols.right,  rightX,  'right');
   place(cols.center, centerX, 'center');
 
-  // Step 4 — Clamp and resolve overlaps. Idempotent fixed-point loop.
+  // Step 4, Clamp and resolve overlaps. Idempotent fixed-point loop.
   const minX = b.x + UC_PAD;
   const maxX = b.x + b.width - UC_PAD;
   const minY = b.y + HEADER_H + UC_PAD;
@@ -1131,11 +1131,11 @@ function fixLayout(layout) {
     }
   }
 
-  // Step 5 — Expand boundary height to fit all UCs.
+  // Step 5, Expand boundary height to fit all UCs.
   const maxBottom = Math.max(...layout.useCases.map(uc => uc.cy + uc.ry));
   b.height = Math.max(b.height, maxBottom - b.y + UC_PAD);
 
-  // Step 6 — Re-center actors on their UC group; push bottom actors below boundary.
+  // Step 6, Re-center actors on their UC group; push bottom actors below boundary.
   layout.actors.forEach(actor => {
     const myUCs = layout.useCases.filter(u => actor.ucIds.includes(u.id));
     if (actor.side === 'left' || actor.side === 'right') {
@@ -1146,7 +1146,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 6b — Enforce a minimum vertical gap between actors on the same side.
+  // Step 6b, Enforce a minimum vertical gap between actors on the same side.
   // Step 6 centers each actor on its UCs' mean cy, which can place two single-UC
   // actors barely one row apart (~UC_GAP) so their stick figures + labels overlap.
   // Push later actors down to keep centers at least ACTOR_MIN_GAP apart (CR #6).
@@ -1159,7 +1159,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 7 — Write UC positions to the SVG (absolute attributes).
+  // Step 7, Write UC positions to the SVG (absolute attributes).
   layout.useCases.forEach(uc => {
     const g = svg.querySelector('[id="uc-group-' + uc.id + '"]');
     if (!g) return;
@@ -1178,12 +1178,12 @@ function fixLayout(layout) {
   layout.actors.forEach(actor => {
     // Scope to THIS svg: a shared actor id (e.g. 'head') repeats across tabs, so
     // document.getElementById returns the first tab's figure and moves the wrong
-    // one — leaving this tab's figure detached from its (correctly placed) line.
+    // one, leaving this tab's figure detached from its (correctly placed) line.
     const g = svg.querySelector('[id="actor-group-' + actor.id + '"]');
     if (g) g.setAttribute('transform', `translate(${actor.x},${actor.y})`);
   });
 
-  // Step 8 — Recalculate every connection line endpoint.
+  // Step 8, Recalculate every connection line endpoint.
   svg.querySelectorAll('[data-conn-from][data-conn-to]').forEach(line => {
     const fId = line.getAttribute('data-conn-from');
     const tId = line.getAttribute('data-conn-to');
@@ -1215,7 +1215,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 9 — Resize boundary rect and SVG viewBox (both width and height).
+  // Step 9, Resize boundary rect and SVG viewBox (both width and height).
   const br = svg.querySelector('.system-boundary, rect[rx="12"]');
   if (br) { br.setAttribute('width', b.width); br.setAttribute('height', b.height); }
   const vb = svg.getAttribute('viewBox');
@@ -1230,7 +1230,7 @@ function fixLayout(layout) {
     svg.setAttribute('viewBox', p.join(' '));
   }
 
-  // Step 10 — Timing labels.
+  // Step 10, Timing labels.
   renderTimingLabels(layout);
 }
 
@@ -1342,7 +1342,7 @@ function openUcModal(id) {
       } else if (step.kind === 'system') {
         scenariosHtml += `<li><em class="step-system">המערכת</em>: ${esc(step.text || '')}</li>`;
       } else if (step.kind === 'include') {
-        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ' — ' + esc(step.text) : ''}</li>`;
+        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ', ' + esc(step.text) : ''}</li>`;
       } else if (step.kind === 'extension') {
         scenariosHtml += `<li class="ext-inline">${step.at ? esc(String(step.at)) + 'a. ' : ''}${esc(step.text || '')}</li>`;
       }
@@ -1362,7 +1362,7 @@ function openUcModal(id) {
   if (doc.wireframe && !wireframeSafe(doc.wireframe))
     console.warn(`Wireframe for ${id} failed safety check.`);
 
-  // Single innerHTML write — avoids silent failures in sandboxed iframe environments.
+  // Single innerHTML write, avoids silent failures in sandboxed iframe environments.
   const body = document.querySelector('#uc-modal .uc-modal-body');
   body.innerHTML = `
     <button class="uc-modal-close" onclick="closeUcModal()" aria-label="Close">×</button>
@@ -1456,7 +1456,7 @@ function xmiBody(elements, rels) {
         const n = i + 1;
         if      (step.kind === 'actor')     out.push('  ' + n + '. ' + actorName(step.actor) + ': ' + step.text);
         else if (step.kind === 'system')    out.push('  ' + n + '. System: ' + step.text);
-        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ' — ' + step.text : ''));
+        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ', ' + step.text : ''));
         else if (step.kind === 'extension') out.push('  ' + n + 'a. ' + step.text);
         (sc.extensions || []).filter(e => e.at === n).forEach((e, j) => {
           out.push('  ' + n + String.fromCharCode(97 + j) + '. ' + e.text);

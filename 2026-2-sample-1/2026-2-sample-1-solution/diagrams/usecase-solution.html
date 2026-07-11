@@ -2,11 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>קמפוס בית — Use Case Diagram (פתרון שאלה 6)</title>
+  <title>קמפוס בית, Use Case Diagram (פתרון שאלה 6)</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
 /* inlined uc-diagram-common.css */
-/* uc-diagram-common.css — SAD MCP shared styles for use case diagrams */
+/* uc-diagram-common.css, SAD MCP shared styles for use case diagrams */
 
 /* ── Base layout ─────────────────────────────────────────────────────────── */
 body { margin: 0; padding: 20px 0; background: #f8fafc;
@@ -138,8 +138,8 @@ body.uc-modal-open { overflow: hidden; }
 </head>
 <body>
   <div class="solution-head">
-    <h1>פתרון שאלה 6 — תרשים Use Case — מערכת "קמפוס בית"</h1>
-    <p>מודל פתרון להוראה · ניתוח ועיצוב מערכות מידע (364-1-1411), מבחן לדוגמה סמסטר ב' 2026. לחיצה על Use Case פותחת את התיעוד המלא; לחיצה על שחקן/קו אסוציאציה מציגה תיאור.</p>
+    <h1>פתרון שאלה 6, תרשים Use Case, מערכת "קמפוס בית"</h1>
+    <p>מודל פתרון להוראה, ניתוח ועיצוב מערכות מידע (364-1-1411), מבחן לדוגמה סמסטר ב' 2026. לחיצה על Use Case פותחת את התיעוד המלא; לחיצה על שחקן/קו אסוציאציה מציגה תיאור.</p>
   </div>
 
   <!-- Tab bar -->
@@ -149,7 +149,7 @@ body.uc-modal-open { overflow: hidden; }
   </div>
 
   <!-- Split rationale -->
-  <div class="split-rationale">Split by UC count: 17 UCs &gt; 8 threshold — פוצל לשני אזורי אחריות של אותה מערכת.</div>
+  <div class="split-rationale">Split by UC count: 17 UCs &gt; 8 threshold, פוצל לשני אזורי אחריות של אותה מערכת.</div>
 
   <!-- Fix Layout button -->
   <div style="text-align:center;margin:8px 0;">
@@ -170,7 +170,7 @@ body.uc-modal-open { overflow: hidden; }
       <rect class="system-boundary" x="360" y="70" width="860" height="560" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/>
       <rect x="360" y="70" width="860" height="44" rx="12" fill="#1e40af"/>
       <rect x="360" y="96" width="860" height="18" fill="#1e40af"/>
-      <text x="790" y="99" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="'Noto Sans Hebrew',sans-serif">מערכת "קמפוס בית" — חוזים, תשלומים ומתקנים</text>
+      <text x="790" y="99" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="'Noto Sans Hebrew',sans-serif">מערכת "קמפוס בית", חוזים, תשלומים ומתקנים</text>
 
       <!-- association lines -->
       <g id="assocLayer0">
@@ -263,7 +263,7 @@ body.uc-modal-open { overflow: hidden; }
       <rect class="system-boundary" x="360" y="70" width="860" height="480" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/>
       <rect x="360" y="70" width="860" height="44" rx="12" fill="#1e40af"/>
       <rect x="360" y="96" width="860" height="18" fill="#1e40af"/>
-      <text x="790" y="99" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="'Noto Sans Hebrew',sans-serif">מערכת "קמפוס בית" — תחזוקה, דוחות וניהול נתוני-אב</text>
+      <text x="790" y="99" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="700" font-family="'Noto Sans Hebrew',sans-serif">מערכת "קמפוס בית", תחזוקה, דוחות וניהול נתוני-אב</text>
 
       <g id="assocLayer1">
         <line class="assoc-line" data-conn-from="dayar" data-conn-to="uc-open-maintenance" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
@@ -336,14 +336,14 @@ body.uc-modal-open { overflow: hidden; }
     rakaz:    { name:'רכז שיבוץ', desc:'מאתר חדר פנוי, מכין טיוטת חוזה, מגיש לאישור ומתקן חוזה שהוחזר. מפיק דוחות.' },
     manager:  { name:'מנהל אזור', desc:'מאשר או מחזיר חוזים לתיקון, מבטל חוזה לפני כניסתו לתוקף, מאשר עלות חריגה ומפיק דוחות.' },
     avbait:   { name:'אב בית', desc:'משבץ לקריאת תחזוקה קבלן מאושר לפי תחום התמחותו ומנהל את זרימת הטיפול.' },
-    kablan:   { name:'קבלן', desc:'משתמש חיצוני בעל הרשאה לעדכן אך ורק את הקריאה ששובצה לו — מדווח על סיום העבודה ועל עלותה.' },
+    kablan:   { name:'קבלן', desc:'משתמש חיצוני בעל הרשאה לעדכן אך ורק את הקריאה ששובצה לו, מדווח על סיום העבודה ועל עלותה.' },
     sysadmin: { name:'מנהל מערכת', desc:'מנהל את נתוני-האב: בניינים, חדרים, סוגי מתקנים והקבלנים המאושרים.' },
     time:     { name:'שחקן זמן «system»', desc:'טריגר מתוזמן: מפיק חיוב ב-1 לכל חודש ומסמן חוזה כבפיגור בחלוף 10 ימים ללא פירעון.' },
     clearing: { name:'מערכת הסליקה «system»', desc:'מערכת חיצונית של חברת האשראי. בתום כל יום היא היוזמת ומעבירה אלינו את פירוט התשלומים שנקלטו ונדחו; אנו לעולם איננו פונים אליה.' }
   };
 
   var assocDescriptions = {
-    'a-clearing': { name:'מערכת הסליקה ↔ קליטת דיווח תשלומים', desc:'מערכת חיצונית יוזמת: היא הפונה אלינו בתום כל יום, ולכן מיוצגת כשחקן «system» מחוץ לגבול המערכת המחובר באסוציאציה ל-Use Case זה (עוגן שאלה 6.3).' }
+    'a-clearing': { name:'מערכת הסליקה - קליטת דיווח תשלומים', desc:'מערכת חיצונית יוזמת: היא הפונה אלינו בתום כל יום, ולכן מיוצגת כשחקן «system» מחוץ לגבול המערכת המחובר באסוציאציה ל-Use Case זה (עוגן שאלה 6.3).' }
   };
 
   var useCaseDocs = {
@@ -357,7 +357,7 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'rakaz', text:'מזין תאריך תחילה, תאריך סיום, דמי שכירות חודשיים וגובה פיקדון' },
         { kind:'include', uc:'uc-check-debt', text:'בדיקה שאין לדייר חוב פתוח לפני יצירת חוזה חדש' },
         { kind:'system', text:'מוודא שהחדר עדיין פנוי ושומר את החוזה במצב "טיוטה"' }
-      ], extensions:[{ at:4, text:'אם החדר כבר שובץ בינתיים — המערכת מציגה הודעה ומחזירה לבחירת חדר.' }] }],
+      ], extensions:[{ at:4, text:'אם החדר כבר שובץ בינתיים, המערכת מציגה הודעה ומחזירה לבחירת חדר.' }] }],
       userStories:[
         { role:'רכז שיבוץ', want:'ליצור טיוטת חוזה המשייכת סטודנט לחדר פנוי', so:'אוכל לשבץ סטודנט חדש במהירות' },
         { role:'מנהל אזור', want:'שכל חוזה חדש ייווצר במצב טיוטה מסודר', so:'אוכל לאשר אותו על בסיס נתונים מלאים' }
@@ -381,14 +381,14 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'dayar', text:'פותח את החוזה שנשלח אליו וקורא את תנאיו' },
         { kind:'actor', actor:'dayar', text:'מסמן הסכמה וחותם דיגיטלית' },
         { kind:'system', text:'שומר את החתימה ומעביר את החוזה ל"ממתין לאישור מנהל האזור"' }
-      ], extensions:[{ at:2, text:'אם הסטודנט מסרב לחתום — החוזה נשאר ב"ממתין לחתימה" עד לחתימה או לביטול.' }] }],
+      ], extensions:[{ at:2, text:'אם הסטודנט מסרב לחתום, החוזה נשאר ב"ממתין לחתימה" עד לחתימה או לביטול.' }] }],
       userStories:[
         { role:'דייר', want:'לחתום על החוזה שלי באופן דיגיטלי', so:'אוכל להשלים את השכירות בלי טפסי נייר' },
         { role:'רכז שיבוץ', want:'שהחתימה תעביר את החוזה אוטומטית לאישור', so:'לא אצטרך לעקוב ידנית אחר כל חוזה' }
       ],
       wireframe:`<div class="wf-screen"><h3 class="wf-heading">חתימה על חוזה שכירות</h3>
         <div class="wf-section">תצוגת תנאי החוזה: חדר, תאריכים, שכר דירה ופיקדון (לקריאה בלבד).</div>
-        <div class="wf-row"><label class="wf-label">מאשר שקראתי את תנאי החוזה</label><input class="wf-input" disabled placeholder="☐"/></div>
+        <div class="wf-row"><label class="wf-label">מאשר שקראתי את תנאי החוזה</label><input class="wf-input" disabled placeholder=""/></div>
         <div class="wf-actions"><button class="wf-button wf-primary">חתום דיגיטלית</button><button class="wf-button">חזרה</button></div>
         <p class="wf-hint">החתימה מעבירה את החוזה למצב "ממתין לאישור מנהל האזור".</p></div>`
     },
@@ -401,7 +401,7 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'manager', text:'פותח את החוזה החתום ובודק את תנאיו' },
         { kind:'actor', actor:'manager', text:'מאשר את החוזה' },
         { kind:'system', text:'מסמן את החוזה כמאושר וממתין להפעלתו במועד תחילת השכירות' }
-      ], extensions:[{ at:2, text:'אם נמצא ליקוי — מנהל האזור מחזיר את החוזה לרכז השיבוץ לתיקון, והוא יוגש שוב לאישור.' }] }],
+      ], extensions:[{ at:2, text:'אם נמצא ליקוי, מנהל האזור מחזיר את החוזה לרכז השיבוץ לתיקון, והוא יוגש שוב לאישור.' }] }],
       userStories:[
         { role:'מנהל אזור', want:'לאשר או להחזיר לתיקון כל חוזה חתום', so:'רק חוזים תקינים ייכנסו לתוקף' },
         { role:'רכז שיבוץ', want:'לקבל חזרה חוזה עם סיבת ההחזרה', so:'אוכל לתקן ולהגיש מחדש' }
@@ -420,7 +420,7 @@ body.uc-modal-open { overflow: hidden; }
       scenarios:[{ id:'sc-happy', name:'מסלול מרכזי', flow:[
         { kind:'actor', actor:'dayar', text:'בוחר חוזה טרום-תוקף ומבקש לבטלו' },
         { kind:'system', text:'מוודא שהחוזה עדיין לא נכנס לתוקף ומעביר אותו למצב "בוטל"' }
-      ], extensions:[{ at:2, text:'אם החוזה כבר פעיל — המערכת דוחה את הבקשה ומציגה שאי-אפשר לבטל חוזה בתוקף.' }] }],
+      ], extensions:[{ at:2, text:'אם החוזה כבר פעיל, המערכת דוחה את הבקשה ומציגה שאי-אפשר לבטל חוזה בתוקף.' }] }],
       userStories:[
         { role:'דייר', want:'לבטל חוזה כל עוד לא נכנס לתוקף', so:'לא אתחייב לשכירות שאינה רלוונטית עוד' },
         { role:'מנהל אזור', want:'לבטל חוזה טרום-תוקף בעייתי', so:'החדר ישוחרר לשיבוץ אחר' }
@@ -440,7 +440,7 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'dayar', text:'בוחר סוג מתקן, תאריך וחלון שעה פנוי' },
         { kind:'include', uc:'uc-check-debt', text:'בדיקה שאין לדייר חוב פתוח לפני אישור ההזמנה' },
         { kind:'system', text:'מוודא שהחלון פנוי ושומר את ההזמנה' }
-      ], extensions:[{ at:3, text:'אם החלון נתפס בינתיים — המערכת מציגה הודעה ומחזירה לבחירת שעה.' }] }],
+      ], extensions:[{ at:3, text:'אם החלון נתפס בינתיים, המערכת מציגה הודעה ומחזירה לבחירת שעה.' }] }],
       userStories:[
         { role:'דייר', want:'להזמין את חדר הכביסה לשעה מסוימת', so:'אבטיח לעצמי מכונה פנויה' },
         { role:'דייר', want:'שהמערכת תמנע ממני הזמנה כשיש לי חוב', so:'אדע להסדיר את החוב תחילה' }
@@ -450,7 +450,7 @@ body.uc-modal-open { overflow: hidden; }
         <div class="wf-row"><label class="wf-label">תאריך</label><input class="wf-input" disabled/></div>
         <div class="wf-row"><label class="wf-label">חלון שעה</label><select class="wf-select" disabled><option>בחר שעה פנויה</option></select></div>
         <div class="wf-actions"><button class="wf-button wf-primary">הזמן</button><button class="wf-button">ביטול</button></div>
-        <p class="wf-hint">אם קיים חוב פתוח — ההזמנה תיחסם עד להסדרתו.</p></div>`
+        <p class="wf-hint">אם קיים חוב פתוח, ההזמנה תיחסם עד להסדרתו.</p></div>`
     },
     'uc-check-debt': {
       id:'uc-check-debt', name:'בדיקת מצב חוב של דייר',
@@ -483,8 +483,8 @@ body.uc-modal-open { overflow: hidden; }
       scenarios:[{ id:'sc-happy', name:'מסלול מרכזי', flow:[
         { kind:'actor', actor:'clearing', text:'מעבירה בתום היום את פירוט התשלומים שנקלטו ושנדחו' },
         { kind:'system', text:'מתאים כל שורת דיווח לחיוב ומעדכן את סטטוסו' },
-        { kind:'system', text:'חוזה שחובו נפרע ושהיה בפיגור — מוחזר למצב "פעיל"' }
-      ], extensions:[{ at:2, text:'אם שורת דיווח אינה תואמת לחיוב מוכר — היא נרשמת ליומן חריגות לבירור.' }] }],
+        { kind:'system', text:'חוזה שחובו נפרע ושהיה בפיגור, מוחזר למצב "פעיל"' }
+      ], extensions:[{ at:2, text:'אם שורת דיווח אינה תואמת לחיוב מוכר, היא נרשמת ליומן חריגות לבירור.' }] }],
       userStories:[
         { role:'מנהל גבייה', want:'שסטטוס החיובים יתעדכן אוטומטית מדיווח הסליקה', so:'תמונת החובות תהיה מעודכנת מדי יום' }
       ]
@@ -518,8 +518,8 @@ body.uc-modal-open { overflow: hidden; }
       wireframe:`<div class="wf-screen"><h3 class="wf-heading">החוזה שלי</h3>
         <div class="wf-section">פרטי חוזה: חדר, תאריכים, שכר דירה, סטטוס.</div>
         <table class="wf-table"><thead><tr><th>חודש</th><th>סכום</th><th>סטטוס</th></tr></thead>
-        <tbody><tr><td>—</td><td>—</td><td>שולם / ממתין</td></tr></tbody></table>
-        <p class="wf-hint">מסך לקריאה בלבד — מרכז חוזה, חיובים וקריאות תחזוקה של הדייר.</p></div>`
+        <tbody><tr><td>-</td><td>-</td><td>שולם / ממתין</td></tr></tbody></table>
+        <p class="wf-hint">מסך לקריאה בלבד, מרכז חוזה, חיובים וקריאות תחזוקה של הדייר.</p></div>`
     },
     'uc-reports': {
       id:'uc-reports', name:'הפקת דוחות', primaryActor:'manager', secondaryActors:['rakaz'],
@@ -537,7 +537,7 @@ body.uc-modal-open { overflow: hidden; }
       wireframe:`<div class="wf-screen"><h3 class="wf-heading">הפקת דוחות</h3>
         <div class="wf-row"><label class="wf-label">סוג דוח</label><select class="wf-select" disabled><option>חדרים פנויים</option><option>דיירים בפיגור</option><option>קריאות פתוחות מעל שבוע</option></select></div>
         <div class="wf-actions"><button class="wf-button wf-primary">הפק דוח</button></div>
-        <table class="wf-table"><thead><tr><th>ערך</th><th>פירוט</th></tr></thead><tbody><tr><td>—</td><td>—</td></tr></tbody></table>
+        <table class="wf-table"><thead><tr><th>ערך</th><th>פירוט</th></tr></thead><tbody><tr><td>-</td><td>-</td></tr></tbody></table>
         <p class="wf-hint">הדוח מופק לפי הסוג והמסננים שנבחרו.</p></div>`
     },
     'uc-open-maintenance': {
@@ -549,7 +549,7 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'dayar', text:'בוחר מיקום (חדרו או שטח משותף) ומזין תיאור התקלה' },
         { kind:'actor', actor:'dayar', text:'בוחר רמת דחיפות: רגילה, דחופה או חירום' },
         { kind:'system', text:'שומר את הקריאה במצב "פתוחה" ומעביר אותה לאב הבית' }
-      ], extensions:[{ at:1, text:'אם התיאור ריק — המערכת מונעת שמירה ומבקשת למלא תיאור.' }] }],
+      ], extensions:[{ at:1, text:'אם התיאור ריק, המערכת מונעת שמירה ומבקשת למלא תיאור.' }] }],
       userStories:[
         { role:'דייר', want:'לפתוח קריאת תחזוקה עם תיאור ורמת דחיפות', so:'התקלה תטופל לפי חשיבותה' }
       ],
@@ -568,7 +568,7 @@ body.uc-modal-open { overflow: hidden; }
       scenarios:[{ id:'sc-happy', name:'מסלול מרכזי', flow:[
         { kind:'actor', actor:'avbait', text:'פותח קריאה פתוחה ובוחר קבלן מאושר לפי תחום התמחותו' },
         { kind:'system', text:'משייך את הקבלן לקריאה ומעביר אותה למצב "בטיפול"' }
-      ], extensions:[{ at:1, text:'אם אין קבלן מאושר בתחום הנדרש — הקריאה נשארת פתוחה עד להוספת קבלן.' }] }],
+      ], extensions:[{ at:1, text:'אם אין קבלן מאושר בתחום הנדרש, הקריאה נשארת פתוחה עד להוספת קבלן.' }] }],
       userStories:[
         { role:'אב בית', want:'לשבץ לקריאה קבלן לפי תחום התמחותו', so:'התקלה תטופל בידי בעל המקצוע הנכון' }
       ],
@@ -586,7 +586,7 @@ body.uc-modal-open { overflow: hidden; }
       scenarios:[{ id:'sc-happy', name:'מסלול מרכזי', flow:[
         { kind:'actor', actor:'kablan', text:'מסמן שהעבודה הושלמה ומזין את עלותה' },
         { kind:'system', text:'בודק אם העלות חורגת מסכום הסף ומעדכן את מצב הקריאה בהתאם' }
-      ], extensions:[{ at:2, text:'אם העלות חורגת מהסף — הקריאה מועברת לאישור מנהל האזור לפני חזרתה לדייר.' }] }],
+      ], extensions:[{ at:2, text:'אם העלות חורגת מהסף, הקריאה מועברת לאישור מנהל האזור לפני חזרתה לדייר.' }] }],
       userStories:[
         { role:'קבלן', want:'לדווח על סיום העבודה ועל עלותה', so:'הקריאה תתקדם לאישור הדייר' }
       ],
@@ -605,7 +605,7 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'manager', text:'בוחן את פרטי הקריאה ואת העלות החורגת' },
         { kind:'actor', actor:'manager', text:'מאשר את העלות' },
         { kind:'system', text:'מעביר את הקריאה לאישור הדייר' }
-      ], extensions:[{ at:2, text:'אם מנהל האזור דוחה את העלות — הקריאה חוזרת לאב הבית לבירור מול הקבלן.' }] }],
+      ], extensions:[{ at:2, text:'אם מנהל האזור דוחה את העלות, הקריאה חוזרת לאב הבית לבירור מול הקבלן.' }] }],
       userStories:[
         { role:'מנהל אזור', want:'לאשר עלות תיקון חריגה', so:'הוצאות גדולות ייבחנו לפני חיובן' }
       ],
@@ -623,13 +623,13 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'dayar', text:'בודק שהתקלה אכן תוקנה' },
         { kind:'actor', actor:'dayar', text:'מאשר את התיקון' },
         { kind:'system', text:'סוגר את הקריאה' }
-      ], extensions:[{ at:2, text:'אם התקלה לא תוקנה — הדייר מחזיר את הקריאה לאב הבית לשיבוץ חוזר.' }] }],
+      ], extensions:[{ at:2, text:'אם התקלה לא תוקנה, הדייר מחזיר את הקריאה לאב הבית לשיבוץ חוזר.' }] }],
       userStories:[
         { role:'דייר', want:'לאשר שהתקלה תוקנה או להחזיר את הקריאה', so:'הקריאה תיסגר רק כשהבעיה נפתרה' }
       ],
       wireframe:`<div class="wf-screen"><h3 class="wf-heading">אישור שהתקלה תוקנה</h3>
         <div class="wf-section">קריאה: מיקום, תיאור, קבלן ותאריך סיום.</div>
-        <div class="wf-actions"><button class="wf-button wf-primary">אשר שתוקן</button><button class="wf-button">לא תוקן — החזר</button></div>
+        <div class="wf-actions"><button class="wf-button wf-primary">אשר שתוקן</button><button class="wf-button">לא תוקן, החזר</button></div>
         <p class="wf-hint">"אשר" סוגר את הקריאה; "החזר" מחזיר אותה לאב הבית.</p></div>`
     },
     'uc-manage-master-data': {
@@ -641,13 +641,13 @@ body.uc-modal-open { overflow: hidden; }
         { kind:'actor', actor:'sysadmin', text:'בוחר ישות לניהול (בניין / חדר / סוג מתקן / קבלן מאושר)' },
         { kind:'actor', actor:'sysadmin', text:'יוצר, מעדכן או מוציא רשומה מניהול' },
         { kind:'system', text:'שומר את השינוי ומחיל אותו על שאר התהליכים' }
-      ], extensions:[{ at:2, text:'אם מוצא בניין מניהול — המערכת גוררת את דירותיו וחדריו בהתאם (קומפוזיציה).' }] }],
+      ], extensions:[{ at:2, text:'אם מוצא בניין מניהול, המערכת גוררת את דירותיו וחדריו בהתאם (קומפוזיציה).' }] }],
       userStories:[
         { role:'מנהל מערכת', want:'להגדיר בניינים, חדרים, מתקנים וקבלנים מאושרים', so:'שאר התהליכים יעבדו על נתונים תקינים' }
       ],
       wireframe:`<div class="wf-screen"><h3 class="wf-heading">ניהול נתוני-אב</h3>
         <div class="wf-row"><label class="wf-label">ישות</label><select class="wf-select" disabled><option>בניין / חדר / סוג מתקן / קבלן</option></select></div>
-        <table class="wf-table"><thead><tr><th>שם</th><th>פרטים</th><th>סטטוס</th></tr></thead><tbody><tr><td>—</td><td>—</td><td>פעיל</td></tr></tbody></table>
+        <table class="wf-table"><thead><tr><th>שם</th><th>פרטים</th><th>סטטוס</th></tr></thead><tbody><tr><td>-</td><td>-</td><td>פעיל</td></tr></tbody></table>
         <div class="wf-actions"><button class="wf-button wf-primary">שמור</button><button class="wf-button">הוצא מניהול</button></div>
         <p class="wf-hint">הוצאת בניין מניהול גוררת את דירותיו וחדריו.</p></div>`
     }
@@ -768,7 +768,7 @@ body.uc-modal-open { overflow: hidden; }
     };
     return {
       kind:'use-case',
-      title:'קמפוס בית — Use Case',
+      title:'קמפוס בית, Use Case',
       parts:[partA, partB],
       assumptions:[
         'כל שחקן אנושי מזוהה באמצעות חשבון משתמש ייחודי; ההתחברות היא תנאי מוקדם ואינה מקרה שימוש.',
@@ -782,12 +782,12 @@ body.uc-modal-open { overflow: hidden; }
   </script>
   <script>
 /* inlined uc-diagram-common.js */
-/* uc-diagram-common.js — SAD MCP shared runtime for use case diagrams
+/* uc-diagram-common.js, SAD MCP shared runtime for use case diagrams
    Depends on globals defined in the inline <script> of each diagram:
    diagramLayouts, actorDescriptions, assocDescriptions, useCaseDocs, diagramModel
 
-   This file is deployed by hand to themathbible.com (see CLAUDE.md → Static Assets).
-   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy — it prints to the
+   This file is deployed by hand to themathbible.com (see CLAUDE.md, Static Assets).
+   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy, it prints to the
    browser console so you can confirm which runtime is actually live vs. the repo.
 */
 const UC_RUNTIME_VERSION = '2.3.2';
@@ -805,7 +805,7 @@ function fixLayout(layout) {
   if (!svg) return;
   const b = layout.boundary;
 
-  // Step 1 — Group UCs by the side of their owning actor.
+  // Step 1, Group UCs by the side of their owning actor.
   const ucSide = {};
   layout.actors.forEach(a =>
     a.ucIds.forEach(uid => {
@@ -815,7 +815,7 @@ function fixLayout(layout) {
   const cols = { left: [], right: [], center: [] };
   layout.useCases.forEach(uc => cols[ucSide[uc.id] || 'center'].push(uc));
 
-  // Step 2 — Sort each column by actor order (top-to-bottom on that side).
+  // Step 2, Sort each column by actor order (top-to-bottom on that side).
   function sortCol(ucs, side) {
     const ordered = layout.actors.filter(a => a.side === side).sort((a, bb) => a.y - bb.y);
     ucs.sort((a, bb) => {
@@ -827,7 +827,7 @@ function fixLayout(layout) {
   sortCol(cols.left,  'left');
   sortCol(cols.right, 'right');
 
-  // Step 3 — Adaptive column X positions. Widen boundary if needed.
+  // Step 3, Adaptive column X positions. Widen boundary if needed.
   const COL_GAP = 30;
   const maxRx = ucs => (ucs.length ? Math.max(...ucs.map(u => u.rx)) : 0);
   const lRx = maxRx(cols.left), cRx = maxRx(cols.center), rRx = maxRx(cols.right);
@@ -850,7 +850,7 @@ function fixLayout(layout) {
   place(cols.right,  rightX,  'right');
   place(cols.center, centerX, 'center');
 
-  // Step 4 — Clamp and resolve overlaps. Idempotent fixed-point loop.
+  // Step 4, Clamp and resolve overlaps. Idempotent fixed-point loop.
   const minX = b.x + UC_PAD;
   const maxX = b.x + b.width - UC_PAD;
   const minY = b.y + HEADER_H + UC_PAD;
@@ -873,11 +873,11 @@ function fixLayout(layout) {
     }
   }
 
-  // Step 5 — Expand boundary height to fit all UCs.
+  // Step 5, Expand boundary height to fit all UCs.
   const maxBottom = Math.max(...layout.useCases.map(uc => uc.cy + uc.ry));
   b.height = Math.max(b.height, maxBottom - b.y + UC_PAD);
 
-  // Step 6 — Re-center actors on their UC group; push bottom actors below boundary.
+  // Step 6, Re-center actors on their UC group; push bottom actors below boundary.
   layout.actors.forEach(actor => {
     const myUCs = layout.useCases.filter(u => actor.ucIds.includes(u.id));
     if (actor.side === 'left' || actor.side === 'right') {
@@ -888,7 +888,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 6b — Enforce a minimum vertical gap between actors on the same side.
+  // Step 6b, Enforce a minimum vertical gap between actors on the same side.
   // Step 6 centers each actor on its UCs' mean cy, which can place two single-UC
   // actors barely one row apart (~UC_GAP) so their stick figures + labels overlap.
   // Push later actors down to keep centers at least ACTOR_MIN_GAP apart (CR #6).
@@ -901,7 +901,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 7 — Write UC positions to the SVG (absolute attributes).
+  // Step 7, Write UC positions to the SVG (absolute attributes).
   layout.useCases.forEach(uc => {
     const g = svg.querySelector('[id="uc-group-' + uc.id + '"]');
     if (!g) return;
@@ -920,12 +920,12 @@ function fixLayout(layout) {
   layout.actors.forEach(actor => {
     // Scope to THIS svg: a shared actor id (e.g. 'head') repeats across tabs, so
     // document.getElementById returns the first tab's figure and moves the wrong
-    // one — leaving this tab's figure detached from its (correctly placed) line.
+    // one, leaving this tab's figure detached from its (correctly placed) line.
     const g = svg.querySelector('[id="actor-group-' + actor.id + '"]');
     if (g) g.setAttribute('transform', `translate(${actor.x},${actor.y})`);
   });
 
-  // Step 8 — Recalculate every connection line endpoint.
+  // Step 8, Recalculate every connection line endpoint.
   svg.querySelectorAll('[data-conn-from][data-conn-to]').forEach(line => {
     const fId = line.getAttribute('data-conn-from');
     const tId = line.getAttribute('data-conn-to');
@@ -957,7 +957,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 9 — Resize boundary rect and SVG viewBox (both width and height).
+  // Step 9, Resize boundary rect and SVG viewBox (both width and height).
   const br = svg.querySelector('.system-boundary, rect[rx="12"]');
   if (br) { br.setAttribute('width', b.width); br.setAttribute('height', b.height); }
   const vb = svg.getAttribute('viewBox');
@@ -972,7 +972,7 @@ function fixLayout(layout) {
     svg.setAttribute('viewBox', p.join(' '));
   }
 
-  // Step 10 — Timing labels.
+  // Step 10, Timing labels.
   renderTimingLabels(layout);
 }
 
@@ -1084,7 +1084,7 @@ function openUcModal(id) {
       } else if (step.kind === 'system') {
         scenariosHtml += `<li><em class="step-system">המערכת</em>: ${esc(step.text || '')}</li>`;
       } else if (step.kind === 'include') {
-        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ' — ' + esc(step.text) : ''}</li>`;
+        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ', ' + esc(step.text) : ''}</li>`;
       } else if (step.kind === 'extension') {
         scenariosHtml += `<li class="ext-inline">${step.at ? esc(String(step.at)) + 'a. ' : ''}${esc(step.text || '')}</li>`;
       }
@@ -1104,7 +1104,7 @@ function openUcModal(id) {
   if (doc.wireframe && !wireframeSafe(doc.wireframe))
     console.warn(`Wireframe for ${id} failed safety check.`);
 
-  // Single innerHTML write — avoids silent failures in sandboxed iframe environments.
+  // Single innerHTML write, avoids silent failures in sandboxed iframe environments.
   const body = document.querySelector('#uc-modal .uc-modal-body');
   body.innerHTML = `
     <button class="uc-modal-close" onclick="closeUcModal()" aria-label="Close">×</button>
@@ -1198,7 +1198,7 @@ function xmiBody(elements, rels) {
         const n = i + 1;
         if      (step.kind === 'actor')     out.push('  ' + n + '. ' + actorName(step.actor) + ': ' + step.text);
         else if (step.kind === 'system')    out.push('  ' + n + '. System: ' + step.text);
-        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ' — ' + step.text : ''));
+        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ', ' + step.text : ''));
         else if (step.kind === 'extension') out.push('  ' + n + 'a. ' + step.text);
         (sc.extensions || []).filter(e => e.at === n).forEach((e, j) => {
           out.push('  ' + n + String.fromCharCode(97 + j) + '. ' + e.text);

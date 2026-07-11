@@ -2,11 +2,11 @@
 <html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>שולחן פנוי — Use Case Diagram</title>
+  <title>שולחן פנוי, Use Case Diagram</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
 /* inlined uc-diagram-common.css */
-/* uc-diagram-common.css — SAD MCP shared styles for use case diagrams */
+/* uc-diagram-common.css, SAD MCP shared styles for use case diagrams */
 
 /* ── Base layout ─────────────────────────────────────────────────────────── */
 body { margin: 0; padding: 20px 0; background: #f8fafc;
@@ -133,7 +133,7 @@ body.uc-modal-open { overflow: hidden; }
   <style>[hidden] { display: none !important; }</style>
 </head>
 <body>
-  <h1 class="page-title">פתרון שאלה 6 — תרשים Use Case — "שולחן פנוי" (רשת מסעדות)</h1>
+  <h1 class="page-title">פתרון שאלה 6, תרשים Use Case, "שולחן פנוי" (רשת מסעדות)</h1>
 
   <!-- Tab bar -->
   <div class="tab-bar">
@@ -149,7 +149,7 @@ body.uc-modal-open { overflow: hidden; }
     <button onclick="fixLayout(currentLayout())" class="fix-btn">Fix Layout</button>
   </div>
 
-  <!-- ============================ TAB 1 — מחזור ההזמנה ============================ -->
+  <!-- ============================ TAB 1, מחזור ההזמנה ============================ -->
   <div class="diagram-part" id="diagram-0">
     <svg id="diagram-svg-0" viewBox="0 0 1300 860" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -167,7 +167,7 @@ body.uc-modal-open { overflow: hidden; }
       <rect class="system-boundary" x="240" y="72" width="820" height="640" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/>
       <rect x="240" y="72" width="820" height="44" rx="12" fill="#1e40af"/>
       <rect x="240" y="94" width="820" height="22" fill="#1e40af"/>
-      <text x="650" y="101" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans Hebrew',sans-serif" font-weight="700" font-size="15" direction="rtl">מערכת ניהול הזמנות ואירועים — "שולחן פנוי"</text>
+      <text x="650" y="101" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans Hebrew',sans-serif" font-weight="700" font-size="15" direction="rtl">מערכת ניהול הזמנות ואירועים, "שולחן פנוי"</text>
 
       <!-- Association lines (visible) -->
       <line data-conn-from="cust" data-conn-to="uc-submit" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
@@ -204,7 +204,7 @@ body.uc-modal-open { overflow: hidden; }
       <text data-label-for="uc-waitlist uc-confirmTable" x="0" y="0" text-anchor="middle" font-size="9.5" fill="#7c3aed" font-family="'IBM Plex Mono',monospace">«extend»</text>
       <line class="conn-hitbox" data-conn-id="ext-waitlist-confirm" data-hitbox-from="uc-waitlist" data-hitbox-to="uc-confirmTable" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('ext-waitlist-confirm','assoc',event)"/>
 
-      <!-- host → view-tonight association hitbox -->
+      <!-- host to view-tonight association hitbox -->
       <line class="conn-hitbox" data-conn-id="as-host-viewtonight" data-hitbox-from="host" data-hitbox-to="uc-viewTonight" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('as-host-viewtonight','assoc',event)"/>
 
       <!-- Use Cases: left (cust + platform) -->
@@ -305,7 +305,7 @@ body.uc-modal-open { overflow: hidden; }
     </svg>
   </div>
 
-  <!-- ============================ TAB 2 — אירועים, ניהול ודוחות ============================ -->
+  <!-- ============================ TAB 2, אירועים, ניהול ודוחות ============================ -->
   <div class="diagram-part" id="diagram-1" hidden>
     <svg id="diagram-svg-1" viewBox="0 0 1300 760" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -323,7 +323,7 @@ body.uc-modal-open { overflow: hidden; }
       <rect class="system-boundary" x="240" y="72" width="820" height="560" rx="12" fill="#ffffff" stroke="#3b82f6" stroke-width="2.5"/>
       <rect x="240" y="72" width="820" height="44" rx="12" fill="#1e40af"/>
       <rect x="240" y="94" width="820" height="22" fill="#1e40af"/>
-      <text x="650" y="101" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans Hebrew',sans-serif" font-weight="700" font-size="15" direction="rtl">מערכת ניהול הזמנות ואירועים — "שולחן פנוי"</text>
+      <text x="650" y="101" text-anchor="middle" fill="#ffffff" font-family="'Noto Sans Hebrew',sans-serif" font-weight="700" font-size="15" direction="rtl">מערכת ניהול הזמנות ואירועים, "שולחן פנוי"</text>
 
       <!-- Association lines (visible) -->
       <line data-conn-from="coord" data-conn-to="uc-confirmEvent" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
@@ -356,7 +356,7 @@ body.uc-modal-open { overflow: hidden; }
         <text x="380" y="228" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">ניהול הזמנת אירוע</text>
       </g>
 
-      <!-- Use Case: center (reports — shared coord + bmanager) -->
+      <!-- Use Case: center (reports, shared coord + bmanager) -->
       <g id="uc-group-uc-reports" data-uc-id="uc-reports" onclick="showDesc('uc-reports','uc',event)" style="cursor:pointer">
         <ellipse cx="650" cy="150" rx="102" ry="34" fill="#d4e9f7" stroke="#2980b9" stroke-width="1.8"/>
         <text x="650" y="144" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">הפקת דוחות</text>
@@ -434,7 +434,7 @@ body.uc-modal-open { overflow: hidden; }
   <!-- VP export button -->
   <button class="vp-export-btn" onclick="exportXMI()">Download .xmi (Visual Paradigm)</button>
 
-  <!-- DIAGRAM DATA ONLY — all functions are in uc-diagram-common.js. -->
+  <!-- DIAGRAM DATA ONLY, all functions are in uc-diagram-common.js. -->
   <script>
     function wf(title, rows, btns){
       var r = rows.map(function(x){ return '<div class="wf-row"><label class="wf-label">'+x+'</label><input class="wf-input" disabled/></div>'; }).join('');
@@ -522,25 +522,25 @@ body.uc-modal-open { overflow: hidden; }
     };
 
     var assocDescriptions = {
-      'as-cust-submit':   { name: 'לקוח ↔ הגשת בקשת הזמנה', desc: 'הלקוח יוזם הגשת בקשת הזמנת שולחן. תפקיד: Initiator.' },
-      'as-cust-cancel':   { name: 'לקוח ↔ ביטול הזמנה',     desc: 'הלקוח יוזם ביטול הזמנתו כל עוד לא הושבו האורחים. תפקיד: Initiator.' },
-      'as-cust-view':     { name: 'לקוח ↔ צפייה בהזמנות',   desc: 'הלקוח יוזם צפייה בהזמנותיו ובסטטוסן. תפקיד: Initiator.' },
-      'as-plat-intake':   { name: 'פלטפורמת ההזמנות ↔ קליטת בקשת הזמנה מהפלטפורמה', desc: 'הפלטפורמה החיצונית יוזמת את העברת הבקשה, והמערכת קולטת אותה. תפקיד: Initiator.' },
-      'as-host-confirm':  { name: 'מארח ↔ אישור הזמנת שולחן', desc: 'המארח יוזם בדיקת זמינות ואישור הזמנת שולחן. תפקיד: Initiator.' },
-      'as-host-seat':     { name: 'מארח ↔ הושבת אורחים',    desc: 'המארח יוזם הושבת אורחים והפיכת ההזמנה לפעילה. תפקיד: Initiator.' },
-      'as-host-complete': { name: 'מארח ↔ סימון סיום הזמנה', desc: 'המארח יוזם סימון סיום הסעודה ושחרור השולחן. תפקיד: Initiator.' },
-      'as-host-noshow':   { name: 'מארח ↔ סימון אי-הגעה',   desc: 'המארח יוזם סימון ידני של הזמנה שאורחיה לא הגיעו. תפקיד: Initiator.' },
-      'as-time-noshow':   { name: 'שחקן זמן ↔ סימון אי-הגעה', desc: 'שחקן הזמן מפעיל סימון אוטומטי של אי-הגעה. תפקיד: Initiator. תזמון: אחרי חלון חסד 15 דק׳.' },
-      'as-time-expire':   { name: 'שחקן זמן ↔ סימון פקיעת רשימת המתנה', desc: 'שחקן הזמן מפעיל פקיעת רשומות המתנה שחלף מועדן. תפקיד: Initiator. תזמון: בחלוף המועד.' },
-      'as-host-viewtonight': { name: 'מארח ↔ צפייה בהזמנות הערב', desc: 'המארח יוזם צפייה ברשימת ההזמנות של הערב בסניפו בתחילת המשמרת. תפקיד: Initiator. (בקשה זו בתוך היקף המערכת — שאילתה על נתונים שהמערכת מנהלת.)' },
-      'ext-waitlist-confirm': { name: 'טיפול ברשימת המתנה «extend» אישור הזמנת שולחן', desc: 'טיפול ברשימת ההמתנה מרחיב את אישור הזמנת השולחן, ומופעל רק בהתקיים התנאי "אין שולחן פנוי במועד" — התנהגות אופציונלית/מותנית, ולכן «extend» ולא «include».' },
+      'as-cust-submit':   { name: 'לקוח - הגשת בקשת הזמנה', desc: 'הלקוח יוזם הגשת בקשת הזמנת שולחן. תפקיד: Initiator.' },
+      'as-cust-cancel':   { name: 'לקוח - ביטול הזמנה',     desc: 'הלקוח יוזם ביטול הזמנתו כל עוד לא הושבו האורחים. תפקיד: Initiator.' },
+      'as-cust-view':     { name: 'לקוח - צפייה בהזמנות',   desc: 'הלקוח יוזם צפייה בהזמנותיו ובסטטוסן. תפקיד: Initiator.' },
+      'as-plat-intake':   { name: 'פלטפורמת ההזמנות - קליטת בקשת הזמנה מהפלטפורמה', desc: 'הפלטפורמה החיצונית יוזמת את העברת הבקשה, והמערכת קולטת אותה. תפקיד: Initiator.' },
+      'as-host-confirm':  { name: 'מארח - אישור הזמנת שולחן', desc: 'המארח יוזם בדיקת זמינות ואישור הזמנת שולחן. תפקיד: Initiator.' },
+      'as-host-seat':     { name: 'מארח - הושבת אורחים',    desc: 'המארח יוזם הושבת אורחים והפיכת ההזמנה לפעילה. תפקיד: Initiator.' },
+      'as-host-complete': { name: 'מארח - סימון סיום הזמנה', desc: 'המארח יוזם סימון סיום הסעודה ושחרור השולחן. תפקיד: Initiator.' },
+      'as-host-noshow':   { name: 'מארח - סימון אי-הגעה',   desc: 'המארח יוזם סימון ידני של הזמנה שאורחיה לא הגיעו. תפקיד: Initiator.' },
+      'as-time-noshow':   { name: 'שחקן זמן - סימון אי-הגעה', desc: 'שחקן הזמן מפעיל סימון אוטומטי של אי-הגעה. תפקיד: Initiator. תזמון: אחרי חלון חסד 15 דק׳.' },
+      'as-time-expire':   { name: 'שחקן זמן - סימון פקיעת רשימת המתנה', desc: 'שחקן הזמן מפעיל פקיעת רשומות המתנה שחלף מועדן. תפקיד: Initiator. תזמון: בחלוף המועד.' },
+      'as-host-viewtonight': { name: 'מארח - צפייה בהזמנות הערב', desc: 'המארח יוזם צפייה ברשימת ההזמנות של הערב בסניפו בתחילת המשמרת. תפקיד: Initiator. (בקשה זו בתוך היקף המערכת, שאילתה על נתונים שהמערכת מנהלת.)' },
+      'ext-waitlist-confirm': { name: 'טיפול ברשימת המתנה «extend» אישור הזמנת שולחן', desc: 'טיפול ברשימת ההמתנה מרחיב את אישור הזמנת השולחן, ומופעל רק בהתקיים התנאי "אין שולחן פנוי במועד", התנהגות אופציונלית/מותנית, ולכן «extend» ולא «include».' },
       'inc-confirmTable-avail': { name: 'אישור הזמנת שולחן «include» בדיקת זמינות למועד', desc: 'בדיקת הזמינות מתבצעת תמיד כחלק מאישור הזמנת שולחן.' },
-      'as-coord-confirm': { name: 'רכז אירועים ↔ אישור הזמנת אירוע', desc: 'רכז האירועים יוזם בדיקת זמינות ואישור הזמנת אירוע. תפקיד: Initiator.' },
-      'as-coord-manage':  { name: 'רכז אירועים ↔ ניהול הזמנת אירוע', desc: 'רכז האירועים יוזם ליווי ועדכון הזמנת האירוע. תפקיד: Initiator.' },
-      'as-coord-reports': { name: 'רכז אירועים ↔ הפקת דוחות תפעוליים', desc: 'רכז האירועים יוזם הפקת דוח אירועים צפויים. תפקיד: Initiator.' },
-      'as-bm-override':   { name: 'מנהל סניף ↔ ביטול-על של הזמנה מאושרת', desc: 'מנהל הסניף יוזם ביטול-על של הזמנה מאושרת. תפקיד: Initiator.' },
-      'as-bm-reports':    { name: 'מנהל סניף ↔ הפקת דוחות תפעוליים', desc: 'מנהל הסניף יוזם הפקת דוח ביטולים חודשי. תפקיד: Initiator.' },
-      'as-sa-masterdata': { name: 'מנהל מערכת ↔ הגדרת נתוני-אב', desc: 'מנהל המערכת יוזם הגדרת סניפים, שולחנות, אולמות וחבילות תפריט. תפקיד: Initiator.' },
+      'as-coord-confirm': { name: 'רכז אירועים - אישור הזמנת אירוע', desc: 'רכז האירועים יוזם בדיקת זמינות ואישור הזמנת אירוע. תפקיד: Initiator.' },
+      'as-coord-manage':  { name: 'רכז אירועים - ניהול הזמנת אירוע', desc: 'רכז האירועים יוזם ליווי ועדכון הזמנת האירוע. תפקיד: Initiator.' },
+      'as-coord-reports': { name: 'רכז אירועים - הפקת דוחות תפעוליים', desc: 'רכז האירועים יוזם הפקת דוח אירועים צפויים. תפקיד: Initiator.' },
+      'as-bm-override':   { name: 'מנהל סניף - ביטול-על של הזמנה מאושרת', desc: 'מנהל הסניף יוזם ביטול-על של הזמנה מאושרת. תפקיד: Initiator.' },
+      'as-bm-reports':    { name: 'מנהל סניף - הפקת דוחות תפעוליים', desc: 'מנהל הסניף יוזם הפקת דוח ביטולים חודשי. תפקיד: Initiator.' },
+      'as-sa-masterdata': { name: 'מנהל מערכת - הגדרת נתוני-אב', desc: 'מנהל המערכת יוזם הגדרת סניפים, שולחנות, אולמות וחבילות תפריט. תפקיד: Initiator.' },
       'inc-confirmEvent-avail': { name: 'אישור הזמנת אירוע «include» בדיקת זמינות למועד', desc: 'בדיקת הזמינות מתבצעת תמיד כחלק מאישור הזמנת אירוע.' }
     };
 
@@ -556,26 +556,26 @@ body.uc-modal-open { overflow: hidden; }
           { kind: 'system', text: 'מסנן שולחנות/אולמות תפוסים באותו חלון זמן' },
           { kind: 'system', text: 'מחזיר את רשימת המשאבים הפנויים או חיווי שאין פנוי' }
         ], extensions: [
-          { at: 1, text: 'אם לא נמסר מספר סועדים תקין — הבדיקה נעצרת ומדווח על קלט חסר.' }
+          { at: 1, text: 'אם לא נמסר מספר סועדים תקין, הבדיקה נעצרת ומדווח על קלט חסר.' }
         ] } ],
         userStories: [ ual('מארח','שהמערכת תבדוק זמינות שולחן אוטומטית לפני אישור','שלא יובטח אותו שולחן פעמיים') ],
         wireframe: ''
       },
       'uc-waitlist': {
         id: 'uc-waitlist', name: 'טיפול ברשימת המתנה', primaryActor: 'host', secondaryActors: ['time'],
-        description: 'הרחבה (extend) של "אישור הזמנת שולחן": כאשר אין שולחן פנוי במועד המבוקש, נכנסת הבקשה לרשימת המתנה. אם מתפנה שולחן לפני המועד היא מאושרת, ואם חלף המועד — היא פוקעת. מתרחש רק בחלק מן הבקשות, ולכן «extend» ולא «include».',
+        description: 'הרחבה (extend) של "אישור הזמנת שולחן": כאשר אין שולחן פנוי במועד המבוקש, נכנסת הבקשה לרשימת המתנה. אם מתפנה שולחן לפני המועד היא מאושרת, ואם חלף המועד, היא פוקעת. מתרחש רק בחלק מן הבקשות, ולכן «extend» ולא «include».',
         preconditions: ['נבדקה זמינות ולא נמצא שולחן פנוי למועד המבוקש.'],
         postconditions: ['הבקשה ברשימת המתנה, עד שתאושר או תפקע.'],
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'system', text: 'מכניס את הבקשה לרשימת המתנה ומעדכן סטטוס ל"רשימת המתנה"' },
-          { kind: 'system', text: 'אם מתפנה שולחן לפני המועד — מזמן את המארח לאישור' }
-        ], extensions: [ { at: 2, text: 'אם חלף המועד בלי ששולחן התפנה — שחקן הזמן מסמן את הבקשה כפגת-תוקף.' } ] } ],
+          { kind: 'system', text: 'אם מתפנה שולחן לפני המועד, מזמן את המארח לאישור' }
+        ], extensions: [ { at: 2, text: 'אם חלף המועד בלי ששולחן התפנה, שחקן הזמן מסמן את הבקשה כפגת-תוקף.' } ] } ],
         userStories: [ ual('מארח','שבקשה ללא שולחן פנוי תיכנס לרשימת המתנה ולא תידחה מיד','שלא נאבד לקוחות כשמתפנה מקום') ],
         wireframe: ''
       },
       'uc-viewTonight': {
         id: 'uc-viewTonight', name: 'צפייה בהזמנות הערב', primaryActor: 'host', secondaryActors: [],
-        description: 'המארח צופה בתחילת המשמרת ברשימת ההזמנות של אותו ערב בסניפו. בקשה זו נמצאת בתוך היקף המערכת — היא שאילתה על נתוני ההזמנות שהמערכת ממילא מנהלת (בשונה מניהול קופה או הזמנת מנות במטבח, שמחוץ ל-scope).',
+        description: 'המארח צופה בתחילת המשמרת ברשימת ההזמנות של אותו ערב בסניפו. בקשה זו נמצאת בתוך היקף המערכת, היא שאילתה על נתוני ההזמנות שהמערכת ממילא מנהלת (בשונה מניהול קופה או הזמנת מנות במטבח, שמחוץ ל-scope).',
         preconditions: ['המארח מחובר למערכת ומשויך לסניף.'],
         postconditions: ['הוצגה רשימת ההזמנות של הערב עם הסטטוס של כל אחת.'],
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
@@ -594,7 +594,7 @@ body.uc-modal-open { overflow: hidden; }
           { kind: 'actor', actor: 'cust', text: 'מזין שם, טלפון, דוא"ל, מספר סועדים ומועד מבוקש' },
           { kind: 'actor', actor: 'cust', text: 'מוסיף הערה מיוחדת (אלרגיה / אירוע חגיגי) לפי הצורך' },
           { kind: 'system', text: 'שומר את הבקשה בסטטוס "מבוקשת" ומציג אישור קליטה' }
-        ], extensions: [ { at: 1, text: 'אם חסר שדה חובה — המערכת מסמנת את השדה ואינה שומרת.' } ] } ],
+        ], extensions: [ { at: 1, text: 'אם חסר שדה חובה, המערכת מסמנת את השדה ואינה שומרת.' } ] } ],
         userStories: [ ual('לקוח','להגיש בקשת הזמנת שולחן עם פרטיי והמועד הרצוי','שאקבל שולחן במסעדה'), ual('לקוח','לציין הערה מיוחדת כגון אלרגיה','שהמסעדה תיערך בהתאם') ],
         wireframe: wf('הגשת בקשת הזמנה', ['שם מלא','טלפון','דוא"ל','מספר סועדים','מועד מבוקש','הערה מיוחדת'], ['שליחת בקשה','ניקוי'])
       },
@@ -607,7 +607,7 @@ body.uc-modal-open { overflow: hidden; }
           { kind: 'actor', actor: 'cust', text: 'בוחר הזמנה פעילה שטרם הושבה' },
           { kind: 'actor', actor: 'cust', text: 'מאשר את הביטול' },
           { kind: 'system', text: 'מעדכן את סטטוס ההזמנה ל"בוטלה" ומשחרר את השולחן' }
-        ], extensions: [ { at: 1, text: 'אם ההזמנה כבר הושבה — המערכת חוסמת את הביטול ומציגה הסבר.' } ] } ],
+        ], extensions: [ { at: 1, text: 'אם ההזמנה כבר הושבה, המערכת חוסמת את הביטול ומציגה הסבר.' } ] } ],
         userStories: [ ual('לקוח','לבטל הזמנה שלא אוכל להגיע אליה','שהשולחן ישוחרר ולא יסומן כאי-הגעה') ],
         wireframe: wf('ביטול הזמנה', ['בחירת הזמנה','סטטוס נוכחי'], ['ביטול הזמנה','חזרה'])
       },
@@ -619,7 +619,7 @@ body.uc-modal-open { overflow: hidden; }
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'cust', text: 'פותח את מסך "ההזמנות שלי"' },
           { kind: 'system', text: 'מציג את רשימת הזמנות הלקוח עם הסטטוס העדכני של כל אחת' }
-        ], extensions: [ { at: 2, text: 'אם אין הזמנות — המערכת מציגה הודעה ריקה מתאימה.' } ] } ],
+        ], extensions: [ { at: 2, text: 'אם אין הזמנות, המערכת מציגה הודעה ריקה מתאימה.' } ] } ],
         userStories: [ ual('לקוח','לראות את סטטוס הזמנותיי בכל עת','שאדע אם השולחן שלי אושר') ],
         wireframe: wf('ההזמנות שלי', ['סינון לפי סטטוס','טווח תאריכים'], ['רענון','סגירה'])
       },
@@ -631,7 +631,7 @@ body.uc-modal-open { overflow: hidden; }
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'platform', text: 'שולח בקשת הזמנה שלקוח ביצע באתר החיצוני' },
           { kind: 'system', text: 'ממפה את השדות ויוצר בקשת הזמנה בסטטוס "מבוקשת"' }
-        ], extensions: [ { at: 1, text: 'אם חסרים שדות חובה — המערכת דוחה את הקליטה ומתעדת את הכשל.' } ] } ],
+        ], extensions: [ { at: 1, text: 'אם חסרים שדות חובה, המערכת דוחה את הקליטה ומתעדת את הכשל.' } ] } ],
         userStories: [ ual('מנהל סניף','שבקשות מהפלטפורמה ייקלטו אוטומטית','שלא תאבד אף בקשת הזמנה') ]
       },
       'uc-confirmTable': {
@@ -643,7 +643,7 @@ body.uc-modal-open { overflow: hidden; }
           { kind: 'actor', actor: 'host', text: 'בוחר בקשת הזמנה ממתינה' },
           { kind: 'include', uc: 'uc-availability', text: 'בדיקת זמינות שולחן למועד' },
           { kind: 'system', text: 'משריין את השולחן ומעדכן את הסטטוס ל"מאושרת"' }
-        ], extensions: [ { at: 2, text: 'אם אין שולחן פנוי — ההזמנה נכנסת לרשימת המתנה.' } ] } ],
+        ], extensions: [ { at: 2, text: 'אם אין שולחן פנוי, ההזמנה נכנסת לרשימת המתנה.' } ] } ],
         userStories: [ ual('מארח','לאשר הזמנת שולחן פנוי למועד','שהאורחים יקבלו מקום ושלא יובטח אותו שולחן פעמיים') ],
         wireframe: wf('אישור הזמנת שולחן', ['בקשת הזמנה','מועד מבוקש','שולחן פנוי מוצע'], ['אישור הזמנה','לרשימת המתנה'])
       },
@@ -655,7 +655,7 @@ body.uc-modal-open { overflow: hidden; }
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'host', text: 'מאתר את ההזמנה המאושרת בהגעת האורחים' },
           { kind: 'system', text: 'מעדכן את הסטטוס ל"פעילה" ומסמן את השולחן כתפוס' }
-        ], extensions: [ { at: 1, text: 'אם השולחן עוד תפוס — המארח בוחר שולחן חלופי פנוי.' } ] } ],
+        ], extensions: [ { at: 1, text: 'אם השולחן עוד תפוס, המארח בוחר שולחן חלופי פנוי.' } ] } ],
         userStories: [ ual('מארח','לסמן שהאורחים הושבו','שמצב השולחן יהיה מעודכן וההזמנה תיסגר תקין בהמשך') ],
         wireframe: wf('הושבת אורחים', ['הזמנה מאושרת','שולחן'], ['הושבה','חזרה'])
       },
@@ -673,7 +673,7 @@ body.uc-modal-open { overflow: hidden; }
       },
       'uc-noshow': {
         id: 'uc-noshow', name: 'סימון אי-הגעה', primaryActor: 'host', secondaryActors: ['time'],
-        description: 'סימון הזמנה מאושרת כ"לא הופיעו" כאשר האורחים לא הגיעו בחלון החסד — ידנית ע"י המארח או אוטומטית ע"י שחקן הזמן.',
+        description: 'סימון הזמנה מאושרת כ"לא הופיעו" כאשר האורחים לא הגיעו בחלון החסד, ידנית ע"י המארח או אוטומטית ע"י שחקן הזמן.',
         preconditions: ['ההזמנה בסטטוס "מאושרת" וחלף חלון החסד.'],
         postconditions: ['ההזמנה עברה לסטטוס "לא הופיעו".'],
         scenarios: [
@@ -709,7 +709,7 @@ body.uc-modal-open { overflow: hidden; }
           { kind: 'actor', actor: 'coord', text: 'בוחר את בקשת האירוע ואת האולם' },
           { kind: 'include', uc: 'uc-availability', text: 'בדיקת זמינות האולם לתאריך' },
           { kind: 'system', text: 'רושם את סכום הפיקדון ומעדכן סטטוס ל"מאושרת"' }
-        ], extensions: [ { at: 2, text: 'אם האולם תפוס בתאריך — הרכז מציע תאריך/אולם חלופי.' } ] } ],
+        ], extensions: [ { at: 2, text: 'אם האולם תפוס בתאריך, הרכז מציע תאריך/אולם חלופי.' } ] } ],
         userStories: [ ual('רכז אירועים','לאשר הזמנת אירוע באולם פנוי','שהאירוע הפרטי יובטח ללקוח') ],
         wireframe: wf('אישור הזמנת אירוע', ['אולם','תאריך','מספר משתתפים','חבילת תפריט','סכום פיקדון'], ['אישור אירוע','חלופה'])
       },
@@ -727,14 +727,14 @@ body.uc-modal-open { overflow: hidden; }
       },
       'uc-overrideCancel': {
         id: 'uc-overrideCancel', name: 'ביטול-על של הזמנה מאושרת', primaryActor: 'bmanager', secondaryActors: [],
-        description: 'מנהל הסניף מבטל הזמנת שולחן מאושרת (גם לאחר אישור) כדי לפנות מקום לאירוע פרטי — הרשאה שאין למארח וללקוח.',
+        description: 'מנהל הסניף מבטל הזמנת שולחן מאושרת (גם לאחר אישור) כדי לפנות מקום לאירוע פרטי, הרשאה שאין למארח וללקוח.',
         preconditions: ['ההזמנה בסטטוס "מאושרת".'],
         postconditions: ['ההזמנה עברה לסטטוס "בוטלה" והשולחן פנוי לאירוע.'],
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'bmanager', text: 'בוחר הזמנה מאושרת שיש לפנות' },
           { kind: 'actor', actor: 'bmanager', text: 'מבצע ביטול-על ומזין את סיבת הביטול' },
           { kind: 'system', text: 'מעדכן סטטוס ל"בוטלה" עם סיבת הביטול ומשחרר את השולחן' }
-        ], extensions: [ { at: 1, text: 'אם ההזמנה כבר הושבה — הביטול-על אינו זמין.' } ] } ],
+        ], extensions: [ { at: 1, text: 'אם ההזמנה כבר הושבה, הביטול-על אינו זמין.' } ] } ],
         userStories: [ ual('מנהל סניף','לבטל הזמנה מאושרת כדי לפנות מקום לאירוע','שאוכל להקצות את האולם/השולחן לאירוע פרטי') ],
         wireframe: wf('ביטול-על של הזמנה', ['הזמנה מאושרת','סיבת ביטול'], ['ביטול-על','חזרה'])
       },
@@ -746,7 +746,7 @@ body.uc-modal-open { overflow: hidden; }
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'bmanager', text: 'בוחר סוג דוח ותקופה' },
           { kind: 'system', text: 'מפיק את הדוח (למשל ביטולים וסיבותיהם) ומציג אותו' }
-        ], extensions: [ { at: 2, text: 'אם אין נתונים לתקופה — המערכת מציגה דוח ריק עם חיווי.' } ] } ],
+        ], extensions: [ { at: 2, text: 'אם אין נתונים לתקופה, המערכת מציגה דוח ריק עם חיווי.' } ] } ],
         userStories: [ ual('מנהל סניף','דוח ביטולים חודשי עם סיבות הביטול','שאבין מדוע אובדים שולחנות'), ual('רכז אירועים','דוח אירועים צפויים לחודש הקרוב','שאיערך מראש לאירועים') ],
         wireframe: wf('הפקת דוחות תפעוליים', ['סוג דוח','מהתאריך','עד התאריך'], ['הפקת דוח','ייצוא'])
       },
@@ -758,7 +758,7 @@ body.uc-modal-open { overflow: hidden; }
         scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
           { kind: 'actor', actor: 'sysadmin', text: 'בוחר ישות (סניף/שולחן/אולם/חבילת תפריט) ומזין את פרטיה' },
           { kind: 'system', text: 'מוודא תקינות ושומר את הרשומה' }
-        ], extensions: [ { at: 1, text: 'בסגירת סניף — המערכת מוציאה אותו וישויותיו התלויות מניהול פעיל.' } ] } ],
+        ], extensions: [ { at: 1, text: 'בסגירת סניף, המערכת מוציאה אותו וישויותיו התלויות מניהול פעיל.' } ] } ],
         userStories: [ ual('מנהל מערכת','להגדיר סניפים, שולחנות, אולמות וחבילות תפריט','שכל הסניפים ינוהלו במערכת אחת') ],
         wireframe: wf('הגדרת נתוני-אב', ['סוג ישות','שם','פרטים נוספים'], ['שמירה','מחיקה'])
       }
@@ -779,11 +779,11 @@ body.uc-modal-open { overflow: hidden; }
       var SPLIT = 'Split by UC count: 15 use cases > 8 threshold';
       return {
         kind: 'use-case',
-        title: 'מערכת ניהול הזמנות ואירועים — "שולחן פנוי"',
+        title: 'מערכת ניהול הזמנות ואירועים, "שולחן פנוי"',
         assumptions: [
-          'כל בקשה מפלטפורמת ההזמנות החיצונית נקלטת אצלנו כבקשת הזמנה רגילה — איננו פונים אל הפלטפורמה ביוזמתנו.',
+          'כל בקשה מפלטפורמת ההזמנות החיצונית נקלטת אצלנו כבקשת הזמנה רגילה, איננו פונים אל הפלטפורמה ביוזמתנו.',
           'שחקן הזמן (Time) הוא טריגר מערכת אוטומטי לפקיעת המתנה ולסימון אי-הגעה בחלוף חלון החסד.',
-          'סיבת הביטול נשמרת בכל ביטול, בניגוד לבקשת מנהל התפעול — אחרת לא ניתן להפיק את דוח הביטולים החודשי.'
+          'סיבת הביטול נשמרת בכל ביטול, בניגוד לבקשת מנהל התפעול, אחרת לא ניתן להפיק את דוח הביטולים החודשי.'
         ],
         openQuestions: [
           'האם אישור בקשה מהפלטפורמה יכול להתבצע אוטומטית כשקיים שולחן פנוי, או תמיד ידנית ע"י המארח?'
@@ -808,7 +808,7 @@ body.uc-modal-open { overflow: hidden; }
               uc('uc-viewTonight'),
               uc('uc-availability'),
               uc('uc-waitlist'),
-              { kind: 'system', id: 'sys-boundary-1', name: 'מערכת ניהול הזמנות ואירועים — "שולחן פנוי"', x: 240, y: 72, w: 820, h: 640 }
+              { kind: 'system', id: 'sys-boundary-1', name: 'מערכת ניהול הזמנות ואירועים, "שולחן פנוי"', x: 240, y: 72, w: 820, h: 640 }
             ],
             relationships: [
               { kind: 'actorAssoc', id: 'as-cust-submit',   actorId: 'cust',     ucId: 'uc-submit',       role: 'initiator', description: 'הלקוח יוזם הגשת בקשת הזמנה.' },
@@ -837,7 +837,7 @@ body.uc-modal-open { overflow: hidden; }
               uc('uc-reports'),
               uc('uc-overrideCancel'),
               uc('uc-masterdata'),
-              { kind: 'system', id: 'sys-boundary-2', name: 'מערכת ניהול הזמנות ואירועים — "שולחן פנוי"', x: 240, y: 72, w: 820, h: 560 }
+              { kind: 'system', id: 'sys-boundary-2', name: 'מערכת ניהול הזמנות ואירועים, "שולחן פנוי"', x: 240, y: 72, w: 820, h: 560 }
             ],
             relationships: [
               { kind: 'actorAssoc', id: 'as-coord-confirm', actorId: 'coord',    ucId: 'uc-confirmEvent',   role: 'initiator', description: 'רכז האירועים יוזם אישור הזמנת אירוע.' },
@@ -855,12 +855,12 @@ body.uc-modal-open { overflow: hidden; }
   </script>
   <script>
 /* inlined uc-diagram-common.js */
-/* uc-diagram-common.js — SAD MCP shared runtime for use case diagrams
+/* uc-diagram-common.js, SAD MCP shared runtime for use case diagrams
    Depends on globals defined in the inline <script> of each diagram:
    diagramLayouts, actorDescriptions, assocDescriptions, useCaseDocs, diagramModel
 
-   This file is deployed by hand to themathbible.com (see CLAUDE.md → Static Assets).
-   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy — it prints to the
+   This file is deployed by hand to themathbible.com (see CLAUDE.md, Static Assets).
+   Keep UC_RUNTIME_VERSION in sync with package.json on every deploy, it prints to the
    browser console so you can confirm which runtime is actually live vs. the repo.
 */
 const UC_RUNTIME_VERSION = '2.3.2';
@@ -878,7 +878,7 @@ function fixLayout(layout) {
   if (!svg) return;
   const b = layout.boundary;
 
-  // Step 1 — Group UCs by the side of their owning actor.
+  // Step 1, Group UCs by the side of their owning actor.
   const ucSide = {};
   layout.actors.forEach(a =>
     a.ucIds.forEach(uid => {
@@ -888,7 +888,7 @@ function fixLayout(layout) {
   const cols = { left: [], right: [], center: [] };
   layout.useCases.forEach(uc => cols[ucSide[uc.id] || 'center'].push(uc));
 
-  // Step 2 — Sort each column by actor order (top-to-bottom on that side).
+  // Step 2, Sort each column by actor order (top-to-bottom on that side).
   function sortCol(ucs, side) {
     const ordered = layout.actors.filter(a => a.side === side).sort((a, bb) => a.y - bb.y);
     ucs.sort((a, bb) => {
@@ -900,7 +900,7 @@ function fixLayout(layout) {
   sortCol(cols.left,  'left');
   sortCol(cols.right, 'right');
 
-  // Step 3 — Adaptive column X positions. Widen boundary if needed.
+  // Step 3, Adaptive column X positions. Widen boundary if needed.
   const COL_GAP = 30;
   const maxRx = ucs => (ucs.length ? Math.max(...ucs.map(u => u.rx)) : 0);
   const lRx = maxRx(cols.left), cRx = maxRx(cols.center), rRx = maxRx(cols.right);
@@ -923,7 +923,7 @@ function fixLayout(layout) {
   place(cols.right,  rightX,  'right');
   place(cols.center, centerX, 'center');
 
-  // Step 4 — Clamp and resolve overlaps. Idempotent fixed-point loop.
+  // Step 4, Clamp and resolve overlaps. Idempotent fixed-point loop.
   const minX = b.x + UC_PAD;
   const maxX = b.x + b.width - UC_PAD;
   const minY = b.y + HEADER_H + UC_PAD;
@@ -946,11 +946,11 @@ function fixLayout(layout) {
     }
   }
 
-  // Step 5 — Expand boundary height to fit all UCs.
+  // Step 5, Expand boundary height to fit all UCs.
   const maxBottom = Math.max(...layout.useCases.map(uc => uc.cy + uc.ry));
   b.height = Math.max(b.height, maxBottom - b.y + UC_PAD);
 
-  // Step 6 — Re-center actors on their UC group; push bottom actors below boundary.
+  // Step 6, Re-center actors on their UC group; push bottom actors below boundary.
   layout.actors.forEach(actor => {
     const myUCs = layout.useCases.filter(u => actor.ucIds.includes(u.id));
     if (actor.side === 'left' || actor.side === 'right') {
@@ -961,7 +961,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 6b — Enforce a minimum vertical gap between actors on the same side.
+  // Step 6b, Enforce a minimum vertical gap between actors on the same side.
   // Step 6 centers each actor on its UCs' mean cy, which can place two single-UC
   // actors barely one row apart (~UC_GAP) so their stick figures + labels overlap.
   // Push later actors down to keep centers at least ACTOR_MIN_GAP apart (CR #6).
@@ -974,7 +974,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 7 — Write UC positions to the SVG (absolute attributes).
+  // Step 7, Write UC positions to the SVG (absolute attributes).
   layout.useCases.forEach(uc => {
     const g = svg.querySelector('[id="uc-group-' + uc.id + '"]');
     if (!g) return;
@@ -993,12 +993,12 @@ function fixLayout(layout) {
   layout.actors.forEach(actor => {
     // Scope to THIS svg: a shared actor id (e.g. 'head') repeats across tabs, so
     // document.getElementById returns the first tab's figure and moves the wrong
-    // one — leaving this tab's figure detached from its (correctly placed) line.
+    // one, leaving this tab's figure detached from its (correctly placed) line.
     const g = svg.querySelector('[id="actor-group-' + actor.id + '"]');
     if (g) g.setAttribute('transform', `translate(${actor.x},${actor.y})`);
   });
 
-  // Step 8 — Recalculate every connection line endpoint.
+  // Step 8, Recalculate every connection line endpoint.
   svg.querySelectorAll('[data-conn-from][data-conn-to]').forEach(line => {
     const fId = line.getAttribute('data-conn-from');
     const tId = line.getAttribute('data-conn-to');
@@ -1030,7 +1030,7 @@ function fixLayout(layout) {
     }
   });
 
-  // Step 9 — Resize boundary rect and SVG viewBox (both width and height).
+  // Step 9, Resize boundary rect and SVG viewBox (both width and height).
   const br = svg.querySelector('.system-boundary, rect[rx="12"]');
   if (br) { br.setAttribute('width', b.width); br.setAttribute('height', b.height); }
   const vb = svg.getAttribute('viewBox');
@@ -1045,7 +1045,7 @@ function fixLayout(layout) {
     svg.setAttribute('viewBox', p.join(' '));
   }
 
-  // Step 10 — Timing labels.
+  // Step 10, Timing labels.
   renderTimingLabels(layout);
 }
 
@@ -1157,7 +1157,7 @@ function openUcModal(id) {
       } else if (step.kind === 'system') {
         scenariosHtml += `<li><em class="step-system">המערכת</em>: ${esc(step.text || '')}</li>`;
       } else if (step.kind === 'include') {
-        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ' — ' + esc(step.text) : ''}</li>`;
+        scenariosHtml += `<li><span class="step-include">«include» </span><a class="step-uc-ref" data-uc-ref="${esc(step.uc)}">${esc(ucName(step.uc))}</a>${step.text ? ', ' + esc(step.text) : ''}</li>`;
       } else if (step.kind === 'extension') {
         scenariosHtml += `<li class="ext-inline">${step.at ? esc(String(step.at)) + 'a. ' : ''}${esc(step.text || '')}</li>`;
       }
@@ -1177,7 +1177,7 @@ function openUcModal(id) {
   if (doc.wireframe && !wireframeSafe(doc.wireframe))
     console.warn(`Wireframe for ${id} failed safety check.`);
 
-  // Single innerHTML write — avoids silent failures in sandboxed iframe environments.
+  // Single innerHTML write, avoids silent failures in sandboxed iframe environments.
   const body = document.querySelector('#uc-modal .uc-modal-body');
   body.innerHTML = `
     <button class="uc-modal-close" onclick="closeUcModal()" aria-label="Close">×</button>
@@ -1271,7 +1271,7 @@ function xmiBody(elements, rels) {
         const n = i + 1;
         if      (step.kind === 'actor')     out.push('  ' + n + '. ' + actorName(step.actor) + ': ' + step.text);
         else if (step.kind === 'system')    out.push('  ' + n + '. System: ' + step.text);
-        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ' — ' + step.text : ''));
+        else if (step.kind === 'include')   out.push('  ' + n + '. «include» ' + ucName(step.uc) + (step.text ? ', ' + step.text : ''));
         else if (step.kind === 'extension') out.push('  ' + n + 'a. ' + step.text);
         (sc.extensions || []).filter(e => e.at === n).forEach((e, j) => {
           out.push('  ' + n + String.fromCharCode(97 + j) + '. ' + e.text);

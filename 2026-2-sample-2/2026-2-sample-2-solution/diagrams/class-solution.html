@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
 <meta charset="UTF-8">
-<title>פתרון שאלה 7 — תרשים מחלקות | שולחן פנוי</title>
+<title>פתרון שאלה 7, תרשים מחלקות | שולחן פנוי</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,700;1,400&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
@@ -31,19 +31,19 @@
 <body>
 <div class="page">
   <header class="top">
-    <h1>פתרון לדוגמה — שאלה 7: תרשים מחלקות — "שולחן פנוי"</h1>
-    <p>ניתוח ועיצוב מערכות מידע (364-1-1411) · מבחן לדוגמה, סמסטר ב' 2026, מועד מיוחד · תרשים מודל-פתרון להוראה</p>
+    <h1>פתרון לדוגמה, שאלה 7: תרשים מחלקות, "שולחן פנוי"</h1>
+    <p>ניתוח ועיצוב מערכות מידע (364-1-1411), מבחן לדוגמה, סמסטר ב' 2026, מועד מיוחד, תרשים מודל-פתרון להוראה</p>
   </header>
   <div class="diagram-wrap">
     <svg id="diagram-svg" xmlns="http://www.w3.org/2000/svg"></svg>
   </div>
   <div class="notes">
-    <h2>הערות עיצוב — שאלה 7</h2>
+    <h2>הערות עיצוב, שאלה 7</h2>
     <div class="grid">
-      <p><b>7.2 — רבים-לרבים בלי מחלקת קשר:</b> <code>MenuPackage</code> —"offered at"— <code>Branch</code> הוא קשר <b>רבים-לרבים רגיל</b>. אין נתון על הזיווג חבילה–סניף (המחיר והתיאור אחידים ושייכים לחבילה עצמה), ולכן <b>לא</b> נדרשת מחלקת קשר. (לעומת זאת <code>Reservation</code> כן מחלקת קשר — כי יש לה נתונים משל הזיווג לקוח–שולחן.)</p>
-      <p><b>7.3 — קרדינליות, הגבול התחתון:</b> <code>Branch</code> ◆—1—0..*— <code>Table</code>. הגבול התחתון בצד השולחן הוא <b>0</b> ולא 1, כי סניף חדש עשוי להתקיים עוד לפני שהוגדרו בו שולחנות. (הקשר נותר קומפוזיציה — שולחן אינו קיים ללא סניף.)</p>
-      <p><b>7.4 — מחלקה מול enumerator:</b> <code>MenuPackage</code> היא <b>מחלקה</b> (נושאת <code>price</code>, <code>description</code>), אף שבוחרים אותה מרשימה קבועה — נתונים חייבים "לגור" איפשהו. לעומתה <code>SeatingArea</code> ו-<code>ReservationStatus</code> הם <b>enumerator</b> — קבוצות ערכים סגורות בלי תכונות.</p>
-      <p><b>7.5 — <code>Reservation.cancellationReason</code> נשמר במכוון:</b> בקשת מנהל התפעול לסמן רק "בוטלה/לא בוטלה" נדחתה — היא סותרת בתוך הסיפור את דוח הביטולים החודשי של מנהל הסניף (המפרט את <b>הסיבות</b> לביטול). ויתור על התכונה = אי-אפשר להפיק את הדוח, ואין audit trail.</p>
+      <p><b>7.2, רבים-לרבים בלי מחלקת קשר:</b> <code>MenuPackage</code> —"offered at"— <code>Branch</code> הוא קשר <b>רבים-לרבים רגיל</b>. אין נתון על הזיווג חבילה-סניף (המחיר והתיאור אחידים ושייכים לחבילה עצמה), ולכן <b>לא</b> נדרשת מחלקת קשר. (לעומת זאת <code>Reservation</code> כן מחלקת קשר, כי יש לה נתונים משל הזיווג לקוח-שולחן.)</p>
+      <p><b>7.3, קרדינליות, הגבול התחתון:</b> <code>Branch</code> ◆—1—0..*— <code>Table</code>. הגבול התחתון בצד השולחן הוא <b>0</b> ולא 1, כי סניף חדש עשוי להתקיים עוד לפני שהוגדרו בו שולחנות. (הקשר נותר קומפוזיציה, שולחן אינו קיים ללא סניף.)</p>
+      <p><b>7.4, מחלקה מול enumerator:</b> <code>MenuPackage</code> היא <b>מחלקה</b> (נושאת <code>price</code>, <code>description</code>), אף שבוחרים אותה מרשימה קבועה, נתונים חייבים "לגור" איפשהו. לעומתה <code>SeatingArea</code> ו-<code>ReservationStatus</code> הם <b>enumerator</b>, קבוצות ערכים סגורות בלי תכונות.</p>
+      <p><b>7.5, <code>Reservation.cancellationReason</code> נשמר במכוון:</b> בקשת מנהל התפעול לסמן רק "בוטלה/לא בוטלה" נדחתה, היא סותרת בתוך הסיפור את דוח הביטולים החודשי של מנהל הסניף (המפרט את <b>הסיבות</b> לביטול). ויתור על התכונה = אי-אפשר להפיק את הדוח, ואין audit trail.</p>
     </div>
   </div>
 </div>
@@ -52,7 +52,7 @@
 
 <script>
 /* ============================================================
-   1. DATA — CLASSES (§9b)
+   1. DATA, CLASSES (§9b)
    ============================================================ */
 const CLASSES = [
   // ── Domain classes ──
@@ -92,7 +92,7 @@ const CLASSES = [
     attrs: ['+ name : String', '+ phone : String', '+ role : StaffRole'],
     ops: [], x: 210, y: 900 },
 
-  // ── Enumerations (unconnected boxes — attribute-type link only) ──
+  // ── Enumerations (unconnected boxes, attribute-type link only) ──
   { id: 'ReservationStatus', name: 'ReservationStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,
     attrs: ['Requested', 'Waitlisted', 'Confirmed', 'Seated', 'Completed', 'Cancelled', 'NoShow', 'Expired'],
     ops: [], x: 1060, y: 60 },
@@ -111,25 +111,25 @@ const CLASSES = [
 ];
 
 /* ============================================================
-   2. DATA — RELS (§9c)
+   2. DATA, RELS (§9c)
    ============================================================ */
 const RELS = [
-  // Composition: Branch (whole ◆) — Table.  Lower bound 0: a new branch may have no tables yet (7.3).
+  // Composition: Branch (whole ◆), Table.  Lower bound 0: a new branch may have no tables yet (7.3).
   { type: 'comp', from: 'Branch', to: 'Table',
     fromMult: '1', toMult: '0..*', fromRole: null, toRole: null, label: null,
     points: [[115, 156], [115, 430]] },
 
-  // Composition: Branch (whole ◆) — Hall (top L-route)
+  // Composition: Branch (whole ◆), Hall (top L-route)
   { type: 'comp', from: 'Branch', to: 'Hall',
     fromMult: '1', toMult: '0..*', fromRole: null, toRole: null, label: null,
     points: [[193, 90], [843, 90], [843, 438]] },
 
-  // Association base of Reservation (association class): Customer — Table
+  // Association base of Reservation (association class): Customer, Table
   { id: 'r_cust_table', type: 'assoc', from: 'Customer', to: 'Table',
     fromMult: '0..*', toMult: '0..*', fromRole: null, toRole: null, label: 'reserves',
     points: [[420, 475], [319, 475], [219, 475]] },
 
-  // Association base of EventBooking (association class): Customer — Hall
+  // Association base of EventBooking (association class): Customer, Hall
   { id: 'r_cust_hall', type: 'assoc', from: 'Customer', to: 'Hall',
     fromMult: '0..*', toMult: '0..*', fromRole: null, toRole: null, label: 'books event',
     points: [[540, 475], [650, 475], [760, 475]] },
@@ -138,27 +138,27 @@ const RELS = [
   { type: 'assocClass', from: 'Reservation', baseId: 'r_cust_table' },
   { type: 'assocClass', from: 'EventBooking', baseId: 'r_cust_hall' },
 
-  // Association: Staff — Branch (assigned to), left-margin L-route
+  // Association: Staff, Branch (assigned to), left-margin L-route
   { type: 'assoc', from: 'Staff', to: 'Branch',
     fromMult: '0..*', toMult: '1', fromRole: 'assigned to', toRole: null, label: null,
     points: [[210, 940], [20, 940], [20, 110], [60, 110]] },
 
-  // Association: Reservation — Staff (handled by)
+  // Association: Reservation, Staff (handled by)
   { type: 'assoc', from: 'Reservation', to: 'Staff',
     fromMult: '0..*', toMult: '0..1', fromRole: null, toRole: 'handled by', label: 'handled by',
     points: [[319, 791], [319, 850], [276, 850], [276, 900]] },
 
-  // Association: EventBooking — Staff (coordinated by)
+  // Association: EventBooking, Staff (coordinated by)
   { type: 'assoc', from: 'EventBooking', to: 'Staff',
     fromMult: '0..*', toMult: '0..1', fromRole: null, toRole: 'coordinated by', label: 'coordinated by',
     points: [[649, 763], [649, 860], [343, 860], [343, 940]] },
 
-  // Association: MenuPackage — EventBooking
+  // Association: MenuPackage, EventBooking
   { type: 'assoc', from: 'MenuPackage', to: 'EventBooking',
     fromMult: '1', toMult: '0..*', fromRole: null, toRole: null, label: null,
     points: [[810, 650], [752, 650]] },
 
-  // Association: MenuPackage — Branch (offered at) — plain many-to-many, NO association class (7.2).
+  // Association: MenuPackage, Branch (offered at), plain many-to-many, NO association class (7.2).
   // Top-margin route (y=40, above all boxes) from MenuPackage right edge to Branch top.
   { type: 'assoc', from: 'MenuPackage', to: 'Branch',
     fromMult: '0..*', toMult: '1..*', fromRole: null, toRole: null, label: 'offered at',
@@ -166,7 +166,7 @@ const RELS = [
 ];
 
 /* ============================================================
-   3. ENGINE (§9d — verbatim, plus minimal assocClass support)
+   3. ENGINE (§9d, verbatim, plus minimal assocClass support)
    ============================================================ */
 const HDR_H = 28, PAD = 6, LINE_H = 14, DIV_H = 1;
 const FM = 'font-family="IBM Plex Mono, monospace"';
@@ -258,10 +258,10 @@ function svgRel(rel) {
   if (rel.type === 'agg')  mS = 'marker-start="url(#aggHollow)"';
   if (rel.type === 'gen')  mE = 'marker-end="url(#genHollow)"';
   if (rel.type === 'dep')  { mE = 'marker-end="url(#arrOpen)"'; dash = 'stroke-dasharray="6 3"'; }
-  // 'assoc': no markers — plain line
+  // 'assoc': no markers, plain line
 
   let s = `<polyline points="${pts}" fill="none" stroke="#334155" stroke-width="1.8" ${dash} ${mS} ${mE}/>`;
-  // Multiplicity labels — placed just OUTSIDE each box, offset along the line
+  // Multiplicity labels, placed just OUTSIDE each box, offset along the line
   // (away from the box) and beside it, so BOTH ends are always legible.
   const multLabel = (end, adj, txt) => {
     const dx = adj[0] - end[0], dy = adj[1] - end[1];
@@ -311,7 +311,7 @@ function render() {
 
   const bg    = `<rect width="${totalWidth}" height="${totalHeight}" fill="url(#dotgrid)"/>`;
 
-  // Enumeration zone: dashed divider + caption (course rule — right-hand zone).
+  // Enumeration zone: dashed divider + caption (course rule, right-hand zone).
   const zoneX = 1030;
   const zone = `<line x1="${zoneX}" y1="30" x2="${zoneX}" y2="${totalHeight - 90}" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6 4"/>`
     + `<text x="${zoneX + 6}" y="24" text-anchor="start" fill="#94a3b8" font-size="10" ${FM}>enumerations (type link only)</text>`;
@@ -319,7 +319,7 @@ function render() {
   const rels  = RELS.map(svgRel).join('');
   const boxes = CLASSES.map(svgBox).join('');
 
-  // cancellationReason — deliberate-retention highlight + annotation (שאלה 7.5).
+  // cancellationReason, deliberate-retention highlight + annotation (שאלה 7.5).
   const res = CLASSES.find(c => c.id === 'Reservation');
   const rw = boxW(res);
   const attrIdx = res.attrs.findIndex(a => a.indexOf('cancellationReason') !== -1);
@@ -338,7 +338,7 @@ function render() {
 }
 
 /* ============================================================
-   4. diagramModel (§8 / model-shape.md — kind:'class')
+   4. diagramModel (§8 / model-shape.md, kind:'class')
    ============================================================ */
 function parseAttr(s) {
   const m = s.match(/^\s*([+\-#])\s*([^:]+?)\s*:\s*(.+?)\s*$/);
@@ -353,7 +353,7 @@ function parseOp(s) {
 
 const diagramModel = {
   kind: 'class',
-  title: 'מודל מחלקות — "שולחן פנוי"',
+  title: 'מודל מחלקות, "שולחן פנוי"',
   parts: [{
     id: 'part-1',
     label: 'Domain Model',
@@ -404,7 +404,7 @@ const diagramModel = {
 };
 
 /* ============================================================
-   5. VP EXPORT (export-buttons.md — XMI 2.1, class xmiBody)
+   5. VP EXPORT (export-buttons.md, XMI 2.1, class xmiBody)
    ============================================================ */
 function xmlEscape(s) {
   return String(s ?? '')
@@ -469,7 +469,7 @@ ${body}
 
   downloadFile(title.replace(/\s+/g, '_') + '.xmi', 'application/xml', xmi);
 }
-// NOTE: Visual Paradigm auto-layouts on XMI import — coordinates are not preserved.
+// NOTE: Visual Paradigm auto-layouts on XMI import, coordinates are not preserved.
 
 document.addEventListener('DOMContentLoaded', render);
 </script>

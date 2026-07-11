@@ -2,7 +2,7 @@
 <html lang="he">
 <head>
   <meta charset="UTF-8">
-  <title>תרשים מחלקות — "ספר פתוח" (רשת השאלת ספריות)</title>
+  <title>תרשים מחלקות, "ספר פתוח" (רשת השאלת ספריות)</title>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body { margin: 0; background: #f1f5f9; font-family: 'IBM Plex Mono', monospace; }
@@ -30,7 +30,7 @@
 
   <script>
   /* ============================================================
-     1. DATA — CLASSES (§9b)
+     1. DATA, CLASSES (§9b)
      ============================================================ */
   const CLASSES = [
     // ── Domain classes ──
@@ -87,7 +87,7 @@
       x: 535, y: 780
     },
 
-    // ── Enumerations (unconnected — placed near their using class) ──
+    // ── Enumerations (unconnected, placed near their using class) ──
     {
       id: 'TitleCategory', name: 'TitleCategory', stereotype: '«enumeration»', isEnum: true, isAbstract: false,
       attrs: ['Reference', 'Fiction', 'Children', 'ReferenceOnly'],
@@ -115,34 +115,34 @@
   ];
 
   /* ============================================================
-     2. DATA — RELS (§9c)
+     2. DATA, RELS (§9c)
      ============================================================ */
   const RELS = [
-    // Composition: Title (whole ◆) — Copy
+    // Composition: Title (whole ◆), Copy
     {
       type: 'comp', from: 'Title', to: 'Copy',
       fromMult: '1', toMult: '1..*', fromRole: null, toRole: null, label: null,
       points: [[416, 170], [416, 340]]
     },
-    // Association: Title — AcquisitionOrder (orders)
+    // Association: Title, AcquisitionOrder (orders)
     {
       type: 'assoc', from: 'Title', to: 'AcquisitionOrder',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'orders', label: 'orders',
       points: [[512, 101], [566, 101], [620, 101]]
     },
-    // Aggregation: Branch (whole ◇) — Copy — copies SURVIVE branch closure (moved elsewhere)
+    // Aggregation: Branch (whole ◇), Copy, copies SURVIVE branch closure (moved elsewhere)
     {
       type: 'agg', from: 'Branch', to: 'Copy',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'stocks', label: 'stocks',
       points: [[193, 120], [300, 120], [300, 390], [360, 390]]
     },
-    // Association: Branch — Patron (home branch)
+    // Association: Branch, Patron (home branch)
     {
       type: 'assoc', from: 'Branch', to: 'Patron',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'home branch', label: 'home branch',
       points: [[126, 142], [126, 250], [769, 250], [769, 340]]
     },
-    // Association: MembershipType — Patron (governs)
+    // Association: MembershipType, Patron (governs)
     {
       type: 'assoc', from: 'MembershipType', to: 'Patron',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'governs', label: 'governs',
@@ -154,11 +154,11 @@
       fromMult: '0..*', toMult: '0..*', fromRole: null, toRole: null, label: 'borrows',
       points: [[690, 372], [611, 372], [532, 372]]
     },
-    // Association class tether: Loan ⇢ midpoint of Patron—Copy
+    // Association class tether: Loan ⇢ midpoint of Patron-Copy
     {
       type: 'assocClass', from: 'Loan', baseId: 'assoc_patron_copy'
     },
-    // Association: Loan — Fine (incurs)
+    // Association: Loan, Fine (incurs)
     {
       type: 'assoc', from: 'Loan', to: 'Fine',
       fromMult: '1', toMult: '0..1', fromRole: null, toRole: 'incurs', label: 'incurs',
@@ -167,7 +167,7 @@
   ];
 
   /* ============================================================
-     3. ENGINE (§9d — verbatim, plus minimal assocClass support)
+     3. ENGINE (§9d, verbatim, plus minimal assocClass support)
      ============================================================ */
   // ── Constants ─────────────────────────────────────────────────────────────
   const HDR_H = 28, PAD = 6, LINE_H = 14, DIV_H = 1;
@@ -260,10 +260,10 @@
     if (rel.type === 'agg')  mS = 'marker-start="url(#aggHollow)"';
     if (rel.type === 'gen')  mE = 'marker-end="url(#genHollow)"';
     if (rel.type === 'dep')  { mE = 'marker-end="url(#arrOpen)"'; dash = 'stroke-dasharray="6 3"'; }
-    // 'assoc': no markers — plain line
+    // 'assoc': no markers, plain line
 
     let s = `<polyline points="${pts}" fill="none" stroke="#334155" stroke-width="1.8" ${dash} ${mS} ${mE}/>`;
-    // Multiplicity labels — placed just OUTSIDE each box, offset along the line
+    // Multiplicity labels, placed just OUTSIDE each box, offset along the line
     // (away from the box) and beside it, so BOTH ends are always legible.
     const multLabel = (end, adj, txt) => {
       const dx = adj[0] - end[0], dy = adj[1] - end[1];
@@ -328,7 +328,7 @@
   }
 
   /* ============================================================
-     4. diagramModel (§8 / model-shape.md — kind:'class')
+     4. diagramModel (§8 / model-shape.md, kind:'class')
      ============================================================ */
   function parseAttr(s) {
     const m = s.match(/^\s*([+\-#])\s*([^:]+?)\s*:\s*(.+?)\s*$/);
@@ -344,7 +344,7 @@
 
   const diagramModel = {
     kind: 'class',
-    title: 'Class Diagram — Library Loan Network (ספר פתוח)',
+    title: 'Class Diagram, Library Loan Network (ספר פתוח)',
     parts: [{
       id: 'part-1',
       label: 'Domain Model',
@@ -388,7 +388,7 @@
   };
 
   /* ============================================================
-     5. VP EXPORT (export-buttons.md — XMI 2.1, class xmiBody)
+     5. VP EXPORT (export-buttons.md, XMI 2.1, class xmiBody)
      ============================================================ */
   function xmlEscape(s) {
     return String(s ?? '')
@@ -455,7 +455,7 @@ ${body}
 
     downloadFile(title.replace(/\s+/g, '_') + '.xmi', 'application/xml', xmi);
   }
-  // NOTE: Visual Paradigm auto-layouts on XMI import — coordinates are not preserved.
+  // NOTE: Visual Paradigm auto-layouts on XMI import, coordinates are not preserved.
 
   document.addEventListener('DOMContentLoaded', render);
   </script>
