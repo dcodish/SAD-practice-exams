@@ -75,7 +75,7 @@
     {
       id: 'Loan', name: 'Loan', stereotype: '«association class»', isEnum: false, isAbstract: false,
       attrs: ['+ checkoutDate : Date', '+ dueDate : Date', '+ returnDate : Date',
-              '+ returnTimestamp : DateTime', '+ renewalsCount : Integer', '+ status : LoanStatus'],
+              '+ renewalsCount : Integer', '+ status : LoanStatus'],
       ops: ['+ checkout()', '+ renew()', '+ markOverdue()',
             '+ returnCopy()', '+ markLost()', '+ calculateFine()'],
       x: 512, y: 478
@@ -130,9 +130,9 @@
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'orders', label: 'orders',
       points: [[512, 101], [566, 101], [620, 101]]
     },
-    // Association: Branch — Copy (stocks)
+    // Aggregation: Branch (whole ◇) — Copy — copies SURVIVE branch closure (moved elsewhere)
     {
-      type: 'assoc', from: 'Branch', to: 'Copy',
+      type: 'agg', from: 'Branch', to: 'Copy',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'stocks', label: 'stocks',
       points: [[193, 120], [300, 120], [300, 390], [360, 390]]
     },
@@ -369,7 +369,7 @@
           directed: false, aggregation: false, composition: false },
         { kind: 'association', id: 'r_branch_copy', from: 'Branch', to: 'Copy',
           multFrom: '1', multTo: '0..*', roleFrom: null, roleTo: 'stocks',
-          directed: false, aggregation: false, composition: false },
+          directed: false, aggregation: true, composition: false },
         { kind: 'association', id: 'r_branch_patron', from: 'Branch', to: 'Patron',
           multFrom: '1', multTo: '0..*', roleFrom: null, roleTo: 'home branch',
           directed: false, aggregation: false, composition: false },

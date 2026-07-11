@@ -40,10 +40,10 @@
   <div class="notes">
     <h2>הערות עיצוב — שאלה 7</h2>
     <div class="grid">
-      <p><b>7.2 — מחלקת קשר (רבים-לרבים על-פני זמן):</b> <code>Reservation</code> היא מחלקת קשר על היחס Customer×Table. התאריך, מספר הסועדים, ההערה והסטטוס שייכים לזוג לקוח–שולחן הספציפי באותה הזמנה — ולא לאף אחת מהמחלקות בנפרד. קו האסוציאציה נשאר, והמחלקה נתלית באמצע הקו בקו מקווקו.</p>
-      <p><b>7.3 — קומפוזיציה (תלות-חיים):</b> <code>Branch</code> ◆—1—1..*— <code>Table</code> ו-<code>Branch</code> ◆—1—0..*— <code>Hall</code> (לא בכל סניף אולם). סגירת סניף גוררת מחיקה/ארכוב מדורג של שולחנותיו ואולמותיו.</p>
-      <p><b>7.4 — enumerator כטיפוס תכונה:</b> <code>SeatingArea</code>, <code>ReservationStatus</code>, <code>EventBookingStatus</code>, <code>StaffRole</code> מחוברים כ<b>טיפוס של תכונה</b> בלבד (למשל <code>area : SeatingArea</code>) — תיבות לא-מחוברות, ללא קו אסוציאציה וללא קרדינליות.</p>
-      <p><b>7.5 — <code>Reservation.cancellationReason</code> נשמר במכוון:</b> בקשת מנהל התפעול לסמן רק "בוטלה/לא בוטלה" נדחתה — היא סותרת בתוך הסיפור את דוח הביטולים החודשי של מנהל הסניף (אין דוח סיבות, אין audit trail, אין הבחנה בין ביטול-לקוח לביטול-על של מנהל).</p>
+      <p><b>7.2 — רבים-לרבים בלי מחלקת קשר:</b> <code>MenuPackage</code> —"offered at"— <code>Branch</code> הוא קשר <b>רבים-לרבים רגיל</b>. אין נתון על הזיווג חבילה–סניף (המחיר והתיאור אחידים ושייכים לחבילה עצמה), ולכן <b>לא</b> נדרשת מחלקת קשר. (לעומת זאת <code>Reservation</code> כן מחלקת קשר — כי יש לה נתונים משל הזיווג לקוח–שולחן.)</p>
+      <p><b>7.3 — קרדינליות, הגבול התחתון:</b> <code>Branch</code> ◆—1—0..*— <code>Table</code>. הגבול התחתון בצד השולחן הוא <b>0</b> ולא 1, כי סניף חדש עשוי להתקיים עוד לפני שהוגדרו בו שולחנות. (הקשר נותר קומפוזיציה — שולחן אינו קיים ללא סניף.)</p>
+      <p><b>7.4 — מחלקה מול enumerator:</b> <code>MenuPackage</code> היא <b>מחלקה</b> (נושאת <code>price</code>, <code>description</code>), אף שבוחרים אותה מרשימה קבועה — נתונים חייבים "לגור" איפשהו. לעומתה <code>SeatingArea</code> ו-<code>ReservationStatus</code> הם <b>enumerator</b> — קבוצות ערכים סגורות בלי תכונות.</p>
+      <p><b>7.5 — <code>Reservation.cancellationReason</code> נשמר במכוון:</b> בקשת מנהל התפעול לסמן רק "בוטלה/לא בוטלה" נדחתה — היא סותרת בתוך הסיפור את דוח הביטולים החודשי של מנהל הסניף (המפרט את <b>הסיבות</b> לביטול). ויתור על התכונה = אי-אפשר להפיק את הדוח, ואין audit trail.</p>
     </div>
   </div>
 </div>
@@ -114,9 +114,9 @@ const CLASSES = [
    2. DATA — RELS (§9c)
    ============================================================ */
 const RELS = [
-  // Composition: Branch (whole ◆) — Table
+  // Composition: Branch (whole ◆) — Table.  Lower bound 0: a new branch may have no tables yet (7.3).
   { type: 'comp', from: 'Branch', to: 'Table',
-    fromMult: '1', toMult: '1..*', fromRole: null, toRole: null, label: null,
+    fromMult: '1', toMult: '0..*', fromRole: null, toRole: null, label: null,
     points: [[115, 156], [115, 430]] },
 
   // Composition: Branch (whole ◆) — Hall (top L-route)
@@ -156,7 +156,13 @@ const RELS = [
   // Association: MenuPackage — EventBooking
   { type: 'assoc', from: 'MenuPackage', to: 'EventBooking',
     fromMult: '1', toMult: '0..*', fromRole: null, toRole: null, label: null,
-    points: [[810, 650], [752, 650]] }
+    points: [[810, 650], [752, 650]] },
+
+  // Association: MenuPackage — Branch (offered at) — plain many-to-many, NO association class (7.2).
+  // Top-margin route (y=40, above all boxes) from MenuPackage right edge to Branch top.
+  { type: 'assoc', from: 'MenuPackage', to: 'Branch',
+    fromMult: '0..*', toMult: '1..*', fromRole: null, toRole: null, label: 'offered at',
+    points: [[950, 610], [950, 40], [126, 40], [126, 60]] }
 ];
 
 /* ============================================================
@@ -365,7 +371,7 @@ const diagramModel = {
     })),
     relationships: [
       { kind: 'association', id: 'r_branch_table', from: 'Branch', to: 'Table',
-        multFrom: '1', multTo: '1..*', roleFrom: null, roleTo: null,
+        multFrom: '1', multTo: '0..*', roleFrom: null, roleTo: null,
         directed: false, aggregation: false, composition: true },
       { kind: 'association', id: 'r_branch_hall', from: 'Branch', to: 'Hall',
         multFrom: '1', multTo: '0..*', roleFrom: null, roleTo: null,
@@ -389,6 +395,9 @@ const diagramModel = {
         directed: false, aggregation: false, composition: false },
       { kind: 'association', id: 'r_menu_event', from: 'MenuPackage', to: 'EventBooking',
         multFrom: '1', multTo: '0..*', roleFrom: null, roleTo: null,
+        directed: false, aggregation: false, composition: false },
+      { kind: 'association', id: 'r_menu_branch', from: 'MenuPackage', to: 'Branch',
+        multFrom: '0..*', multTo: '1..*', roleFrom: null, roleTo: 'offered at',
         directed: false, aggregation: false, composition: false }
     ]
   }]

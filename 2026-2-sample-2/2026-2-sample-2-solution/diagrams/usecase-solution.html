@@ -180,6 +180,7 @@ body.uc-modal-open { overflow: hidden; }
       <line data-conn-from="host" data-conn-to="uc-noshow" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
       <line data-conn-from="time" data-conn-to="uc-noshow" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
       <line data-conn-from="time" data-conn-to="uc-expire" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
+      <line data-conn-from="host" data-conn-to="uc-viewTonight" x1="0" y1="0" x2="0" y2="0" stroke="#334155" stroke-width="1.8"/>
 
       <!-- Association hitboxes -->
       <line class="conn-hitbox" data-conn-id="as-cust-submit" data-hitbox-from="cust" data-hitbox-to="uc-submit" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('as-cust-submit','assoc',event)"/>
@@ -197,6 +198,14 @@ body.uc-modal-open { overflow: hidden; }
       <line data-conn-from="uc-confirmTable" data-conn-to="uc-availability" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow-include-0)"/>
       <text data-label-for="uc-confirmTable uc-availability" x="0" y="0" text-anchor="middle" font-size="9.5" fill="#7c3aed" font-family="'IBM Plex Mono',monospace">«include»</text>
       <line class="conn-hitbox" data-conn-id="inc-confirmTable-avail" data-hitbox-from="uc-confirmTable" data-hitbox-to="uc-availability" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('inc-confirmTable-avail','assoc',event)"/>
+
+      <!-- «extend» line + label + hitbox (waitlist handling extends table confirmation) -->
+      <line data-conn-from="uc-waitlist" data-conn-to="uc-confirmTable" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="1.6" stroke-dasharray="6 4" marker-end="url(#arrow-include-0)"/>
+      <text data-label-for="uc-waitlist uc-confirmTable" x="0" y="0" text-anchor="middle" font-size="9.5" fill="#7c3aed" font-family="'IBM Plex Mono',monospace">«extend»</text>
+      <line class="conn-hitbox" data-conn-id="ext-waitlist-confirm" data-hitbox-from="uc-waitlist" data-hitbox-to="uc-confirmTable" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('ext-waitlist-confirm','assoc',event)"/>
+
+      <!-- host → view-tonight association hitbox -->
+      <line class="conn-hitbox" data-conn-id="as-host-viewtonight" data-hitbox-from="host" data-hitbox-to="uc-viewTonight" x1="0" y1="0" x2="0" y2="0" stroke="transparent" stroke-width="14" style="cursor:pointer" onclick="showDesc('as-host-viewtonight','assoc',event)"/>
 
       <!-- Use Cases: left (cust + platform) -->
       <g id="uc-group-uc-submit" data-uc-id="uc-submit" onclick="showDesc('uc-submit','uc',event)" style="cursor:pointer">
@@ -239,12 +248,23 @@ body.uc-modal-open { overflow: hidden; }
         <text x="920" y="440" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">סימון פקיעת</text>
         <text x="920" y="455" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">רשימת המתנה</text>
       </g>
+      <g id="uc-group-uc-viewTonight" data-uc-id="uc-viewTonight" onclick="showDesc('uc-viewTonight','uc',event)" style="cursor:pointer">
+        <ellipse cx="920" cy="546" rx="112" ry="32" fill="#d4e9f7" stroke="#2980b9" stroke-width="1.8"/>
+        <text x="920" y="542" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">צפייה בהזמנות</text>
+        <text x="920" y="557" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">הערב (מארח)</text>
+      </g>
 
       <!-- Include target (center) -->
       <g id="uc-group-uc-availability" data-uc-id="uc-availability" onclick="showDesc('uc-availability','uc',event)" style="cursor:pointer">
         <ellipse cx="650" cy="170" rx="112" ry="36" fill="#d4e9f7" stroke="#2980b9" stroke-width="1.8"/>
         <text x="650" y="164" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">בדיקת זמינות</text>
         <text x="650" y="179" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">למועד / לתאריך</text>
+      </g>
+      <!-- «extend» source (center) -->
+      <g id="uc-group-uc-waitlist" data-uc-id="uc-waitlist" onclick="showDesc('uc-waitlist','uc',event)" style="cursor:pointer">
+        <ellipse cx="650" cy="320" rx="110" ry="32" fill="#d4e9f7" stroke="#2980b9" stroke-width="1.8"/>
+        <text x="650" y="316" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">טיפול ברשימת</text>
+        <text x="650" y="331" text-anchor="middle" font-size="11" font-weight="500" fill="#1a1a2e" font-family="'Noto Sans Hebrew',sans-serif" direction="rtl">המתנה</text>
       </g>
 
       <!-- Actors -->
@@ -430,8 +450,8 @@ body.uc-modal-open { overflow: hidden; }
         actors: [
           { id: 'cust',     label: 'לקוח',             side: 'left',  x: 130,  y: 224, ucIds: ['uc-submit','uc-cancelCust','uc-view'] },
           { id: 'platform', label: 'פלטפורמת ההזמנות', side: 'left',  x: 130,  y: 372, ucIds: ['uc-intake'] },
-          { id: 'host',     label: 'מארח',             side: 'right', x: 1170, y: 260, ucIds: ['uc-confirmTable','uc-seat','uc-complete','uc-noshow'] },
-          { id: 'time',     label: 'שחקן זמן',         side: 'right', x: 1170, y: 500, ucIds: ['uc-noshow','uc-expire'] }
+          { id: 'host',     label: 'מארח',             side: 'right', x: 1170, y: 260, ucIds: ['uc-confirmTable','uc-seat','uc-complete','uc-noshow','uc-viewTonight'] },
+          { id: 'time',     label: 'שחקן זמן',         side: 'right', x: 1170, y: 560, ucIds: ['uc-noshow','uc-expire'] }
         ],
         useCases: [
           { id: 'uc-submit',       cx: 380, cy: 150, rx: 100, ry: 30 },
@@ -443,7 +463,9 @@ body.uc-modal-open { overflow: hidden; }
           { id: 'uc-complete',     cx: 920, cy: 298, rx: 100, ry: 30 },
           { id: 'uc-noshow',       cx: 920, cy: 372, rx: 96,  ry: 30 },
           { id: 'uc-expire',       cx: 920, cy: 446, rx: 106, ry: 34 },
-          { id: 'uc-availability', cx: 650, cy: 170, rx: 112, ry: 36 }
+          { id: 'uc-viewTonight',  cx: 920, cy: 546, rx: 112, ry: 32 },
+          { id: 'uc-availability', cx: 650, cy: 170, rx: 112, ry: 36 },
+          { id: 'uc-waitlist',     cx: 650, cy: 320, rx: 110, ry: 32 }
         ],
         connections: [
           { from: 'cust',     to: 'uc-submit',       type: 'association' },
@@ -454,9 +476,11 @@ body.uc-modal-open { overflow: hidden; }
           { from: 'host',     to: 'uc-seat',         type: 'association' },
           { from: 'host',     to: 'uc-complete',     type: 'association' },
           { from: 'host',     to: 'uc-noshow',       type: 'association' },
+          { from: 'host',     to: 'uc-viewTonight',  type: 'association' },
           { from: 'time',     to: 'uc-noshow',       type: 'association', timing: 'אחרי חלון חסד 15 דק׳' },
           { from: 'time',     to: 'uc-expire',       type: 'association', timing: 'בחלוף המועד' },
-          { from: 'uc-confirmTable', to: 'uc-availability', type: 'include' }
+          { from: 'uc-confirmTable', to: 'uc-availability', type: 'include' },
+          { from: 'uc-waitlist',     to: 'uc-confirmTable',  type: 'extend' }
         ]
       },
       {
@@ -508,6 +532,8 @@ body.uc-modal-open { overflow: hidden; }
       'as-host-noshow':   { name: 'מארח ↔ סימון אי-הגעה',   desc: 'המארח יוזם סימון ידני של הזמנה שאורחיה לא הגיעו. תפקיד: Initiator.' },
       'as-time-noshow':   { name: 'שחקן זמן ↔ סימון אי-הגעה', desc: 'שחקן הזמן מפעיל סימון אוטומטי של אי-הגעה. תפקיד: Initiator. תזמון: אחרי חלון חסד 15 דק׳.' },
       'as-time-expire':   { name: 'שחקן זמן ↔ סימון פקיעת רשימת המתנה', desc: 'שחקן הזמן מפעיל פקיעת רשומות המתנה שחלף מועדן. תפקיד: Initiator. תזמון: בחלוף המועד.' },
+      'as-host-viewtonight': { name: 'מארח ↔ צפייה בהזמנות הערב', desc: 'המארח יוזם צפייה ברשימת ההזמנות של הערב בסניפו בתחילת המשמרת. תפקיד: Initiator. (בקשה זו בתוך היקף המערכת — שאילתה על נתונים שהמערכת מנהלת.)' },
+      'ext-waitlist-confirm': { name: 'טיפול ברשימת המתנה «extend» אישור הזמנת שולחן', desc: 'טיפול ברשימת ההמתנה מרחיב את אישור הזמנת השולחן, ומופעל רק בהתקיים התנאי "אין שולחן פנוי במועד" — התנהגות אופציונלית/מותנית, ולכן «extend» ולא «include».' },
       'inc-confirmTable-avail': { name: 'אישור הזמנת שולחן «include» בדיקת זמינות למועד', desc: 'בדיקת הזמינות מתבצעת תמיד כחלק מאישור הזמנת שולחן.' },
       'as-coord-confirm': { name: 'רכז אירועים ↔ אישור הזמנת אירוע', desc: 'רכז האירועים יוזם בדיקת זמינות ואישור הזמנת אירוע. תפקיד: Initiator.' },
       'as-coord-manage':  { name: 'רכז אירועים ↔ ניהול הזמנת אירוע', desc: 'רכז האירועים יוזם ליווי ועדכון הזמנת האירוע. תפקיד: Initiator.' },
@@ -534,6 +560,30 @@ body.uc-modal-open { overflow: hidden; }
         ] } ],
         userStories: [ ual('מארח','שהמערכת תבדוק זמינות שולחן אוטומטית לפני אישור','שלא יובטח אותו שולחן פעמיים') ],
         wireframe: ''
+      },
+      'uc-waitlist': {
+        id: 'uc-waitlist', name: 'טיפול ברשימת המתנה', primaryActor: 'host', secondaryActors: ['time'],
+        description: 'הרחבה (extend) של "אישור הזמנת שולחן": כאשר אין שולחן פנוי במועד המבוקש, נכנסת הבקשה לרשימת המתנה. אם מתפנה שולחן לפני המועד היא מאושרת, ואם חלף המועד — היא פוקעת. מתרחש רק בחלק מן הבקשות, ולכן «extend» ולא «include».',
+        preconditions: ['נבדקה זמינות ולא נמצא שולחן פנוי למועד המבוקש.'],
+        postconditions: ['הבקשה ברשימת המתנה, עד שתאושר או תפקע.'],
+        scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
+          { kind: 'system', text: 'מכניס את הבקשה לרשימת המתנה ומעדכן סטטוס ל"רשימת המתנה"' },
+          { kind: 'system', text: 'אם מתפנה שולחן לפני המועד — מזמן את המארח לאישור' }
+        ], extensions: [ { at: 2, text: 'אם חלף המועד בלי ששולחן התפנה — שחקן הזמן מסמן את הבקשה כפגת-תוקף.' } ] } ],
+        userStories: [ ual('מארח','שבקשה ללא שולחן פנוי תיכנס לרשימת המתנה ולא תידחה מיד','שלא נאבד לקוחות כשמתפנה מקום') ],
+        wireframe: ''
+      },
+      'uc-viewTonight': {
+        id: 'uc-viewTonight', name: 'צפייה בהזמנות הערב', primaryActor: 'host', secondaryActors: [],
+        description: 'המארח צופה בתחילת המשמרת ברשימת ההזמנות של אותו ערב בסניפו. בקשה זו נמצאת בתוך היקף המערכת — היא שאילתה על נתוני ההזמנות שהמערכת ממילא מנהלת (בשונה מניהול קופה או הזמנת מנות במטבח, שמחוץ ל-scope).',
+        preconditions: ['המארח מחובר למערכת ומשויך לסניף.'],
+        postconditions: ['הוצגה רשימת ההזמנות של הערב עם הסטטוס של כל אחת.'],
+        scenarios: [ { id: 'sc', name: 'מסלול מרכזי', flow: [
+          { kind: 'actor', actor: 'host', text: 'בוחר את התאריך הנוכחי ואת סניפו' },
+          { kind: 'system', text: 'מציג את כל ההזמנות של הערב עם מועד, מספר סועדים וסטטוס' }
+        ], extensions: [] } ],
+        userStories: [ ual('מארח','לראות בתחילת המשמרת את כל ההזמנות של הערב','שאדע לאילו שולחנות להיערך') ],
+        wireframe: wf('הזמנות הערב', ['תאריך','סניף'], ['הצגה'])
       },
       'uc-submit': {
         id: 'uc-submit', name: 'הגשת בקשת הזמנה', primaryActor: 'cust', secondaryActors: [],
@@ -755,7 +805,9 @@ body.uc-modal-open { overflow: hidden; }
               uc('uc-complete'),
               uc('uc-noshow'),
               uc('uc-expire'),
+              uc('uc-viewTonight'),
               uc('uc-availability'),
+              uc('uc-waitlist'),
               { kind: 'system', id: 'sys-boundary-1', name: 'מערכת ניהול הזמנות ואירועים — "שולחן פנוי"', x: 240, y: 72, w: 820, h: 640 }
             ],
             relationships: [
@@ -769,7 +821,9 @@ body.uc-modal-open { overflow: hidden; }
               { kind: 'actorAssoc', id: 'as-host-noshow',   actorId: 'host',     ucId: 'uc-noshow',       role: 'initiator', description: 'המארח יוזם סימון אי-הגעה ידני.' },
               { kind: 'actorAssoc', id: 'as-time-noshow',   actorId: 'time',     ucId: 'uc-noshow',       role: 'participant', description: 'שחקן הזמן מפעיל סימון אי-הגעה אוטומטי.', timing: 'אחרי חלון חסד 15 דק׳' },
               { kind: 'actorAssoc', id: 'as-time-expire',   actorId: 'time',     ucId: 'uc-expire',       role: 'initiator', description: 'שחקן הזמן מפעיל פקיעת רשימת המתנה.', timing: 'בחלוף המועד' },
-              { kind: 'include', id: 'inc-confirmTable-avail', from: 'uc-confirmTable', to: 'uc-availability' }
+              { kind: 'actorAssoc', id: 'as-host-viewtonight', actorId: 'host',  ucId: 'uc-viewTonight',  role: 'initiator', description: 'המארח יוזם צפייה בהזמנות הערב (בתוך היקף המערכת).' },
+              { kind: 'include', id: 'inc-confirmTable-avail', from: 'uc-confirmTable', to: 'uc-availability' },
+              { kind: 'extend', id: 'ext-waitlist-confirm', from: 'uc-waitlist', to: 'uc-confirmTable' }
             ]
           },
           {
