@@ -68,7 +68,8 @@ const CLASSES = [
 
   { id: 'RentalAgreement', name: 'RentalAgreement', stereotype: '«association class»', isEnum: false, isAbstract: false,
     attrs: ['+ startDate : Date', '+ endDate : Date', '+ monthlyRent : Number',
-            '+ deposit : Number', '+ status : AgreementStatus'],
+            '+ deposit : Number', '+ status : AgreementStatus',
+            '+ closureReason : AgreementStatus'],
     ops: ['+ approve()', '+ returnForCorrection()', '+ cancel()', '+ activate()'],
     x: 210, y: 610 },
 
@@ -92,7 +93,7 @@ const CLASSES = [
   /* ── enumerations (unconnected boxes, right column) ── */
   { id: 'AgreementStatus', name: 'AgreementStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,
     attrs: ['Draft', 'AwaitingSignature', 'AwaitingApproval', 'ReturnedForCorrection',
-            'Active', 'InArrears', 'Ended', 'Cancelled'], ops: [],
+            'Active', 'InArrears', 'Ended', 'Cancelled', 'Archived'], ops: [],
     x: 1060, y: 60 },
 
   { id: 'PaymentStatus', name: 'PaymentStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,

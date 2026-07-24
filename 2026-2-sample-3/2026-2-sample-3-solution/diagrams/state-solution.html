@@ -56,7 +56,7 @@
 
 <div class="diagram-part" id="part-1">
 <div class="svg-wrap">
-<svg width="1320" height="850" viewBox="0 0 1320 850" xmlns="http://www.w3.org/2000/svg">
+<svg width="1320" height="1010" viewBox="0 0 1320 1010" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <pattern id="dotgrid" width="24" height="24" patternUnits="userSpaceOnUse">
       <circle cx="12" cy="12" r="0.8" fill="#cbd5e1"/>
@@ -65,9 +65,9 @@
       <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
     </marker>
   </defs>
-  <rect x="0" y="0" width="1320" height="850" fill="url(#dotgrid)"/>
+  <rect x="0" y="0" width="1320" height="1010" fill="url(#dotgrid)"/>
 
-  <text x="24" y="30" font-size="12" fill="#94a3b8" font-family="'Noto Sans Hebrew',sans-serif">מחזור החיים של אובייקט Loan, מ"מוזמנת" ועד מצב הסיום היחיד, דרך ארבעה מצבי סיום עסקיים</text>
+  <text x="24" y="30" font-size="12" fill="#94a3b8" font-family="'Noto Sans Hebrew',sans-serif">מחזור החיים של אובייקט Loan: ארבעה מצבי סיום עסקיים ← ארכיון (תפעולי או פיננסי) ← גריעה מהמערכת בתום תקופת השמירה</text>
 
   <!-- ============ states ============ -->
   <!-- מוזמנת (RESERVED) -->
@@ -107,49 +107,76 @@
     <text x="961" y="243" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">do / accrueOverdueDays()</text>
   </g>
 
+  <!-- ==== outcome states (row 2) ==== -->
   <!-- פקעה (EXPIRED) -->
   <g data-state="expired">
     <title>פקעה, ההזמנה לא נאספה בתוך שלושה ימים ופקעה מאליה, לחץ להסבר</title>
-    <rect x="150" y="480" width="225" height="80" rx="18" ry="18" fill="#ffffff" stroke="none"/>
-    <path d="M 150 506 v -8 a18 18 0 0 1 18 -18 h 189 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
-    <line x1="150" y1="506" x2="375" y2="506" stroke="#3b82f6" stroke-width="1"/>
-    <rect x="150" y="480" width="225" height="80" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
-    <text x="262.5" y="498" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">פקעה</text>
-    <text x="161" y="526" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('EXPIRED');</text>
-    <text x="161" y="542" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        releaseToNextInQueue()</text>
+    <rect x="40" y="440" width="260" height="100" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 40 466 v -8 a18 18 0 0 1 18 -18 h 224 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="40" y1="466" x2="300" y2="466" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="40" y="440" width="260" height="100" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="170" y="458" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">פקעה</text>
+    <text x="51" y="486" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('EXPIRED');</text>
+    <text x="51" y="502" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        releaseToNextInQueue();</text>
+    <text x="51" y="518" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setClosureReason('EXPIRED')</text>
   </g>
   <!-- הוחזרה בזמן (RETURNED_ON_TIME) -->
   <g data-state="returned_on_time">
     <title>הוחזרה בזמן, העותק הוחזר לפני תאריך היעד, לחץ להסבר</title>
-    <rect x="468" y="480" width="225" height="80" rx="18" ry="18" fill="#ffffff" stroke="none"/>
-    <path d="M 468 506 v -8 a18 18 0 0 1 18 -18 h 189 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
-    <line x1="468" y1="506" x2="693" y2="506" stroke="#3b82f6" stroke-width="1"/>
-    <rect x="468" y="480" width="225" height="80" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
-    <text x="580.5" y="498" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">הוחזרה בזמן</text>
-    <text x="479" y="526" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('RETURNED_ON_TIME');</text>
-    <text x="479" y="542" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setReturnDate(today)</text>
+    <rect x="370" y="440" width="260" height="100" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 370 466 v -8 a18 18 0 0 1 18 -18 h 224 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="370" y1="466" x2="630" y2="466" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="370" y="440" width="260" height="100" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="500" y="458" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">הוחזרה בזמן</text>
+    <text x="381" y="486" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('RETURNED_ON_TIME');</text>
+    <text x="381" y="502" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setReturnDate(today);</text>
+    <text x="381" y="518" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setClosureReason('ON_TIME')</text>
   </g>
   <!-- הוחזרה באיחור (RETURNED_LATE) -->
   <g data-state="returned_late">
     <title>הוחזרה באיחור, העותק הוחזר אחרי היעד; חושב קנס, לחץ להסבר</title>
-    <rect x="745" y="480" width="225" height="80" rx="18" ry="18" fill="#ffffff" stroke="none"/>
-    <path d="M 745 506 v -8 a18 18 0 0 1 18 -18 h 189 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
-    <line x1="745" y1="506" x2="970" y2="506" stroke="#3b82f6" stroke-width="1"/>
-    <rect x="745" y="480" width="225" height="80" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
-    <text x="857.5" y="498" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">הוחזרה באיחור</text>
-    <text x="756" y="526" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('RETURNED_LATE');</text>
-    <text x="756" y="542" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        calculateFine()</text>
+    <rect x="700" y="440" width="260" height="100" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 700 466 v -8 a18 18 0 0 1 18 -18 h 224 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="700" y1="466" x2="960" y2="466" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="700" y="440" width="260" height="100" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="830" y="458" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">הוחזרה באיחור</text>
+    <text x="711" y="486" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('RETURNED_LATE');</text>
+    <text x="711" y="502" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        calculateFine();</text>
+    <text x="711" y="518" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setClosureReason('LATE')</text>
   </g>
   <!-- אבודה (LOST) -->
   <g data-state="lost">
     <title>אבודה, עותק שבאיחור לא הוחזר בתוך תקופת הארכה, והוכרז אבוד, לחץ להסבר</title>
-    <rect x="1035" y="480" width="225" height="80" rx="18" ry="18" fill="#ffffff" stroke="none"/>
-    <path d="M 1035 506 v -8 a18 18 0 0 1 18 -18 h 189 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
-    <line x1="1035" y1="506" x2="1260" y2="506" stroke="#3b82f6" stroke-width="1"/>
-    <rect x="1035" y="480" width="225" height="80" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
-    <text x="1147.5" y="498" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">אבודה</text>
-    <text x="1046" y="526" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('LOST');</text>
-    <text x="1046" y="542" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        chargeReplacementFee()</text>
+    <rect x="1030" y="440" width="260" height="100" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 1030 466 v -8 a18 18 0 0 1 18 -18 h 224 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="1030" y1="466" x2="1290" y2="466" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="1030" y="440" width="260" height="100" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="1160" y="458" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">אבודה</text>
+    <text x="1041" y="486" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('LOST');</text>
+    <text x="1041" y="502" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        chargeReplacementFee();</text>
+    <text x="1041" y="518" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">        setClosureReason('LOST')</text>
+  </g>
+
+  <!-- ==== archive states (row 3) ==== -->
+  <!-- ארכיון תפעולי (ARCHIVED_OPS) -->
+  <g data-state="archive_ops">
+    <title>ארכיון תפעולי, הרשומה קיימת אך אינה מוצגת ברשימות הפעילות, לחץ להסבר</title>
+    <rect x="210" y="690" width="250" height="70" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 210 716 v -8 a18 18 0 0 1 18 -18 h 214 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="210" y1="716" x2="460" y2="716" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="210" y="690" width="250" height="70" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="335" y="708" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">ארכיון תפעולי</text>
+    <text x="221" y="736" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('ARCHIVED_OPS')</text>
+  </g>
+  <!-- ארכיון פיננסי (ARCHIVED_FIN) -->
+  <g data-state="archive_fin">
+    <title>ארכיון פיננסי, רשומה שנלווה אליה חיוב כספי ולכן נשמרת שבע שנים, לחץ להסבר</title>
+    <rect x="870" y="690" width="250" height="70" rx="18" ry="18" fill="#ffffff" stroke="none"/>
+    <path d="M 870 716 v -8 a18 18 0 0 1 18 -18 h 214 a18 18 0 0 1 18 18 v 8 z" fill="#eef4ff"/>
+    <line x1="870" y1="716" x2="1120" y2="716" stroke="#3b82f6" stroke-width="1"/>
+    <rect x="870" y="690" width="250" height="70" rx="18" ry="18" fill="none" stroke="#3b82f6" stroke-width="2"/>
+    <text x="995" y="708" font-size="12" font-weight="700" fill="#1e293b" text-anchor="middle" font-family="'Noto Sans Hebrew',sans-serif">ארכיון פיננסי</text>
+    <text x="881" y="736" font-size="10" fill="#334155" font-family="'IBM Plex Mono',monospace">entry / setStatus('ARCHIVED_FIN')</text>
   </g>
 
   <!-- ============ pseudostates ============ -->
@@ -158,9 +185,9 @@
     <circle cx="70" cy="217.5" r="8" fill="#1e293b"/>
   </g>
   <g data-state="final">
-    <title>מצב סיום, סוף מחזור החיים של ההשאלה, לחץ להסבר</title>
-    <circle cx="705" cy="700" r="12" fill="none" stroke="#1e293b" stroke-width="2"/>
-    <circle cx="705" cy="700" r="7" fill="#1e293b"/>
+    <title>מצב סיום, רשומת ההשאלה נגרעה מהמערכת ואינה קיימת עוד, לחץ להסבר</title>
+    <circle cx="690" cy="880" r="12" fill="none" stroke="#1e293b" stroke-width="2"/>
+    <circle cx="690" cy="880" r="7" fill="#1e293b"/>
   </g>
 
   <!-- ============ transitions ============ -->
@@ -169,27 +196,31 @@
   <!-- T2: מוזמנת -> מושאלת -->
   <path d="M 390 217.5 L 545 217.5" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T3: מוזמנת -> פקעה (time) -->
-  <path d="M 262.5 270 L 262.5 480" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M 240 270 L 240 380 L 170 380 L 170 440" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T4: מושאלת self-loop (renewal) -->
   <path d="M 640 165 C 640 108, 715 108, 715 165" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T5: מושאלת -> הוחזרה בזמן -->
-  <path d="M 580.5 270 L 580.5 480" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M 600 270 L 600 380 L 500 380 L 500 440" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T6: מושאלת -> באיחור (time) -->
   <path d="M 770 217.5 L 950 217.5" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T7: באיחור -> הוחזרה באיחור -->
-  <path d="M 1000 270 L 1000 375 L 857.5 375 L 857.5 480" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M 1000 270 L 1000 380 L 830 380 L 830 440" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T8: באיחור -> אבודה -->
-  <path d="M 1120 270 L 1120 480" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <path d="M 1130 270 L 1130 380 L 1160 380 L 1160 440" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
   <!-- T9: באיחור -> מושאלת BACK-ARC (manager extends) -->
   <path d="M 1062.5 165 L 1062.5 80 L 575 80 L 575 165" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <!-- T10: פקעה -> final (retention, enter left) -->
-  <path d="M 262.5 560 L 262.5 700 L 693 700" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <!-- T11: הוחזרה בזמן -> final (retention, enter top) -->
-  <path d="M 580.5 560 L 580.5 660 L 705 660 L 705 688" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <!-- T12: הוחזרה באיחור -> final (retention, enter right) -->
-  <path d="M 857.5 560 L 857.5 700 L 717 700" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
-  <!-- T13: אבודה -> final (retention, enter bottom) -->
-  <path d="M 1147.5 560 L 1147.5 725 L 705 725 L 705 712" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T10: פקעה -> ארכיון תפעולי (closure, time) -->
+  <path d="M 170 540 L 170 655 L 280 655 L 280 690" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T11: הוחזרה בזמן -> ארכיון תפעולי (closure, time) -->
+  <path d="M 500 540 L 500 655 L 390 655 L 390 690" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T12: הוחזרה באיחור -> ארכיון פיננסי (closure, time) -->
+  <path d="M 830 540 L 830 655 L 940 655 L 940 690" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T13: אבודה -> ארכיון פיננסי (closure, time) -->
+  <path d="M 1160 540 L 1160 655 L 1050 655 L 1050 690" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T14: ארכיון תפעולי -> final (RETENTION, 2y) -->
+  <path d="M 335 760 L 335 880 L 666 880" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+  <!-- T15: ארכיון פיננסי -> final (RETENTION, 7y) -->
+  <path d="M 995 760 L 995 880 L 714 880" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
 
   <!-- ============ transition labels ============ -->
   <g font-size="10" font-family="'Noto Sans Hebrew','IBM Plex Mono',monospace">
@@ -197,54 +228,62 @@
     <text class="tl" x="467" y="204" text-anchor="middle" fill="#334155">השאלה <tspan fill="#0891b2">[ספרן]</tspan></text>
     <text class="tl" x="467" y="217" text-anchor="middle" fill="#15803d">/ checkout()</text>
     <!-- T3: מוזמנת -> פקעה -->
-    <text class="tl" x="262.5" y="357" text-anchor="middle" fill="#334155">חלף מועד האיסוף</text>
-    <text class="tl" x="262.5" y="370" text-anchor="middle" fill="#0891b2">[לא נאסף תוך 3 ימים]</text>
-    <text class="tl" x="262.5" y="383" text-anchor="middle" fill="#15803d">/ releaseToNextInQueue()</text>
+    <text class="tl" x="240" y="313" text-anchor="middle" fill="#334155">חלף מועד האיסוף</text>
+    <text class="tl" x="240" y="326" text-anchor="middle" fill="#0891b2">[לא נאסף תוך 3 ימים]</text>
+    <text class="tl" x="240" y="339" text-anchor="middle" fill="#15803d">/ releaseToNextInQueue()</text>
     <!-- T4: מושאלת self-loop -->
     <text class="tl" x="677.5" y="98" text-anchor="middle" fill="#334155">חידוש <tspan fill="#0891b2">[renewalsCount &lt; maxRenewals]</tspan></text>
     <text class="tl" x="677.5" y="111" text-anchor="middle" fill="#15803d">/ dueDate += period; renewalsCount++</text>
     <!-- T5: מושאלת -> הוחזרה בזמן -->
-    <text class="tl" x="580.5" y="357" text-anchor="middle" fill="#334155">קליטת החזרה <tspan fill="#0891b2">[ספרן]</tspan></text>
-    <text class="tl" x="580.5" y="370" text-anchor="middle" fill="#15803d">/ setReturnDate(today)</text>
+    <text class="tl" x="600" y="320" text-anchor="middle" fill="#334155">קליטת החזרה <tspan fill="#0891b2">[ספרן]</tspan></text>
+    <text class="tl" x="600" y="333" text-anchor="middle" fill="#15803d">/ setReturnDate(today)</text>
     <!-- T6: מושאלת -> באיחור -->
     <text class="tl" x="860" y="204" text-anchor="middle" fill="#334155">חלף תאריך היעד</text>
     <text class="tl" x="860" y="217" text-anchor="middle" fill="#15803d">/ markOverdue()</text>
     <!-- T7: באיחור -> הוחזרה באיחור -->
-    <text class="tl" x="928" y="368" text-anchor="middle" fill="#334155">קליטת החזרה <tspan fill="#0891b2">[ספרן]</tspan></text>
-    <text class="tl" x="928" y="381" text-anchor="middle" fill="#15803d">/ calculateFine()</text>
+    <text class="tl" x="915" y="320" text-anchor="middle" fill="#334155">קליטת החזרה <tspan fill="#0891b2">[ספרן]</tspan></text>
+    <text class="tl" x="915" y="333" text-anchor="middle" fill="#15803d">/ calculateFine()</text>
     <!-- T8: באיחור -> אבודה -->
-    <text class="tl" x="1120" y="357" text-anchor="middle" fill="#334155">הכרזת אבוד</text>
-    <text class="tl" x="1120" y="370" text-anchor="middle" fill="#0891b2">[ספרן, לאחר תקופת ארכה]</text>
-    <text class="tl" x="1120" y="383" text-anchor="middle" fill="#15803d">/ chargeReplacementFee()</text>
+    <text class="tl" x="1195" y="313" text-anchor="middle" fill="#334155">הכרזת אבוד</text>
+    <text class="tl" x="1195" y="326" text-anchor="middle" fill="#0891b2">[ספרן, לאחר תקופת ארכה]</text>
+    <text class="tl" x="1195" y="339" text-anchor="middle" fill="#15803d">/ chargeReplacementFee()</text>
     <!-- T9: back-arc באיחור -> מושאלת -->
     <text class="tl" x="820" y="72" text-anchor="middle" fill="#334155">הארכת איחור <tspan fill="#0891b2">[מנהל סניף בלבד]</tspan></text>
     <text class="tl" x="820" y="59" text-anchor="middle" fill="#15803d">/ setStatus(ACTIVE); extendDueDate()</text>
-    <!-- T10-T13: closing/completion -> single final (each labelled) -->
-    <text class="tl" x="262.5" y="600" text-anchor="middle" fill="#334155">רשומת ההשאלה נשמרה לדיווח</text>
-    <text class="tl" x="262.5" y="613" text-anchor="middle" fill="#15803d">/ archiveRecord()</text>
-    <text class="tl" x="580.5" y="600" text-anchor="middle" fill="#334155">רשומת ההשאלה נשמרה לדיווח</text>
-    <text class="tl" x="580.5" y="613" text-anchor="middle" fill="#15803d">/ archiveRecord()</text>
-    <text class="tl" x="857.5" y="600" text-anchor="middle" fill="#334155">רשומת ההשאלה נשמרה לדיווח</text>
-    <text class="tl" x="857.5" y="613" text-anchor="middle" fill="#15803d">/ archiveRecord()</text>
-    <text class="tl" x="1147.5" y="600" text-anchor="middle" fill="#334155">רשומת ההשאלה נשמרה לדיווח</text>
-    <text class="tl" x="1147.5" y="613" text-anchor="middle" fill="#15803d">/ archiveRecord()</text>
+    <!-- T10-T13: outcome -> archive (closure window, time events) -->
+    <text class="tl" x="170" y="578" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+    <text class="tl" x="170" y="591" text-anchor="middle" fill="#15803d">/ removeFromActiveLists()</text>
+    <text class="tl" x="500" y="578" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+    <text class="tl" x="500" y="591" text-anchor="middle" fill="#15803d">/ removeFromActiveLists()</text>
+    <text class="tl" x="830" y="578" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+    <text class="tl" x="830" y="591" text-anchor="middle" fill="#15803d">/ removeFromActiveLists()</text>
+    <text class="tl" x="1160" y="578" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+    <text class="tl" x="1160" y="591" text-anchor="middle" fill="#15803d">/ removeFromActiveLists()</text>
+    <!-- T14: retention 2y -->
+    <text class="tl" x="335" y="793" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(שנתיים)</text>
+    <text class="tl" x="335" y="806" text-anchor="middle" fill="#0891b2">[אין רשומות שמורות המפנות להשאלה]</text>
+    <text class="tl" x="335" y="819" text-anchor="middle" fill="#15803d">/ purge()</text>
+    <!-- T15: retention 7y -->
+    <text class="tl" x="995" y="793" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(7 שנים)</text>
+    <text class="tl" x="995" y="806" text-anchor="middle" fill="#0891b2">[אין רשומות שמורות המפנות להשאלה]</text>
+    <text class="tl" x="995" y="819" text-anchor="middle" fill="#15803d">/ purge()</text>
   </g>
 
   <!-- ============ legend ============ -->
-  <line x1="24" y1="770" x2="1296" y2="770" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="24" y1="930" x2="1296" y2="930" stroke="#e2e8f0" stroke-width="1"/>
   <g font-size="10" font-family="'Noto Sans Hebrew','IBM Plex Mono',monospace" fill="#64748b">
-    <circle cx="80" cy="796" r="6" fill="#1e293b"/>
-    <text x="94" y="800">מצב התחלתי</text>
-    <circle cx="185" cy="796" r="8" fill="none" stroke="#1e293b" stroke-width="1.5"/>
-    <circle cx="185" cy="796" r="4" fill="#1e293b"/>
-    <text x="200" y="800">מצב סיום</text>
-    <rect x="280" y="788" width="34" height="16" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="322" y="800">מצב</text>
-    <path d="M 400 795 C 400 785, 420 785, 420 795" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
-    <text x="432" y="800">מעבר-עצמי (self-loop)</text>
-    <line x1="600" y1="796" x2="640" y2="796" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
-    <text x="650" y="800">מעבר: אירוע <tspan fill="#0891b2">[תנאי]</tspan> <tspan fill="#15803d">/ פעולה</tspan></text>
-    <text x="900" y="800">אירועי <tspan font-style="italic">after(...)</tspan> = אירועי זמן, ללא שחקן אנושי</text>
+    <circle cx="80" cy="956" r="6" fill="#1e293b"/>
+    <text x="94" y="960">מצב התחלתי</text>
+    <circle cx="185" cy="956" r="8" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+    <circle cx="185" cy="956" r="4" fill="#1e293b"/>
+    <text x="200" y="960">מצב סיום = האובייקט אינו קיים עוד במערכת</text>
+    <rect x="450" y="948" width="34" height="16" rx="6" fill="#fff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="492" y="960">מצב</text>
+    <path d="M 560 955 C 560 945, 580 945, 580 955" fill="none" stroke="#334155" stroke-width="1.6" marker-end="url(#arrow)"/>
+    <text x="592" y="960">מעבר-עצמי (self-loop)</text>
+    <line x1="760" y1="956" x2="800" y2="956" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <text x="810" y="960">מעבר: אירוע <tspan fill="#0891b2">[תנאי]</tspan> <tspan fill="#15803d">/ פעולה</tspan></text>
+    <text x="1010" y="960">אירועי <tspan font-style="italic">after(...)</tspan> = אירועי זמן, ללא שחקן אנושי</text>
   </g>
 </svg>
 </div>
@@ -285,36 +324,46 @@ const diagramModel = {
         x: 950, y: 165, w: 225, h: 105, subElements: [] },
       { kind: 'state', id: 'expired', name: 'פקעה', isComposite: false,
         statusConstant: 'EXPIRED',
-        activities: { entry: ["setStatus('EXPIRED')", 'releaseToNextInQueue()'], exit: [], do: [] },
-        x: 150, y: 480, w: 225, h: 80, subElements: [] },
+        activities: { entry: ["setStatus('EXPIRED')", 'releaseToNextInQueue()', "setClosureReason('EXPIRED')"], exit: [], do: [] },
+        x: 40, y: 440, w: 260, h: 100, subElements: [] },
       { kind: 'state', id: 'returned_on_time', name: 'הוחזרה בזמן', isComposite: false,
         statusConstant: 'RETURNED_ON_TIME',
-        activities: { entry: ["setStatus('RETURNED_ON_TIME')", 'setReturnDate(today)'], exit: [], do: [] },
-        x: 468, y: 480, w: 225, h: 80, subElements: [] },
+        activities: { entry: ["setStatus('RETURNED_ON_TIME')", 'setReturnDate(today)', "setClosureReason('ON_TIME')"], exit: [], do: [] },
+        x: 370, y: 440, w: 260, h: 100, subElements: [] },
       { kind: 'state', id: 'returned_late', name: 'הוחזרה באיחור', isComposite: false,
         statusConstant: 'RETURNED_LATE',
-        activities: { entry: ["setStatus('RETURNED_LATE')", 'calculateFine()'], exit: [], do: [] },
-        x: 745, y: 480, w: 225, h: 80, subElements: [] },
+        activities: { entry: ["setStatus('RETURNED_LATE')", 'calculateFine()', "setClosureReason('LATE')"], exit: [], do: [] },
+        x: 700, y: 440, w: 260, h: 100, subElements: [] },
       { kind: 'state', id: 'lost', name: 'אבודה', isComposite: false,
         statusConstant: 'LOST',
-        activities: { entry: ["setStatus('LOST')", 'chargeReplacementFee()'], exit: [], do: [] },
-        x: 1035, y: 480, w: 225, h: 80, subElements: [] },
-      { kind: 'pseudostate', id: 'final', subKind: 'final', x: 705, y: 700 }
+        activities: { entry: ["setStatus('LOST')", 'chargeReplacementFee()', "setClosureReason('LOST')"], exit: [], do: [] },
+        x: 1030, y: 440, w: 260, h: 100, subElements: [] },
+      { kind: 'state', id: 'archive_ops', name: 'ארכיון תפעולי', isComposite: false,
+        statusConstant: 'ARCHIVED_OPS',
+        activities: { entry: ["setStatus('ARCHIVED_OPS')"], exit: [], do: [] },
+        x: 210, y: 690, w: 250, h: 70, subElements: [] },
+      { kind: 'state', id: 'archive_fin', name: 'ארכיון פיננסי', isComposite: false,
+        statusConstant: 'ARCHIVED_FIN',
+        activities: { entry: ["setStatus('ARCHIVED_FIN')"], exit: [], do: [] },
+        x: 870, y: 690, w: 250, h: 70, subElements: [] },
+      { kind: 'pseudostate', id: 'final', subKind: 'final', x: 690, y: 880 }
     ],
     relationships: [
-      { kind: 'transition', id: 't1',  from: 'init',             to: 'reserved',          event: '', guard: '', action: '', isSelf: false },
-      { kind: 'transition', id: 't2',  from: 'reserved',         to: 'active',            event: 'השאלה', guard: 'ספרן', action: 'checkout()', isSelf: false },
-      { kind: 'transition', id: 't3',  from: 'reserved',         to: 'expired',           event: 'חלף מועד האיסוף', guard: 'לא נאסף תוך 3 ימים', action: 'releaseToNextInQueue()', isSelf: false },
-      { kind: 'transition', id: 't4',  from: 'active',           to: 'active',            event: 'חידוש', guard: 'renewalsCount < maxRenewals', action: 'dueDate += period; renewalsCount++', isSelf: true },
-      { kind: 'transition', id: 't5',  from: 'active',           to: 'returned_on_time',  event: 'קליטת החזרה', guard: 'ספרן', action: 'setReturnDate(today)', isSelf: false },
-      { kind: 'transition', id: 't6',  from: 'active',           to: 'overdue',           event: 'חלף תאריך היעד', guard: '', action: 'markOverdue()', isSelf: false },
-      { kind: 'transition', id: 't7',  from: 'overdue',          to: 'returned_late',     event: 'קליטת החזרה', guard: 'ספרן', action: 'calculateFine()', isSelf: false },
-      { kind: 'transition', id: 't8',  from: 'overdue',          to: 'lost',              event: 'הכרזת אבוד', guard: 'ספרן, לאחר תקופת ארכה', action: 'chargeReplacementFee()', isSelf: false },
-      { kind: 'transition', id: 't9',  from: 'overdue',          to: 'active',            event: 'הארכת איחור', guard: 'מנהל סניף בלבד', action: 'setStatus(ACTIVE); extendDueDate()', isSelf: false },
-      { kind: 'transition', id: 't10', from: 'expired',          to: 'final',             event: 'רשומת ההשאלה נשמרה לדיווח', guard: '', action: 'archiveRecord()', isSelf: false },
-      { kind: 'transition', id: 't11', from: 'returned_on_time', to: 'final',             event: 'רשומת ההשאלה נשמרה לדיווח', guard: '', action: 'archiveRecord()', isSelf: false },
-      { kind: 'transition', id: 't12', from: 'returned_late',    to: 'final',             event: 'רשומת ההשאלה נשמרה לדיווח', guard: '', action: 'archiveRecord()', isSelf: false },
-      { kind: 'transition', id: 't13', from: 'lost',             to: 'final',             event: 'רשומת ההשאלה נשמרה לדיווח', guard: '', action: 'archiveRecord()', isSelf: false }
+      { kind: 'transition', id: 't1',  from: 'init',             to: 'reserved',     event: '', guard: '', action: '', isSelf: false },
+      { kind: 'transition', id: 't2',  from: 'reserved',         to: 'active',       event: 'השאלה', guard: 'ספרן', action: 'checkout()', isSelf: false },
+      { kind: 'transition', id: 't3',  from: 'reserved',         to: 'expired',      event: 'חלף מועד האיסוף', guard: 'לא נאסף תוך 3 ימים', action: 'releaseToNextInQueue()', isSelf: false },
+      { kind: 'transition', id: 't4',  from: 'active',           to: 'active',       event: 'חידוש', guard: 'renewalsCount < maxRenewals', action: 'dueDate += period; renewalsCount++', isSelf: true },
+      { kind: 'transition', id: 't5',  from: 'active',           to: 'returned_on_time', event: 'קליטת החזרה', guard: 'ספרן', action: 'setReturnDate(today)', isSelf: false },
+      { kind: 'transition', id: 't6',  from: 'active',           to: 'overdue',      event: 'חלף תאריך היעד', guard: '', action: 'markOverdue()', isSelf: false },
+      { kind: 'transition', id: 't7',  from: 'overdue',          to: 'returned_late', event: 'קליטת החזרה', guard: 'ספרן', action: 'calculateFine()', isSelf: false },
+      { kind: 'transition', id: 't8',  from: 'overdue',          to: 'lost',         event: 'הכרזת אבוד', guard: 'ספרן, לאחר תקופת ארכה', action: 'chargeReplacementFee()', isSelf: false },
+      { kind: 'transition', id: 't9',  from: 'overdue',          to: 'active',       event: 'הארכת איחור', guard: 'מנהל סניף בלבד', action: 'setStatus(ACTIVE); extendDueDate()', isSelf: false },
+      { kind: 'transition', id: 't10', from: 'expired',          to: 'archive_ops',  event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't11', from: 'returned_on_time', to: 'archive_ops',  event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't12', from: 'returned_late',    to: 'archive_fin',  event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't13', from: 'lost',             to: 'archive_fin',  event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't14', from: 'archive_ops',      to: 'final',        event: 'after(שנתיים)', guard: 'אין רשומות שמורות המפנות להשאלה', action: 'purge()', isSelf: false },
+      { kind: 'transition', id: 't15', from: 'archive_fin',      to: 'final',        event: 'after(7 שנים)', guard: 'אין רשומות שמורות המפנות להשאלה', action: 'purge()', isSelf: false }
     ]
   }]
 };
@@ -408,37 +457,51 @@ const STATE_INFO = {
   'expired': {
     title: 'פקעה',
     status: 'EXPIRED',
-    covers: 'ההזמנה לא נאספה בתוך שלושה ימים ופקעה מאליה. העותק שהוקצה משוחרר ומועבר למנוי הבא בתור. זהו סיום "שלילי" של השאלה שמעולם לא יצאה לפועל.',
-    logic: 'מגיעים לכאן רק מ"מוזמנת", ורק באירוע זמן (חלף מועד האיסוף). פעולת הכניסה משחררת את העותק לבא בתור. לאחר תקופת שמירה הרשומה עוברת למצב הסיום, היא אינה נמחקת מיד, לצורכי דוחות והיסטוריה.',
-    teach: 'לא כל סיום הוא "הצלחה". הבחנה בין פקיעה (הזמנה שלא נאספה) לבין החזרה בזמן ממחישה שמצבים סופיים נבדלים לפי המשמעות העסקית, לא רק לפי התוצאה הטכנית.'
+    covers: 'ההזמנה לא נאספה בתוך שלושה ימים ופקעה מאליה. העותק שהוקצה משוחרר ומועבר למנוי הבא בתור. זהו סיום "שלילי" של השאלה שמעולם לא יצאה לפועל, אך הוא עדיין עובדה עסקית: הוא מופיע בדוח ניצול התור.',
+    logic: 'מגיעים לכאן רק מ"מוזמנת", ורק באירוע זמן (חלף מועד האיסוף). פעולת הכניסה משחררת את העותק לבא בתור ורושמת את סיבת הסגירה. זהו מצב תוצאה, לא סוף מחזור החיים: כעבור 30 יום הרשומה יורדת מהרשימות הפעילות ועוברת ל"ארכיון תפעולי".',
+    teach: 'לא כל סיום הוא "הצלחה", ולא כל סיום הוא סוף. פקיעה היא תוצאה עסקית מובחנת מהחזרה בזמן, ושתיהן ממשיכות משם אל הארכיון. שימו לב ל-setClosureReason: הוא נשמר בתכונה נפרדת, כדי שהמעבר לארכיון (שדורס את status) לא ימחק את הסיבה שבגללה ההשאלה נסגרה.'
   },
   'returned_on_time': {
     title: 'הוחזרה בזמן',
     status: 'RETURNED_ON_TIME',
     covers: 'העותק הוחזר לפני תאריך היעד, ללא קנס. נרשם תאריך ההחזרה בפועל. זהו הסיום ה"חיובי" והרצוי של מחזור החיים.',
-    logic: 'מגיעים לכאן מ"מושאלת" באירוע "קליטת החזרה" של הספרן. אין קנס ואין ימי איחור. לאחר תקופת שמירה הרשומה עוברת למצב הסיום. שימו לב: המצב שומר את תאריך ההחזרה, כאן מתחדדת הדרישה הבעייתית בסיפור (מנהל הגבייה ביקש לא לשמור מועד מדויק), שכן בלי מועד/תאריך אי-אפשר לזקוף החזרה נכון.',
-    teach: 'מצב סיום חיובי אינו חייב להיות "ריק", הוא נושא נתוני סגירה (תאריך החזרה). כל ארבעת מצבי הסיום מנקזים אל מצב סיום יחיד, ולא אל ארבעה מצבי סיום נפרדים, ריבוי מצבי סיום נפרדים אינו נלמד בקורס.'
+    logic: 'מגיעים לכאן מ"מושאלת" באירוע "קליטת החזרה" של הספרן. אין קנס ואין ימי איחור, ולכן הרשומה אינה רשומה פיננסית: היא ממשיכה ל"ארכיון תפעולי" ותקופת השמירה שלה קצרה. שימו לב: המצב שומר את תאריך ההחזרה, כאן מתחדדת הדרישה הבעייתית בסיפור (מנהל הגבייה ביקש לא לשמור מועד מדויק), שכן בלי מועד/תאריך אי-אפשר לזקוף החזרה נכון.',
+    teach: 'מצב תוצאה אינו חייב להיות "ריק", הוא נושא נתוני סגירה (תאריך החזרה, סיבת סגירה). וחשוב מכך: הוא אינו מצב הסיום. ההשאלה עדיין קיימת במערכת, וניתן לשאול עליה שאלות, עד שתיגרע בתום תקופת השמירה.'
   },
   'returned_late': {
     title: 'הוחזרה באיחור',
     status: 'RETURNED_LATE',
     covers: 'העותק הוחזר אחרי תאריך היעד. הספרן מחשב קנס לפי מספר ימי האיחור ומחייב את המנוי. סיום לגיטימי אך "יקר" של ההשאלה.',
-    logic: 'מגיעים לכאן מ"באיחור" באירוע "קליטת החזרה" (ספרן), ופעולת הכניסה מחשבת את הקנס. השוו ל"הוחזרה בזמן": אותה פעולת החזרה, אך המצב המקורי (באיחור מול מושאלת) קובע אם נוצר קנס. לאחר תקופת שמירה, מעבר למצב הסיום.',
-    teach: 'אותו אירוע ("קליטת החזרה") מוביל לשני מצבים שונים בהתאם למצב המוצא, זו הסתעפות לפי מצב, לא לפי "כן/לא" של תרשים זרימה. חישוב הקנס הוא action על המעבר/כניסה, לא מצב בפני עצמו.'
+    logic: 'מגיעים לכאן מ"באיחור" באירוע "קליטת החזרה" (ספרן), ופעולת הכניסה מחשבת את הקנס. השוו ל"הוחזרה בזמן": אותה פעולת החזרה, אך המצב המקורי (באיחור מול מושאלת) קובע אם נוצר קנס. מכיוון שנוצר כאן חיוב כספי, הרשומה ממשיכה ל"ארכיון פיננסי" ולא ל"ארכיון תפעולי", והיא נשמרת שבע שנים ולא שנתיים.',
+    teach: 'אותו אירוע ("קליטת החזרה") מוביל לשני מצבים שונים בהתאם למצב המוצא, זו הסתעפות לפי מצב, לא לפי "כן/לא" של תרשים זרימה. שימו לב שההבדל בין השניים ממשיך גם אחרי הסגירה: חיוב כספי קובע תקופת שמירה ארוכה יותר.'
   },
   'lost': {
     title: 'אבודה',
     status: 'LOST',
     covers: 'עותק שהיה באיחור לא הוחזר בתוך תקופת הארכה, והספרן הכריז עליו כ"אבוד". המנוי מחויב בדמי החלפה. סיום "שלילי" שבו העותק לא חוזר למלאי.',
-    logic: 'מגיעים לכאן רק מ"באיחור", בהכרזה מפורשת של ספרן (לא אירוע זמן אוטומטי, הסיפור מחייב פעולת אדם) ורק לאחר תקופת ארכה (guard). פעולת הכניסה מחייבת דמי החלפה. לאחר תקופת שמירה, מעבר למצב הסיום.',
+    logic: 'מגיעים לכאן רק מ"באיחור", בהכרזה מפורשת של ספרן (לא אירוע זמן אוטומטי, הסיפור מחייב פעולת אדם) ורק לאחר תקופת ארכה (guard). פעולת הכניסה מחייבת דמי החלפה, ולכן, כמו "הוחזרה באיחור", הרשומה היא רשומה פיננסית וממשיכה ל"ארכיון פיננסי".',
     teach: 'הבחנה בין טריגר-זמן לטריגר-אדם: הכניסה ל"באיחור" אוטומטית (זמן), אך ההכרזה על "אבוד" דורשת שיקול דעת אנושי (ספרן), ולכן היא אירוע יזום ולא after(...). שימו לב ל-guard "לאחר תקופת ארכה" שמונע הכרזה מוקדמת מדי.'
+  },
+  'archive_ops': {
+    title: 'ארכיון תפעולי',
+    status: 'ARCHIVED_OPS',
+    covers: 'ההשאלה נסגרה ואינה פעילה, אך הרשומה קיימת במערכת: היא פשוט אינה מוצגת עוד ברשימות העבודה של הספרן (המסננים מציגים רק השאלות פעילות). כאן מגיעות ההשאלות שנסגרו בלי חיוב כספי, פקעה והוחזרה בזמן.',
+    logic: 'נכנסים אליו כעבור 30 יום ממצב התוצאה, אחרי שהדוח החודשי רץ ואין עוד סיבה תפעולית להציג את ההשאלה. יש לו יציאה אחת בלבד: מעבר אל מצב הסיום באירוע זמן after(שנתיים), עם guard שמוודא שאין רשומה שמורה אחרת המפנה להשאלה. תקופת השמירה, שנתיים, נגזרת מהצורך בהשוואות שנה-מול-שנה של ניצול הקטלוג.',
+    teach: 'זהו הלב של התרשים: "נסגר" אינו "נמחק". האובייקט ממשיך להתקיים במערכת ולענות על שאלות היסטוריות, ורק בתום תקופת שמירה מוגדרת הוא נגרע. שימו לב שאין למצב פעילות do, "להישמר" אינו התנהגות אלא עובדה.'
+  },
+  'archive_fin': {
+    title: 'ארכיון פיננסי',
+    status: 'ARCHIVED_FIN',
+    covers: 'אותו תפקיד כמו הארכיון התפעולי, אך עבור השאלות שנלווה אליהן חיוב כספי: קנס איחור או דמי החלפה. אלה רשומות הנהלת חשבונות לכל דבר.',
+    logic: 'נכנסים אליו מ"הוחזרה באיחור" ומ"אבודה", שני מצבי התוצאה שיצרו חיוב. היציאה היחידה היא after(7 שנים) אל מצב הסיום. שבע שנים ולא שנתיים, משום שרשומה שנלווה אליה חיוב כפופה לחובת שמירת ספרי חשבונות; אי-אפשר לגרוע אותה במועד התפעולי.',
+    teach: 'זו הסיבה שהתרשים מפצל את הארכיון לשניים במקום לנקז את הכול לארכיון אחד: תקופת השמירה איננה תכונה של האובייקט אלא של סוג הרשומה. כשלשתי תוצאות יש שעונים שונים, אי-אפשר לתלות אותן באותו חץ יציאה.'
   },
   'final': {
     title: 'מצב סיום (Final)',
     status: '',
-    covers: 'פסאודו-מצב שמסמן את סוף מחזור החיים: ההשאלה סיימה את תפקידה ואינה מגיבה עוד לאירועים.',
-    logic: 'מגיעים אליו מארבעת מצבי הסיום העסקיים, פקעה, הוחזרה בזמן, הוחזרה באיחור ואבודה, כל אחד במעבר-סגירה נושא-תווית ("רשומת ההשאלה נשמרה לדיווח / archiveRecord()"): הרשומה נשמרת לצורכי דוחות והיסטוריה, ורק אז נגרעת מהמערכת הפעילה. כל ארבעת החצים מתנקזים אל מצב סיום יחיד.',
-    teach: 'לכל תרשים חייב להיות לפחות מצב סיום אחד, אך בדיוק אחד מספיק גם כשיש כמה מסלולי סיום. ריבוי מצבי סיום נפרדים אינו נלמד בקורס; המוסכמה היא לנקז את כל מצבי הסיום אל מצב סיום יחיד. כל מעבר אל מצב הסיום, כמו כל מעבר שאינו יוצא מהמצב ההתחלתי, נושא תווית אירוע.'
+    covers: 'פסאודו-מצב שמשמעותו אחת בלבד: רשומת ההשאלה נגרעה מהמערכת ואינה קיימת עוד. זהו סוף הקיום, לא סוף התהליך.',
+    logic: 'מגיעים אליו משני מצבי הארכיון בלבד, ובשני המקרים באירוע זמן: after(שנתיים) מהארכיון התפעולי ו-after(7 שנים) מהארכיון הפיננסי. אף מצב תוצאה עסקי אינו מחובר ישירות למצב הסיום, משום שסגירת ההשאלה אינה מוחקת אותה. שני החצים מתנקזים אל מצב סיום יחיד.',
+    teach: 'זו הנקודה הנבחנת: מצב הסיום אינו "ההשאלה הסתיימה" אלא "ההשאלה כבר לא במערכת". מי שמסמן את "הוחזרה בזמן" או "אבודה" כמצב סיום, טוען למעשה שהרשומה נמחקת ברגע ההחזרה, וזו סתירה לכל דוח היסטורי שהספרייה מפיקה. הטריגר היחיד שמוביל לכאן הוא חלוף תקופת השמירה.'
   }
 };
 

@@ -26,7 +26,7 @@
 
   <div class="header-bar">
     <h1>פתרון שאלה 8, תרשים מצבים (חוזה שכירות), קמפוס בית</h1>
-    <p>מסלול החיים של אובייקט RentalAgreement (חוזה שכירות): על־מצב "בתהליך אישור" המקבץ את תת־המצבים שלפני כניסה לתוקף, לולאת תיקון חוזרת (8.2), מעבר הפיך בין פעיל לבפיגור, ושתי דרכי סיום נבדלות (8.3): ביטול מול סיום טבעי.</p>
+    <p>מסלול החיים של אובייקט RentalAgreement (חוזה שכירות): על־מצב "בתהליך אישור" המקבץ את תת־המצבים שלפני כניסה לתוקף, לולאת תיקון חוזרת (8.2), מעבר הפיך בין פעיל לבפיגור, ושתי תוצאות נבדלות (8.3): ביטול מול סיום טבעי. שתיהן <b>מצבים</b>, לא מצבי סיום: החוזה ממשיך אל "ארכיון", ורק חלוף תקופת השמירה (7 שנים) גורע אותו מהמערכת. החריג המנוגד: <b>טיוטה נטושה נמחקת ישירות</b>, בלי לעבור בארכיון, כי מעולם לא הפכה לעובדה עסקית שיש עליה מה לדווח.</p>
   </div>
 
   <div class="diagram-wrap">
@@ -171,8 +171,8 @@
       <rect x="1180" y="315" width="210" height="12" fill="#f3e8ff"/>
       <text x="1285" y="319" text-anchor="middle" font-size="14" font-weight="700" fill="#4c1d95" font-family="Noto Sans Hebrew, sans-serif">הסתיים</text>
       <line x1="1180" y1="327" x2="1390" y2="327" stroke="#7c3aed" stroke-width="1"/>
-      <text x="1190" y="346" font-size="9.3" font-style="italic" fill="#4c1d95" font-family="IBM Plex Mono">entry / setStatus('ENDED')</text>
-      <text x="1190" y="362" font-size="9.3" font-style="italic" fill="#4c1d95" font-family="IBM Plex Mono">do / keepForReporting()</text>
+      <text x="1190" y="346" font-size="9.3" font-style="italic" fill="#4c1d95" font-family="IBM Plex Mono">entry / setStatus('ENDED');</text>
+      <text x="1190" y="362" font-size="8.4" font-style="italic" fill="#4c1d95" font-family="IBM Plex Mono">        setClosureReason('ENDED')</text>
     </g>
 
     <!-- ================= CANCELLED ================= -->
@@ -182,8 +182,18 @@
       <rect x="430" y="705" width="205" height="12" fill="#fee2e2"/>
       <text x="532.5" y="709" text-anchor="middle" font-size="14" font-weight="700" fill="#7f1d1d" font-family="Noto Sans Hebrew, sans-serif">בוטל</text>
       <line x1="430" y1="717" x2="635" y2="717" stroke="#b91c1c" stroke-width="1"/>
-      <text x="440" y="736" font-size="9.3" font-style="italic" fill="#7f1d1d" font-family="IBM Plex Mono">entry / setStatus('CANCELLED')</text>
-      <text x="440" y="752" font-size="9.3" font-style="italic" fill="#7f1d1d" font-family="IBM Plex Mono">do / keepForReporting()</text>
+      <text x="440" y="736" font-size="9.3" font-style="italic" fill="#7f1d1d" font-family="IBM Plex Mono">entry / setStatus('CANCELLED');</text>
+      <text x="440" y="752" font-size="8" font-style="italic" fill="#7f1d1d" font-family="IBM Plex Mono">        setClosureReason('CANCELLED')</text>
+    </g>
+
+    <!-- ================= ARCHIVE ================= -->
+    <g id="state-archive" filter="url(#shadow)">
+      <rect x="1180" y="490" width="210" height="62" rx="18" ry="18" fill="#ffffff" stroke="#475569" stroke-width="2"/>
+      <rect x="1180" y="490" width="210" height="27" rx="18" ry="18" fill="#f1f5f9"/>
+      <rect x="1180" y="505" width="210" height="12" fill="#f1f5f9"/>
+      <text x="1285" y="509" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b" font-family="Noto Sans Hebrew, sans-serif">ארכיון</text>
+      <line x1="1180" y1="517" x2="1390" y2="517" stroke="#475569" stroke-width="1"/>
+      <text x="1190" y="536" font-size="9.3" font-style="italic" fill="#334155" font-family="IBM Plex Mono">entry / setStatus('ARCHIVED')</text>
     </g>
 
     <!-- ================= FINAL PSEUDOSTATE ================= -->
@@ -246,39 +256,61 @@
       <text x="1134" y="500" text-anchor="middle" font-size="8.4" fill="#0891b2">[אירוע זמן]</text>
     </g>
 
-    <!-- ===== ENDED -> FINAL ===== -->
-    <path d="M 1285 380 L 1285 626" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <!-- ===== ENDED -> ARCHIVE (closure window, time event) ===== -->
+    <path d="M 1285 380 L 1285 488" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
     <g font-family="IBM Plex Mono" font-size="9.2">
-      <rect x="1180" y="532" width="210" height="14" fill="white" opacity="0.95" rx="3"/>
-      <text x="1285" y="542" text-anchor="middle" fill="#334155">רשומת הסיום נשמרה לדיווח</text>
-      <rect x="1210" y="548" width="150" height="13" fill="white" opacity="0.9" rx="3"/>
-      <text x="1285" y="558" text-anchor="middle" font-size="8.4" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ archiveRecord()</text>
+      <rect x="1215" y="408" width="140" height="14" fill="white" opacity="0.95" rx="3"/>
+      <text x="1285" y="418" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+      <rect x="1180" y="424" width="210" height="13" fill="white" opacity="0.9" rx="3"/>
+      <text x="1285" y="434" text-anchor="middle" font-size="8.4" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ removeFromActiveLists()</text>
     </g>
 
-    <!-- ===== CANCELLED -> FINAL ===== -->
-    <path d="M 635 730 L 1215 730 L 1215 648 L 1271 641" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <!-- ===== CANCELLED -> ARCHIVE (closure window, time event) ===== -->
+    <path d="M 635 730 L 1140 730 L 1140 521 L 1178 521" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
     <g font-family="IBM Plex Mono" font-size="9.2">
-      <rect x="790" y="708" width="210" height="14" fill="white" opacity="0.95" rx="3"/>
-      <text x="895" y="718" text-anchor="middle" fill="#334155">רשומת הביטול נשמרה לדיווח</text>
-      <rect x="820" y="724" width="150" height="13" fill="white" opacity="0.9" rx="3"/>
-      <text x="895" y="734" text-anchor="middle" font-size="8.4" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ archiveRecord()</text>
+      <rect x="805" y="708" width="140" height="14" fill="white" opacity="0.95" rx="3"/>
+      <text x="875" y="718" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(30 יום)</text>
+      <rect x="770" y="724" width="210" height="13" fill="white" opacity="0.9" rx="3"/>
+      <text x="875" y="734" text-anchor="middle" font-size="8.4" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ removeFromActiveLists()</text>
+    </g>
+
+    <!-- ===== S1 (טיוטה) -> FINAL : DIRECT DELETE, no archive ===== -->
+    <!-- the business-fact exception: an abandoned draft never became a contract -->
+    <path d="M 160 285 L 70 285 L 70 640 L 1273 640" fill="none" stroke="#b91c1c" stroke-width="2.6" marker-end="url(#arrow-red)"/>
+    <g font-family="IBM Plex Mono" font-size="10">
+      <rect x="690" y="596" width="322" height="15" fill="white" opacity="0.96" rx="3"/>
+      <text x="851" y="607" text-anchor="middle" font-weight="700" fill="#b91c1c">מחיקת טיוטה נטושה <tspan font-weight="400" fill="#0891b2">[רכז השיבוץ; טרם נשלחה לחתימה]</tspan></text>
+      <rect x="700" y="613" width="302" height="14" fill="white" opacity="0.92" rx="3"/>
+      <text x="851" y="624" text-anchor="middle" font-size="8.6" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ delete(), ישירות למצב הסיום, בלי ארכיון</text>
+    </g>
+
+    <!-- ===== ARCHIVE -> FINAL (retention expiry) ===== -->
+    <path d="M 1285 552 L 1285 626" fill="none" stroke="#334155" stroke-width="1.8" marker-end="url(#arrow)"/>
+    <g font-family="IBM Plex Mono" font-size="9.2">
+      <rect x="1220" y="562" width="130" height="14" fill="white" opacity="0.95" rx="3"/>
+      <text x="1285" y="572" text-anchor="middle" fill="#334155" style="direction:ltr;unicode-bidi:isolate">after(7 שנים)</text>
+      <rect x="1145" y="578" width="280" height="13" fill="white" opacity="0.95" rx="3"/>
+      <text x="1285" y="588" text-anchor="middle" font-size="8.2" fill="#0891b2">[אין רשומות שמורות המפנות לחוזה]</text>
+      <rect x="1235" y="592" width="100" height="13" fill="white" opacity="0.9" rx="3"/>
+      <text x="1285" y="602" text-anchor="middle" font-size="8.4" fill="#15803d" style="direction:ltr;unicode-bidi:isolate">/ purge()</text>
     </g>
 
     <!-- ================= PEDAGOGY CALLOUTS ================= -->
     <g>
-      <rect x="60" y="820" width="650" height="120" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
-      <text x="80" y="846" font-size="12.5" font-weight="700" fill="#7c2d12" font-family="Noto Sans Hebrew, sans-serif">8.2, לולאת התיקון (מחזור חוזר)</text>
-      <text x="80" y="867" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">הצומת "ממתין לאישור" → "הוחזר לתיקון" → (חץ חוזר) → "טיוטה" סוגר מעגל.</text>
-      <text x="80" y="886" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">אותם תת־מצבים נכנסים שוב ושוב, אין צורך ב"תיקון 1 / תיקון 2".</text>
-      <text x="80" y="905" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">זהו back-arc אמיתי (מעלה/שמאלה) שהופך את התרשים ללא־ליניארי.</text>
-      <text x="80" y="925" font-size="9.5" font-style="italic" fill="#64748b" font-family="Noto Sans Hebrew, sans-serif">כל תת־המצבים מקובצים בעל־מצב "בתהליך אישור" כדי לשתף את חץ הביטול.</text>
+      <rect x="60" y="800" width="650" height="148" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="1.5"/>
+      <text x="80" y="826" font-size="12.5" font-weight="700" fill="#7c2d12" font-family="Noto Sans Hebrew, sans-serif">8.2, לולאת התיקון (מחזור חוזר)</text>
+      <text x="80" y="847" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">הצומת "ממתין לאישור" → "הוחזר לתיקון" → (חץ חוזר) → "טיוטה" סוגר מעגל.</text>
+      <text x="80" y="866" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">אותם תת־מצבים נכנסים שוב ושוב, אין צורך ב"תיקון 1 / תיקון 2".</text>
+      <text x="80" y="885" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">זהו back-arc אמיתי (מעלה/שמאלה) שהופך את התרשים ללא־ליניארי.</text>
+      <text x="80" y="905" font-size="9.5" font-style="italic" fill="#64748b" font-family="Noto Sans Hebrew, sans-serif">כל תת־המצבים מקובצים בעל־מצב "בתהליך אישור" כדי לשתף את חץ הביטול.</text>
 
-      <rect x="740" y="820" width="680" height="120" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
-      <text x="760" y="846" font-size="12.5" font-weight="700" fill="#4c1d95" font-family="Noto Sans Hebrew, sans-serif">8.3, שתי דרכי סיום נבדלות</text>
-      <text x="760" y="867" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif"><tspan font-weight="700" fill="#b91c1c">ביטול:</tspan> טריגר של שחקן (סטודנט/מנהל אזור), guard [טרם נכנס לתוקף]</text>
-      <text x="760" y="886" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">יוצא מגבול העל־מצב, ולכן לעולם לא מ"פעיל"/"בפיגור".</text>
-      <text x="760" y="905" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif"><tspan font-weight="700" fill="#7c3aed">סיום טבעי:</tspan> אירוע זמן (הגעת תאריך הסיום), יוצא מ"פעיל" וגם מ"בפיגור".</text>
-      <text x="760" y="925" font-size="9.5" font-style="italic" fill="#64748b" font-family="Noto Sans Hebrew, sans-serif">מקורות טריגר שונים לגמרי → אין למזג את שני המצבים למעבר אחד.</text>
+      <rect x="740" y="800" width="680" height="148" rx="12" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+      <text x="760" y="826" font-size="12.5" font-weight="700" fill="#4c1d95" font-family="Noto Sans Hebrew, sans-serif">8.3, שתי תוצאות נבדלות, ומצב סיום אחד</text>
+      <text x="760" y="847" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif"><tspan font-weight="700" fill="#b91c1c">ביטול:</tspan> טריגר של שחקן (סטודנט/מנהל אזור), guard [טרם נכנס לתוקף]</text>
+      <text x="760" y="866" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif"><tspan font-weight="700" fill="#7c3aed">סיום טבעי:</tspan> אירוע זמן (הגעת תאריך הסיום), יוצא מ"פעיל" וגם מ"בפיגור".</text>
+      <text x="760" y="885" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">שתיהן <tspan font-weight="700">מצבים</tspan> ולא מצבי סיום: החוזה עדיין קיים, וממשיך אל "ארכיון".</text>
+      <text x="760" y="905" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif">רק חלוף תקופת השמירה (7 שנים) גורע אותו מהמערכת ← מצב הסיום.</text>
+      <text x="760" y="926" font-size="10.5" fill="#334155" font-family="Noto Sans Hebrew, sans-serif"><tspan font-weight="700" fill="#b91c1c">והחריג:</tspan> טיוטה נטושה נמחקת <tspan font-weight="700">ישירות</tspan>, בלי ארכיון, כי מעולם לא הייתה חוזה.</text>
     </g>
 
     <!-- ================= LEGEND ================= -->
@@ -342,12 +374,16 @@ const diagramModel = {
         x: 830, y: 430, w: 225, h: 100, subElements: [] },
       { kind: 'state', id: 'ended', name: 'הסתיים', isComposite: false,
         statusConstant: 'ENDED',
-        activities: { entry: ["setStatus('ENDED')"], exit: [], do: ['keepForReporting()'] },
+        activities: { entry: ["setStatus('ENDED')", "setClosureReason('ENDED')"], exit: [], do: [] },
         x: 1180, y: 300, w: 210, h: 80, subElements: [] },
       { kind: 'state', id: 'cancelled', name: 'בוטל', isComposite: false,
         statusConstant: 'CANCELLED',
-        activities: { entry: ["setStatus('CANCELLED')"], exit: [], do: ['keepForReporting()'] },
+        activities: { entry: ["setStatus('CANCELLED')", "setClosureReason('CANCELLED')"], exit: [], do: [] },
         x: 430, y: 690, w: 205, h: 80, subElements: [] },
+      { kind: 'state', id: 'archive', name: 'ארכיון', isComposite: false,
+        statusConstant: 'ARCHIVED',
+        activities: { entry: ["setStatus('ARCHIVED')"], exit: [], do: [] },
+        x: 1180, y: 490, w: 210, h: 62, subElements: [] },
       { kind: 'pseudostate', id: 'final_1', subKind: 'final', x: 1285, y: 640 }
     ],
     relationships: [
@@ -363,8 +399,10 @@ const diagramModel = {
       { kind: 'transition', id: 't_r_a',     from: 'arrears', to: 'active', event: 'החוב נפרע', guard: 'מערכת סליקה', action: '', isSelf: false },
       { kind: 'transition', id: 't_a_e',     from: 'active', to: 'ended', event: 'הגיע תאריך סיום השכירות', guard: 'אירוע זמן', action: '', isSelf: false },
       { kind: 'transition', id: 't_r_e',     from: 'arrears', to: 'ended', event: 'הגיע תאריך סיום השכירות', guard: 'אירוע זמן', action: '', isSelf: false },
-      { kind: 'transition', id: 't_c_f',     from: 'cancelled', to: 'final_1', event: 'רשומת הביטול נשמרה לדיווח', guard: '', action: 'archiveRecord', isSelf: false },
-      { kind: 'transition', id: 't_e_f',     from: 'ended', to: 'final_1', event: 'רשומת הסיום נשמרה לדיווח', guard: '', action: 'archiveRecord', isSelf: false }
+      { kind: 'transition', id: 't_c_ar',    from: 'cancelled', to: 'archive', event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't_e_ar',    from: 'ended', to: 'archive', event: 'after(30 יום)', guard: '', action: 'removeFromActiveLists()', isSelf: false },
+      { kind: 'transition', id: 't_ar_f',    from: 'archive', to: 'final_1', event: 'after(7 שנים)', guard: 'אין רשומות שמורות המפנות לחוזה', action: 'purge()', isSelf: false },
+      { kind: 'transition', id: 't_s1_f',    from: 's1', to: 'final_1', event: 'מחיקת טיוטה נטושה', guard: 'רכז השיבוץ; טרם נשלחה לחתימה', action: 'delete()', isSelf: false }
     ]
   }]
 };

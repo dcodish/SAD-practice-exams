@@ -74,7 +74,8 @@ const CLASSES = [
 
   { id: 'Reservation', name: 'Reservation', stereotype: '«association class»', isEnum: false, isAbstract: false,
     attrs: ['+ date : Date', '+ timeSlot : String', '+ partySize : Integer',
-            '+ specialNote : String', '+ status : ReservationStatus', '+ cancellationReason : String'],
+            '+ specialNote : String', '+ status : ReservationStatus', '+ closureReason : ReservationStatus',
+            '+ cancellationReason : String'],
     ops: ['+ confirm() : void', '+ seat() : void', '+ complete() : void', '+ cancel() : void'],
     x: 217, y: 600 },
 
@@ -94,7 +95,7 @@ const CLASSES = [
 
   // ── Enumerations (unconnected boxes, attribute-type link only) ──
   { id: 'ReservationStatus', name: 'ReservationStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,
-    attrs: ['Requested', 'Waitlisted', 'Confirmed', 'Seated', 'Completed', 'Cancelled', 'NoShow', 'Expired'],
+    attrs: ['Requested', 'Waitlisted', 'Confirmed', 'Seated', 'Completed', 'Cancelled', 'NoShow', 'Expired', 'Archived'],
     ops: [], x: 1060, y: 60 },
 
   { id: 'EventBookingStatus', name: 'EventBookingStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,

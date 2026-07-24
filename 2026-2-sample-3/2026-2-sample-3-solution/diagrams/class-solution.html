@@ -75,7 +75,8 @@
     {
       id: 'Loan', name: 'Loan', stereotype: '«association class»', isEnum: false, isAbstract: false,
       attrs: ['+ checkoutDate : Date', '+ dueDate : Date', '+ returnDate : Date',
-              '+ renewalsCount : Integer', '+ status : LoanStatus'],
+              '+ renewalsCount : Integer', '+ status : LoanStatus',
+              '+ closureReason : LoanStatus'],
       ops: ['+ checkout()', '+ renew()', '+ markOverdue()',
             '+ returnCopy()', '+ markLost()', '+ calculateFine()'],
       x: 512, y: 478
@@ -102,7 +103,7 @@
     },
     {
       id: 'LoanStatus', name: 'LoanStatus', stereotype: '«enumeration»', isEnum: true, isAbstract: false,
-      attrs: ['Reserved', 'Active', 'Overdue', 'ReturnedOnTime', 'ReturnedLate', 'Lost', 'Expired'],
+      attrs: ['Reserved', 'Active', 'Overdue', 'ReturnedOnTime', 'ReturnedLate', 'Lost', 'Expired', 'ArchivedOps', 'ArchivedFin'],
       ops: [],
       x: 900, y: 360
     },
