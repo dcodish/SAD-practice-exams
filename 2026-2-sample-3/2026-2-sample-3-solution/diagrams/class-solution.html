@@ -55,7 +55,8 @@
     },
     {
       id: 'MembershipType', name: 'MembershipType', stereotype: null, isEnum: false, isAbstract: false,
-      attrs: ['+ maxActiveLoans : Integer', '+ loanPeriodDays : Integer',
+      attrs: ['+ name : String',
+              '+ maxActiveLoans : Integer', '+ loanPeriodDays : Integer',
               '+ maxRenewals : Integer', '+ dailyFineRate : Number'],
       ops: [],
       x: 60, y: 340
@@ -147,7 +148,7 @@
     {
       type: 'assoc', from: 'MembershipType', to: 'Patron',
       fromMult: '1', toMult: '0..*', fromRole: null, toRole: 'governs', label: 'governs',
-      points: [[152, 436], [152, 455], [769, 455], [769, 408]]
+      points: [[152, 450], [152, 464], [769, 464], [769, 408]]
     },
     // Association (many-to-many base carrying the Loan association class)
     {
