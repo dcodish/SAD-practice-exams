@@ -131,7 +131,7 @@
     <path d="M 250 452 L 250 298" fill="none" stroke="#c2410c" stroke-width="2" marker-end="url(#arrow-orange)"/>
     <g font-family="IBM Plex Mono" font-size="9.3">
       <rect x="253" y="358" width="196" height="14" fill="white" opacity="0.95" rx="3"/>
-      <text x="352" y="368" text-anchor="start" fill="#c2410c">רכז השיבוץ תיקן והגיש מחדש</text>
+      <text x="352" y="368" text-anchor="start" fill="#c2410c">רכז השיבוץ החל בתיקון</text>
       <rect x="253" y="374" width="150" height="13" fill="white" opacity="0.9" rx="3"/>
       <text x="257" y="384" text-anchor="start" font-size="8.4" font-style="italic" fill="#64748b">↺ לולאת תיקון, חוזרת</text>
     </g>
@@ -392,7 +392,7 @@ const diagramModel = {
       { kind: 'transition', id: 't_s1_s2',   from: 's1', to: 's2', event: 'שליחה לחתימה', guard: 'רכז השיבוץ', action: '', isSelf: false },
       { kind: 'transition', id: 't_s2_s3',   from: 's2', to: 's3', event: 'הסטודנט חתם', guard: '', action: 'notifyManager', isSelf: false },
       { kind: 'transition', id: 't_s3_s4',   from: 's3', to: 's4', event: 'מנהל האזור החזיר לתיקון', guard: 'נמצא ליקוי', action: '', isSelf: false },
-      { kind: 'transition', id: 't_s4_s1',   from: 's4', to: 's1', event: 'רכז השיבוץ תיקן והגיש מחדש', guard: '', action: '', isSelf: false },
+      { kind: 'transition', id: 't_s4_s1',   from: 's4', to: 's1', event: 'רכז השיבוץ החל בתיקון', guard: '', action: '', isSelf: false },
       { kind: 'transition', id: 't_comp_a',  from: 'composite', to: 'active', event: 'מנהל האזור אישר את החוזה', guard: '', action: '', isSelf: false },
       { kind: 'transition', id: 't_comp_c',  from: 'composite', to: 'cancelled', event: 'ביטול', guard: 'טרם נכנס לתוקף', action: '', isSelf: false },
       { kind: 'transition', id: 't_a_r',     from: 'active', to: 'arrears', event: 'חלפו 10 ימים ללא פירעון החיוב', guard: 'אירוע זמן', action: '', isSelf: false },
